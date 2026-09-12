@@ -1,0 +1,2 @@
+SYNTHETIC_FIXTURE_NOT_CLINICAL
+Not a patient. Not training data.

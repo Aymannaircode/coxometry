@@ -1,0 +1,78 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+credentials.json
+secrets/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Flutter / mobile build artifacts
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/.pub-cache/
+mobile/.pub/
+mobile/build/
+mobile/coverage/
+mobile/windows/flutter/ephemeral/
+mobile/android/app/debug/
+mobile/android/app/profile/
+mobile/android/app/release/
+mobile/**/*.apk
+mobile/**/*.aab
+mobile/**/*.ipa
+
+# Model weights / checkpoints (GitHub 100MB limit)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.weights
+runs/
+
+# Clinical / raw imaging sources — DO NOT COMMIT
+bassin/
+Dataset1/
+Dataset2/
+retuve-data/
+restricted/linkage/*
+!restricted/linkage/.gitkeep
+
+# Large training image trees (keep labels/meta/reports)
+datasets/**/images/
+datasets/**/*.png
+datasets/**/*.jpg
+datasets/**/*.jpeg
+datasets/**/*.dcm
+annotation_pilot/**/cache/
+annotation_pilot/**/*.dcm
+
+# Synthetic DICOM binaries (keep code/tests/markers)
+collection/_synthetic_dicom/**/*.dcm
+collection/_synthetic_dicom/reports/_pytest_tmp/
+
+# Local caches / temp
+*.log
+tmp/
+temp/
+*_temp/
+.cache/

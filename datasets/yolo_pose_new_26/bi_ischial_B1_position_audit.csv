@@ -1,0 +1,30 @@
+audit_id,question_id,topic,status,value_from_sources,source_doc,specification_required,notes
+B1_META,context,B7 closed visibility results,DEFINED,IT_R VISIBLE 25/26; IT_L VISIBLE 25/26; both VISIBLE 25/26; annotables 26/26; B26_05 PARTIELLE; no exclusions,bi_ischial_visibility_audit.md,false,Input context for B1 audit
+B1_Q01,1,Structure anatomique IT_R IT_L,PARTIALLY DEFINED,Tuberosite ischiatique droite (IT_R) et gauche (IT_L); extremites BI_ISCHIAL; LM-17 LM-18 proposes,landmark_specification.md §11; missing_measurements_spec.md §3.2; bi_ischial_spec.md §1-2,true,Morphologie detaillee au-dela tuberosite = SPECIFICATION REQUIRED
+B1_Q02,2,Position du point sur structure,SPECIFICATION REQUIRED,§11 exige IT_R IT_L sans preciser point sur tuberosite; B1 ouvert sommet vs centre vs bord,landmark_specification.md §11; missing_measurements_spec.md §5.3 B1; bi_ischial_spec.md §3,true,Analogie TD point inferieur non etendue aux IT
+B1_Q03,3,Point cortical vs centre structure,SPECIFICATION REQUIRED,Aucune regle IT; TD=extremite pas centre; FHC=centre best-fit,landmark_specification.md §4; annotation_guidelines.md §2.1 §2.2,true,
+B1_Q04,4,Forme etendue tuberosite,SPECIFICATION REQUIRED,Aucune regle IT specifique; analogies TD ASL FSD non transferables sans validation,annotation_guidelines.md §2.1 §2.3 §2.7,true,
+B1_Q05,5,Superposition osseuse,SPECIFICATION REQUIRED,Non documente IT; analogie FHC superposition pubis/ischion -> v=0 si doute,annotation_guidelines.md §2.2; bi_ischial_spec.md §6,true,Regle FHC non etendue explicitement a IT
+B1_Q06,6,Tuberosite partiellement visible,SPECIFICATION REQUIRED IT; DEFINED v general,v=0 si deviner; pas fiche IT; B7 recommande v=0 ou revue si partiel,annotation_guidelines.md §1.2; bi_ischial_spec.md §5; bi_ischial_visibility_audit.md,true,Conduite IT specifique = B4
+B1_Q07,7,Limite image proche,SPECIFICATION REQUIRED IT rule; DOCUMENTED B7 context,B26_05 PARTIELLE bord image; B26_12 marge reduite; FSD bord image regle diaphyse seulement,bi_ischial_visibility_audit.md; annotation_guidelines.md §2.7,true,
+B1_Q08,8,Criteres VISIBLE PARTIELLE INCERTAINE NON-VISIBLE,DEFINED B7 audit; SPECIFICATION REQUIRED link B1,VISIBLE=contour caudal identifiable v=2; PARTIELLE=repere caudal moins confortable; NON VISIBLE=absent; INCERTAINE=revue clinique,bi_ischial_visibility_audit.md §Methode,true,Terme repere caudal = visibilite B7 pas position B1 validee
+B1_Q09,9,Quand utiliser v=0,DEFINED general; SPECIFICATION REQUIRED IT cases,v=0 si deviner; v=1 defaut interdit; IT partiel -> v=0 ou revue B7; un IT v=0 -> BI_ISCHIAL impossible,annotation_guidelines.md §1.2; bi_ischial_visibility_audit.md; bi_ischial_spec.md §13,true,
+B1_Q10,10,Regle symetrie R/L,DEFINED,IT_R=droit patient=gauche image; IT_L=gauche patient=droite image; interdiction copie miroir; hauteurs proches si peu incline,annotation_guidelines.md §1.1 §3; landmark_specification.md conventions,false,
+B1_Q11,11,Exemples faciles difficiles,PARTIALLY DEFINED,0 annotation IT existante; 20 EXCELLENTE 5 BONNE 1 MOYENNE B26_05; revues B26_05 07 11 12,bi_ischial_visibility_audit.md; dataset_analysis.md §14,true,Exemples placement IT absents; illustrations B1 B4 requises
+B1_PROP,proposal,Point caudal inferieur NON VALIDE,NOT VALIDATED,Proposition audit: point le plus caudal/inferieur identifiable — a figer avant annotation,missing_measurements_audit.md §3; bi_ischial_spec.md §3,true,Ne pas utiliser comme definition B1 sans validation clinique
+B1_DEFINED,summary,Elements DEFINED sans hypothese,DEFINED,Structure tuberosite; BI_ISCHIAL= droite IT_R IT_L; TD distinct A2; R/L; v general; 26/26 annotables B7,landmark_specification.md §11; bi_ischial_spec.md; bi_ischial_visibility_audit.md,false,
+B1_VERDICT,final,B1 decision,SPECIFICATION REQUIRED,Position exacte sur tuberosite non figee sources primaires validees,,true,B1 = SPECIFICATION REQUIRED
+B1_IMPACT,reannotation,Impact 26 images,BLOCKED until B1 B4,26 annotables visibilite; 25 haute confiance; B26_05 revue; reannotation B6 interdite sans spec position,bi_ischial_visibility_audit.md; missing_measurements_spec.md §5.4 T1,true,
+image,B26_01,cas facile VISIBLE bilatéral,EXAMPLE B7,B26_01 train VISIBLE VISIBLE EXCELLENTE,bi_ischial_visibility_audit.csv,false,Repere caudal confortable marges caudales
+image,B26_05,cas difficile PARTIELLE bord image,EXAMPLE B7,B26_05 train PARTIELLE PARTIELLE MOYENNE manual_review=true,bi_ischial_visibility_audit.csv,true,Revue clinique confirmer repere caudal vs v=0 apres B1
+image,B26_07,cas difficile gaz intestinal,EXAMPLE B7,B26_07 train VISIBLE VISIBLE BONNE manual_review=true,bi_ischial_visibility_audit.csv,true,
+image,B26_11,cas difficile rotation pelvienne,EXAMPLE B7,B26_11 train VISIBLE VISIBLE BONNE manual_review=true,bi_ischial_visibility_audit.csv,true,
+image,B26_12,cas difficile marge caudale reduite,EXAMPLE B7,B26_12 train VISIBLE VISIBLE BONNE manual_review=true,bi_ischial_visibility_audit.csv,true,
+image,B26_17,cas facile marge caudale genereuse,EXAMPLE B7,B26_17 val VISIBLE VISIBLE EXCELLENTE large marge caudale,bi_ischial_visibility_audit.csv,false,
+image,B26_18,cas facile FOV inferieur genereux,EXAMPLE B7,B26_18 train VISIBLE VISIBLE EXCELLENTE FSD ~78-80%,bi_ischial_visibility_audit.csv,false,
+clinical,P0,Validation clinique position exacte,BLOCKER,B1 B4 B6,,true,
+clinical,P0,Illustrations cas standard et limites,BLOCKER,B1 B4,,true,Inclure B26_05 B26_12 minimum
+clinical,P1,Conduite visibilite partielle IT,,B4,,true,
+clinical,P1,Superposition osseuse IT,,B4,,true,
+clinical,P2,Metrique sortie bi-ischiale,,B2,,true,Hors scope position B1
+clinical,P2,Revue 4 cas B7 avec position figee,,B6,,true,B26_05 07 11 12

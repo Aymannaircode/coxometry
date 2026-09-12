@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pilote MVP — Annotation manuelle A</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" id="dataset-label">PILOTE MVP · ANNOTATEUR A</p>
+        <h1>Annotation manuelle des 14 landmarks</h1>
+      </div>
+      <div class="orientation" role="note">
+        <strong>Droite patient = gauche image</strong>
+        <span><code>*_R</code> ← image · image → <code>*_L</code></span>
+      </div>
+    </header>
+
+    <p id="correction-banner" class="correction-banner" hidden></p>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="case-navigation" aria-label="Navigation entre les images">
+          <button id="previous-case" type="button">← Image précédente</button>
+          <label for="case-select">Image courante</label>
+          <select id="case-select"></select>
+          <button id="next-case" type="button">Image suivante →</button>
+        </section>
+
+        <section class="current-card" aria-live="polite">
+          <p class="eyebrow">LANDMARK ACTUEL</p>
+          <div class="current-heading">
+            <span id="current-id">LM-01</span>
+            <strong id="current-name">TD_R</strong>
+          </div>
+          <p id="current-instruction"></p>
+          <p id="current-side" class="side-warning"></p>
+          <p id="fsd-hint" class="fsd-hint" hidden></p>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>Landmarks</h2>
+            <span id="progress">0 / 14</span>
+          </div>
+          <ol id="landmark-list" class="landmark-list"></ol>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div class="toolbar" aria-label="Outils d'affichage et d'annotation">
+          <button id="zoom-out" type="button" title="Dézoomer">−</button>
+          <output id="zoom-level">100 %</output>
+          <button id="zoom-in" type="button" title="Zoomer">+</button>
+          <button id="fit-image" type="button">Ajuster</button>
+          <button id="previous-landmark" type="button">← Point précédent</button>
+          <button id="undo" type="button" disabled>Annuler la dernière action</button>
+          <button id="mark-invisible" type="button" class="warning" title="Marquer non visible (V)">
+            Marquer non visible (v=0)
+          </button>
+        </div>
+
+        <div id="canvas-shell" class="canvas-shell">
+          <canvas id="annotation-canvas" aria-label="Image radiographique à annoter"></canvas>
+          <div id="loading" class="loading">Chargement…</div>
+        </div>
+
+        <div class="help-strip">
+          <span><b>Clic / glisser</b> : confirmer le landmark (humain ou suggestion YOLO)</span>
+          <span><b>1–9, 0, Q W E R</b> : sélectionner LM-01…LM-14</span>
+          <span><b>V</b> : v=0 · <b>[ ]</b> : landmark préc./suiv.</span>
+          <span><b>Molette</b> : zoom · <b>Espace + glisser</b> : déplacer l'image</span>
+        </div>
+      </section>
+
+      <aside class="actions-panel">
+        <section>
+          <h2>État de l'image</h2>
+          <p id="case-title"></p>
+          <p id="verification-remarque" class="verification-note"></p>
+          <p id="fsd-banner" class="fsd-banner" hidden>
+            Landmark FSD sélectionné — privilégiez v=0 si le FOV distal est insuffisant.
+          </p>
+          <p class="reference-note">
+            <a id="yolo-overlay-link" href="#" target="_blank" rel="noopener" hidden>
+              Ouvrir overlay YOLO (référence visuelle uniquement)
+            </a>
+          </p>
+          <p id="yolo-suggestions-note" class="yolo-suggestions-note panel-note" hidden></p>
+          <p id="save-state" class="status neutral">Aucune modification locale</p>
+          <ul id="validation-errors" class="validation-errors"></ul>
+          <h3 class="subsection-title">Contrôles anatomiques</h3>
+          <ul id="anatomical-warnings" class="anatomical-warnings"></ul>
+        </section>
+
+        <section class="rules">
+          <h2>Règles essentielles</h2>
+          <ul>
+            <li>Les suggestions YOLO (bleu) ne sont <strong>jamais</strong> enregistrées automatiquement.</li>
+            <li>Un point confirmé vient d'un <strong>clic ou glisser humain</strong>.</li>
+            <li>Si le point doit être deviné : <strong>v=0</strong>, sans coordonnées.</li>
+            <li><strong>FSD</strong> : v=0 si diaphyse distale non fiable (FOV court).</li>
+            <li><strong>v=1 est désactivé</strong> pour ce pilote.</li>
+            <li>Ne jamais copier un côté par symétrie.</li>
+            <li>Ne pas utiliser les keypoints pédiatriques Dataset 1.</li>
+          </ul>
+          <details>
+            <summary>Ordre et repères</summary>
+            <p>TD bilatéraux, puis FHC → ASL → ASM → FNM → FSP → FSD à droite, puis à gauche.</p>
+            <p>ASL = fin latérale du sourcil, pas l'ostéophyte. ASM douteux = v=0. FSD doit être distal à FSP.</p>
+          </details>
+        </section>
+
+        <section class="save-actions">
+          <button id="save-draft" type="button" class="secondary">Enregistrer le brouillon</button>
+          <button id="finalize" type="button" class="primary" disabled>Valider cette image</button>
+          <p class="fine-print">
+            « Valider » est bloqué tant que chacun des 14 landmarks n'a pas
+            soit des coordonnées issues d'un clic avec v=2, soit v=0.
+          </p>
+        </section>
+      </aside>
+    </main>
+
+    <dialog id="confirm-dialog">
+      <form method="dialog">
+        <h2>Modifications non enregistrées</h2>
+        <p>Quitter cette image supprimera les modifications locales depuis la dernière sauvegarde.</p>
+        <div class="dialog-actions">
+          <button value="cancel">Rester</button>
+          <button value="discard" class="danger">Quitter sans enregistrer</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

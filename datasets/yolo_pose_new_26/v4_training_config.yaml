@@ -1,0 +1,150 @@
+# YOLO Pose V4 — 16 keypoints (new_26)
+# Fine-tuning conservateur depuis V2 best.pt epoch 80 uniquement.
+# NE PAS utiliser V3 comme init. Ne modifie pas labels, V2, V3, backend, Flutter.
+#
+# Préparation (sans entraînement) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v4_new_26.py
+#
+# Lancer l'entraînement (explicite, après preflight OK) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v4_new_26.py --train
+
+version: "v4_16kp"
+description: "Fine-tuning V2→V4 16 KP (IT_R/IT_L), imgsz 960, stratégie anti-V3"
+
+# --- Init : V2 best epoch 80 UNIQUEMENT ---
+init:
+  source: runs/pose/runs/pose/runs/yolo_pose_new_26_v2-3/weights/best.pt
+  copy_to: runs/pose/yolo_pose_new_26_v4_16kp/init/v2_best_mAP_epoch80.pt
+  note: "V2 best.pt = pic mAP50-95 pose epoch 80. Jamais V3/V1/COCO sans justification."
+  # Ultralytics : reconstruire l'architecture 16 KP puis charger V2 partiellement
+  model_yaml: yolo11n-pose.yaml
+  pretrained_arg: runs/pose/yolo_pose_new_26_v4_16kp/init/v2_best_mAP_epoch80.pt
+
+# --- Dataset officiel 16 KP (post B5 QC) ---
+data: datasets/yolo_pose_new_26/data.yaml
+dataset_alias: datasets/yolo_pose_new_26/dataset.yaml
+
+# --- Run Ultralytics ---
+run:
+  project: runs/pose
+  name: yolo_pose_new_26_v4_16kp
+  exist_ok: false
+
+# --- Entraînement ---
+train:
+  epochs: 100
+  patience: 20
+  imgsz: 960
+  batch: 1
+  device: cpu
+  workers: 4
+  cache: false
+  amp: true
+  deterministic: true
+  seed: 42
+  fraction: 1.0
+  val: true
+  save: true
+  save_period: -1
+  plots: true
+  verbose: true
+
+# --- Optimiseur (fine-tuning très prudent — leçon V3) ---
+optimizer:
+  name: AdamW
+  lr0: 0.00003          # 3e-5 : entre 1e-5 et 5e-5 ; ×3 plus bas que V3 (1e-4) malgré imgsz 960
+  lrf: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 4      # 4 epochs : stabilise box/cls avant d'ajuster pose head réinitialisée (IT)
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.05
+  cos_lr: false         # V3 avait cos_lr=true → choc de schedule sur modèle convergé
+
+# --- Loss (identiques V2) ---
+loss:
+  pose: 12.0
+  kobj: 1.0
+  box: 7.5
+  cls: 0.5
+  dfl: 1.5
+
+# --- Augmentations conservatrices (pas de choc V3) ---
+augment:
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  auto_augment: null    # randaugment désactivé
+  erasing: 0.0
+  close_mosaic: 0
+  fliplr: 0.5           # flip_idx 16 KP validé (IT_R↔IT_L)
+  flipud: 0.0
+  degrees: 0.0
+  translate: 0.03
+  scale: 0.15
+  shear: 0.0
+  perspective: 0.0
+  hsv_h: 0.005
+  hsv_s: 0.3
+  hsv_v: 0.2
+
+# --- Flags Ultralytics ---
+ultralytics:
+  # false : poids custom déjà injectés via init ; évite re-download COCO
+  pretrained: false
+  cls_remap: true
+  overlap_mask: true
+
+# --- Garde-fous epoch 0 / 1 (anti-effondrement V3) ---
+guardrails:
+  epoch0_v2_detection_recall_min: 0.80
+  epoch0_v2_box_conf_min: 0.25
+  epoch1_pose_loss_max_ratio_vs_v2: 3.0
+  abort_if_val_recall_below: 0.80
+
+# --- Landmarks prioritaires évaluation post-training ---
+focus_landmarks:
+  - FSP_R
+  - FSD_R
+  - FSP_L
+  - FSD_L
+  - ASL_R
+  - ASL_L
+  - IT_R
+  - IT_L
+
+# --- Cas cliniques prioritaires ---
+priority_cases:
+  - B26_01
+  - B26_12
+  - B26_13
+  - B26_26
+
+# --- Métriques cliniques à calculer hors mAP ---
+clinical_metrics:
+  detection:
+    - box_detection_recall
+    - mAP50
+    - mAP50-95
+  pixel_error:
+    - mean_px
+    - median_px
+    - p90_px
+  quality_tiers:
+    - CORRECT
+    - INCERTAIN
+    - INCORRECT
+  geometry:
+    - FSP_FSD
+    - ASL
+    - IT_R
+    - IT_L
+    - VCE
+    - Tönnis
+    - CCD
+
+evaluation_thresholds_px:
+  correct_max: 75
+  uncertain_max: 149
+  incorrect_min: 150

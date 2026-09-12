@@ -1,0 +1,70 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "MANUAL_CORRECTION_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_07",
+  "annotation_order": 3,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_07.png",
+  "image_width": 2998,
+  "image_height": 2687,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_manual_correction",
+  "annotation_date": "2026-08-28",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "review_recommended",
+  "ambiguities": [
+    "A-GAS07: gaz intestinal central — repère latéral vérifié"
+  ],
+  "IT_R": {
+    "x": 708.0,
+    "y": 2548.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 1778.0,
+    "y": 2548.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "Revue rotation/gaz recommandée B7 | MANUAL_CORR: IT_L: Apex caudal ischion G — bord inférieur osseux visible; IT_R: Repositionné sur cortex ischiatique D malgré gaz — repère osseux identifiable",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_07.json",
+  "correction_history": [
+    {
+      "session": "2026-08-28",
+      "landmark": "IT_R",
+      "priority": "P2",
+      "x_old": 640.4,
+      "y_old": 2431.5,
+      "x_new": 708.0,
+      "y_new": 2548.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Gaz intestinal ; validation osseuse impossible en auto",
+      "comment": "Repositionné sur cortex ischiatique D malgré gaz — repère osseux identifiable",
+      "reviewer": "agent_B6_manual_correction"
+    },
+    {
+      "session": "2026-08-28",
+      "landmark": "IT_L",
+      "priority": "P1",
+      "x_old": 1834.0,
+      "y_old": 2379.0,
+      "x_new": 1778.0,
+      "y_new": 2548.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Sur ischion G mais ~90 px trop crânial",
+      "comment": "Apex caudal ischion G — bord inférieur osseux visible",
+      "reviewer": "agent_B6_manual_correction"
+    }
+  ],
+  "manual_correction_session": "2026-08-28",
+  "manual_correction_status": "MANUAL_CORRECTION_COMPLETED / QA_REQUIRED"
+}

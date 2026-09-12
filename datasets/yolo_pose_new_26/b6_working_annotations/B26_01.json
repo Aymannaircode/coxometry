@@ -1,0 +1,56 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "MANUAL_CORRECTION_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_01",
+  "annotation_order": 1,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_01.png",
+  "image_width": 2730,
+  "image_height": 2665,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_manual_correction",
+  "annotation_date": "2026-08-28",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "standard",
+  "ambiguities": [
+    "A-IT01: piège fémoral IT_L documenté (pilote)"
+  ],
+  "IT_R": {
+    "x": 548.0,
+    "y": 2140.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 1772.0,
+    "y": 2178.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "IT_R: Point caudal net; cas standard EXCELLENT; IT_L: Rejet piège fémoral latéral; contour ischiatique retenu | MANUAL_CORR: IT_L: Déplacement caudal ~35px sur cortex ischiatique — piège fémoral évité",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_01.json",
+  "correction_history": [
+    {
+      "session": "2026-08-28",
+      "landmark": "IT_L",
+      "priority": "P1",
+      "x_old": 1756.0,
+      "y_old": 2143.0,
+      "x_new": 1772.0,
+      "y_new": 2178.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Piège fémoral évité mais ~15–40 px trop crânial",
+      "comment": "Déplacement caudal ~35px sur cortex ischiatique — piège fémoral évité",
+      "reviewer": "agent_B6_manual_correction"
+    }
+  ],
+  "manual_correction_session": "2026-08-28",
+  "manual_correction_status": "MANUAL_CORRECTION_COMPLETED / QA_REQUIRED"
+}

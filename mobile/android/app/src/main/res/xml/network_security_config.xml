@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MVP développement : HTTP cleartext pour backend FastAPI local / LAN privé.
+     Ne pas étendre à des domaines publics ; utiliser HTTPS en production. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

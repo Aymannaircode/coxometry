@@ -1,0 +1,74 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "P1_MANUAL_REVIEW_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_12",
+  "annotation_order": 5,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_12.png",
+  "image_width": 2986,
+  "image_height": 2437,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_P1_manual_review",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "review_recommended",
+  "ambiguities": [
+    "A-BRD12: marge caudale réduite — règle bord FOV appliquée"
+  ],
+  "IT_R": {
+    "x": 846.0,
+    "y": 2198.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 2038.0,
+    "y": 2210.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "P1: IT_R/IT_L MOVE — apex caudal repositionné sur ligne corticale inférieure identifiable (A-BRD12)",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_12.json",
+  "correction_history": [
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_R",
+      "priority": "P1",
+      "x_old": 843.0,
+      "y_old": 2148.0,
+      "x_new": 846.0,
+      "y_new": 2198.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "P1 revue — repère trop crânial vs ligne caudale nette visible",
+      "comment": "Apex caudal ischion D sur courbe corticale inférieure — marge FOV 9,8 %",
+      "reviewer": "agent_B6_P1_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    },
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P1",
+      "x_old": 2041.0,
+      "y_old": 2179.0,
+      "x_new": 2038.0,
+      "y_new": 2210.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "P1 revue — repère au-dessus du bord caudal cortical sharp",
+      "comment": "Apex caudal ischion G sur bord inférieur osseux — règle bord FOV A-BRD12",
+      "reviewer": "agent_B6_P1_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "P1_MANUAL_REVIEW_COMPLETED / QA_REQUIRED"
+}

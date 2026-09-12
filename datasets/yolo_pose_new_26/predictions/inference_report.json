@@ -1,0 +1,277 @@
+{
+  "generated_at": "2026-08-23T17:21:51.525530+00:00",
+  "model": "runs\\pose\\runs\\yolo_pose_new_26\\weights\\best.pt",
+  "model_sha256_prefix": null,
+  "source": "bassin/a_annoter/ (DICOM → PNG 1:1)",
+  "predictions_root": "datasets\\yolo_pose_new_26\\predictions",
+  "total_cases": 26,
+  "predictions_ok": 26,
+  "predictions_missing_or_invalid": 0,
+  "settings": {
+    "save": true,
+    "save_txt": true,
+    "save_conf": true
+  },
+  "cases": [
+    {
+      "pilot_id": "B26_01",
+      "image": "images/B26_01.png",
+      "prediction_file": "labels/B26_01.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.888307",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_02",
+      "image": "images/B26_02.png",
+      "prediction_file": "labels/B26_02.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.896552",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_03",
+      "image": "images/B26_03.png",
+      "prediction_file": "labels/B26_03.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.889685",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_04",
+      "image": "images/B26_04.png",
+      "prediction_file": "labels/B26_04.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.904208",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_05",
+      "image": "images/B26_05.png",
+      "prediction_file": "labels/B26_05.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.873217",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_06",
+      "image": "images/B26_06.png",
+      "prediction_file": "labels/B26_06.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.884137",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_07",
+      "image": "images/B26_07.png",
+      "prediction_file": "labels/B26_07.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.892405",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_08",
+      "image": "images/B26_08.png",
+      "prediction_file": "labels/B26_08.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.897317",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_09",
+      "image": "images/B26_09.png",
+      "prediction_file": "labels/B26_09.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.870298",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_10",
+      "image": "images/B26_10.png",
+      "prediction_file": "labels/B26_10.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.89612",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_11",
+      "image": "images/B26_11.png",
+      "prediction_file": "labels/B26_11.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.843581",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_12",
+      "image": "images/B26_12.png",
+      "prediction_file": "labels/B26_12.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.895842",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_13",
+      "image": "images/B26_13.png",
+      "prediction_file": "labels/B26_13.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.859886",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_14",
+      "image": "images/B26_14.png",
+      "prediction_file": "labels/B26_14.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.874827",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_15",
+      "image": "images/B26_15.png",
+      "prediction_file": "labels/B26_15.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.8661",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_16",
+      "image": "images/B26_16.png",
+      "prediction_file": "labels/B26_16.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.909199",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_17",
+      "image": "images/B26_17.png",
+      "prediction_file": "labels/B26_17.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.894566",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_18",
+      "image": "images/B26_18.png",
+      "prediction_file": "labels/B26_18.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.87078",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_19",
+      "image": "images/B26_19.png",
+      "prediction_file": "labels/B26_19.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.892978",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_20",
+      "image": "images/B26_20.png",
+      "prediction_file": "labels/B26_20.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.860487",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_21",
+      "image": "images/B26_21.png",
+      "prediction_file": "labels/B26_21.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.864424",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_22",
+      "image": "images/B26_22.png",
+      "prediction_file": "labels/B26_22.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.908781",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_23",
+      "image": "images/B26_23.png",
+      "prediction_file": "labels/B26_23.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.918339",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_24",
+      "image": "images/B26_24.png",
+      "prediction_file": "labels/B26_24.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.881645",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_25",
+      "image": "images/B26_25.png",
+      "prediction_file": "labels/B26_25.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.859987",
+      "label_columns": "48",
+      "error": ""
+    },
+    {
+      "pilot_id": "B26_26",
+      "image": "images/B26_26.png",
+      "prediction_file": "labels/B26_26.txt",
+      "status": "ok",
+      "visible_keypoints": "14",
+      "detection_confidence": "0.826661",
+      "label_columns": "48",
+      "error": ""
+    }
+  ]
+}

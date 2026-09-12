@@ -1,0 +1,75 @@
+check_id,category,item,result,detail,reference
+DS01,dataset,images_total,OK,26/26 (21 train + 5 val),b5_16kp_final_QC.md
+DS02,dataset,split_train,OK,21,b5_16kp_final_QC.csv
+DS03,dataset,split_val,OK,5,b5_16kp_final_QC.csv
+DS04,dataset,kpt_shape,OK,[16 3],data.yaml
+DS05,dataset,label_cols,OK,53 cols × 26 labels,b5_16kp_final_QC.csv
+DS06,dataset,IT_R_index,OK,14 (cols 47-49),meta/keypoint_order.md
+DS07,dataset,IT_L_index,OK,15 (cols 50-52),meta/keypoint_order.md
+DS08,dataset,flip_idx,OK,"[1,0,3,2,5,4,7,6,9,8,11,10,13,12,15,14]",data.yaml
+DS09,dataset,qc_status_match,OK,DATASET_16KP_READY_FOR_TRAINING,b5_16kp_final_QC.md
+DS10,dataset,images_train,OK,21 PNG,images/train/
+DS11,dataset,images_val,OK,5 PNG,images/val/
+INIT01,init,V2_best_pt_exists,OK,"runs/pose/runs/pose/runs/yolo_pose_new_26_v2-3/weights/best.pt",V2 args.yaml
+INIT02,init,V2_epoch80,OK,mAP50-95 pose peak epoch 80,v2_training_behavior.md
+INIT03,init,V2_sha256_prefix,OK,1f92d0867b4cd86e (5947464 bytes),probe 2026-08-29
+INIT04,init,V3_excluded,OK,V3 best/last non utilisés,v3_failure_diagnostic.md
+INIT05,init,COCO_excluded,OK,init V2 uniquement,v4_training_config.yaml
+XF01,transfer,V2_kpt_shape,OK,[14 3],checkpoint probe
+XF02,transfer,V4_kpt_shape,OK,[16 3],PoseTrainer rebuild
+XF03,transfer,backbone_loaded,OK,505/541 tensors transferred,intersect_dicts probe
+XF04,transfer,box_head_loaded,OK,cv2 weights match V2,probe torch.allclose
+XF05,transfer,cls_head_loaded,OK,cv3 weights match V2,probe torch.allclose
+XF06,transfer,pose_head_partial,OK,36 cv4 tensors NOT loaded (shape 42→48),expected reinit
+XF07,transfer,pose_head_reinit_required,OK,IT_R/IT_L channels randomly initialized,by design
+XF08,transfer,ultralytics_errors,OK,aucune erreur — log "Transferred 505/541",probe
+XF09,transfer,ultralytics_warnings,OK,"Overriding model.yaml kpt_shape=[17,3] with [16,3]",informational
+XF10,transfer,compatible_strategy,OK,"model=yolo11n-pose.yaml + pretrained=V2.pt + data 16KP",recommended init path
+CFG01,config,architecture,OK,YOLO11n-pose,v4_training_config.yaml
+CFG02,config,imgsz,OK,960,conservative vs V3 1280
+CFG03,config,batch,OK,1,CPU 16 GB RAM
+CFG04,config,lr0,OK,3e-5,justified mid-range 1e-5..5e-5
+CFG05,config,warmup_epochs,OK,4,justified 3-5 range
+CFG06,config,mosaic,OK,0,anti-V3
+CFG07,config,randaugment,OK,disabled (null),anti-V3
+CFG08,config,erasing,OK,0,anti-V3
+CFG09,config,fliplr,OK,0.5,flip_idx validated
+CFG10,config,cos_lr,OK,false,V3 had true → excluded
+CFG11,config,epochs_max,OK,100,v4_training_config.yaml
+CFG12,config,early_stopping,OK,patience=20,v4_training_config.yaml
+CFG13,config,run_dir,OK,runs/pose/yolo_pose_new_26_v4_16kp/,v4_training_config.yaml
+V3P01,anti_v3,no_imgsz_1280,OK,960 = +50% vs V2 640 not +100%,v3_failure_diagnostic.md
+V3P02,anti_v3,no_cos_lr,OK,cos_lr=false,v3_failure_diagnostic.md
+V3P03,anti_v3,lower_lr,OK,3e-5 vs V3 1e-4,v3_failure_diagnostic.md
+V3P04,anti_v3,longer_warmup,OK,4 vs V3 1 epoch,v3_failure_diagnostic.md
+V3P05,anti_v3,no_v3_init,OK,V2 only,v3_failure_diagnostic.md
+V3P06,anti_v3,epoch0_guard_planned,OK,recall detection vs V2 @ conf 0.25,v4_training_config.yaml
+V3P07,anti_v3,pixel_eval_planned,OK,not mAP-only,v4_training_config.yaml
+MEM01,memory,GPU,NOTE,no NVIDIA GPU — CPU training,nvidia-smi N/A
+MEM02,memory,RAM_total,OK,15.9 GB,Win32 probe
+MEM03,memory,imgsz960_batch1,OK,feasible on CPU (yolo11n ~2.85M params ~11 MB),estimate
+MEM04,memory,imgsz960_alt,NA,960 retained — no downgrade required,—
+EVAL01,eval,box_detection_recall,PLANNED,post-training,v4_training_config.yaml
+EVAL02,eval,mAP50,PLANNED,post-training,v4_training_config.yaml
+EVAL03,eval,mAP50-95,PLANNED,post-training,v4_training_config.yaml
+EVAL04,eval,pixel_mean,PLANNED,post-training,v4_training_config.yaml
+EVAL05,eval,pixel_median,PLANNED,post-training,v4_training_config.yaml
+EVAL06,eval,pixel_p90,PLANNED,post-training,v4_training_config.yaml
+EVAL07,eval,CORRECT_INCERTAIN_INCORRECT,PLANNED,75/150 px tiers,v4_training_config.yaml
+EVAL08,eval,FSP_FSD,PLANNED,geometry,v4_training_config.yaml
+EVAL09,eval,ASL,PLANNED,geometry,v4_training_config.yaml
+EVAL10,eval,IT_R,PLANNED,geometry,v4_training_config.yaml
+EVAL11,eval,IT_L,PLANNED,geometry,v4_training_config.yaml
+EVAL12,eval,VCE,PLANNED,geometry,v4_training_config.yaml
+EVAL13,eval,Tönnis,PLANNED,geometry,v4_training_config.yaml
+EVAL14,eval,CCD,PLANNED,geometry,v4_training_config.yaml
+EVAL15,eval,priority_B26_01,PLANNED,priority case,v4_training_config.yaml
+EVAL16,eval,priority_B26_12,PLANNED,priority case,v4_training_config.yaml
+EVAL17,eval,priority_B26_13,PLANNED,priority case,v4_training_config.yaml
+EVAL18,eval,priority_B26_26,PLANNED,priority case (IT_R v=0),v4_training_config.yaml
+INT01,integrity,V2_untouched,OK,no write to V2 run,preflight read-only
+INT02,integrity,V3_untouched,OK,no write to V3 run,preflight read-only
+INT03,integrity,labels_untouched,OK,no label modification,preflight read-only
+INT04,integrity,yaml_untouched,OK,no YAML modification during preflight,preflight read-only
+INT05,integrity,training_not_run,OK,no training launched,preflight read-only
+CONC01,conclusion,status,V4_PREFLIGHT_READY,all blockers cleared,—

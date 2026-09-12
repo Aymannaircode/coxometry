@@ -1,0 +1,44 @@
+measure,definition,landmarks,formula,calibration,status,source_doc,notes
+VCE / Wiberg,Spec §3.1: angle entre verticale perpendiculaire a ITH par FHC et FHC→ASL,"TD_R, TD_L, FHC, ASL",vce_angle() — spec §3.1 etapes 1-4,Degrés — pas de mm/px,IMPLEMENTED,docs/landmark_specification.md §3.1,mvp_geometry/measurements.py
+Tönnis,Spec §3.2: angle entre horizontale parallele a ITH par ASM et ASM→ASL,"TD_R, TD_L, ASM, ASL",tonnis_angle() — spec §3.2,Degrés,IMPLEMENTED,docs/landmark_specification.md §3.2,
+CCD,Spec §3.3: angle medial entre axe col FHC→FNM et axe diaphyse FSP→FSD,"FHC, FNM, FSP, FSD",ccd_angle() — spec §3.3,Degrés,IMPLEMENTED,docs/landmark_specification.md §3.3,
+Femoral offset,Spec §11 partielle: offset femoral = axe diaphysaire + FHC; definition et mm/px a figer,"FHC_R, FHC_L, FSP_R, FSP_L, FSD_R, FSD_L",Etape 1: SHAFT_side = droite(FSP_side FSD_side) §2.3; Etape 2: point tete = FHC_side §11; Etape 3: relation metrique NON FIGEE §11; Etape 4: conversion mm NON FIGEE §11,mm/px requis — methode non definie dans le projet,SPECIFICATION REQUIRED,docs/landmark_specification.md §11 §2.3; docs/dataset1_analysis.md §14; docs/dataset_analysis.md §14,Landmarks dans les 14; A7 FOV court = axe instable; pas de §3.x dediee; pas de femoral_offset() code
+Alpha angle,"Nötzli: angle entre axe du col femoral et droite FHC → point ou le contour quitte le cercle de meilleure adaptation; AP bassin ≠ Dunn","Conceptuels: FHC (centre cercle), axe col (à figer), P_sphericity_loss (non YOLO); FHC/FNM existent en 14 kp","Etapes 1-4 §2.3: fit cercle → P perte sphericite → axe col → alpha = angle(axe col, FHC→P); seuil non fixe",Degrés — pas de mm/px,SPECIFICATION REQUIRED,missing_measurements_spec.md §2; Nötzli,Aucun nouveau landmark YOLO; AP non equivalente Dunn; seuils varient par vue
+alpha_view,AP bassin,Radiographie frontale bassin — corpus new_26,N/A,N/A,NON EQUIVALENTE Dunn,missing_measurements_spec.md §2.4,Ne pas utiliser pour alpha sans avertissement
+alpha_view,Dunn 45°,Flexion ~45 abduction moderee,Vue courante clinique alpha,N/A,N/A,REFERENCE COURANTE litterature,missing_measurements_spec.md §2.4,
+alpha_view,Dunn 90°,Flexion ~90 variante,Valeurs ≠ Dunn 45,N/A,N/A,PROTOCOLE DISTINCT,missing_measurements_spec.md §2.4,
+alpha_view,Cross-table lateral,Latérale cross-table,Valeurs ≠ Dunn,N/A,N/A,ALTERNATIVE RX,missing_measurements_spec.md §2.4,
+alpha_view,IRM,Coupes morphologiques obliques/radiales,Seuils ≠ radiographie,N/A,N/A,MODALITE DISTINCTE,missing_measurements_spec.md §2.4,
+Bi-ischial / ligne bi-ischiatique,Spec §11: ligne bi-ischiatique necessite IT_R et IT_L; teardrops non substituables A2,"IT_R, IT_L (LM-17+ futur)",Ligne derivee BI_ISCHIAL = droite(IT_R IT_L) — sortie metrique NON FIGEE,Depend de metrique choisie (angle vs distance mm),NEW LANDMARKS REQUIRED,docs/landmark_specification.md §11 §8 A2; docs/annotation_guidelines.md §1.4; docs/dataset_analysis.md §14,14 kp V2 insuffisants; re-annotation + retrain 16 kp apres spec B1-B7
+landmark_future,IT_R — tuberosite ischiatique droite patient,IT_R,Extremite droite ligne bi-ischiatique,N/A,NEW LANDMARKS REQUIRED,docs/landmark_specification.md §11,Propose LM-17; interdit en MVP 14 kp annotation_guidelines §1.4
+landmark_future,IT_L — tuberosite ischiatique gauche patient,IT_L,Extremite gauche ligne bi-ischiatique,N/A,NEW LANDMARKS REQUIRED,docs/landmark_specification.md §11,Propose LM-18; interdit en MVP 14 kp
+derived_line,SHAFT_side,Axe diaphysaire,"FSP_side, FSD_side",SHAFT_side = droite(FSP_side FSD_side),N/A,SPECIFICATION REQUIRED (usage offset),docs/landmark_specification.md §2.3,Utilise pour CCD et mentionne pour offset §11
+derived_line,BI_ISCHIAL,Ligne bi-ischiatique,"IT_R, IT_L",BI_ISCHIAL = droite(IT_R IT_L),N/A,NEW LANDMARKS REQUIRED,docs/landmark_specification.md §11,Metrique de sortie non documentee
+clinical_decision,A1,Alpha — vue radiographique cible (Dunn 45/90 cross-table IRM),N/A,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §2.7.1,
+clinical_decision,A2,Alpha — methode definition axe du col,N/A,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §2.7.2,
+clinical_decision,A3,Alpha — methode fit cercle tete,N/A,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §2.7.3,
+clinical_decision,A4,Alpha — definition exacte point perte de sphericite,N/A,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §2.7.4,
+clinical_decision,A5,Alpha — seuil clinique vue/methode (aucun defaut),N/A,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §2.7.5,
+clinical_decision,A6,Alpha — bilateralite R/L comparaison cote manquant,N/A,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §2.7.6,
+clinical_decision,A7,Alpha — Dunn/laterales seules vs AP avec avertissement,N/A,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §2.7.7,
+clinical_decision,F1,Femoral offset — metrique exacte FHC vs SHAFT,N/A,N/A,N/A,BLOCKER validation mesure,missing_measurements_spec.md §5.2,
+clinical_decision,F2,Femoral offset — signe et unite mm,N/A,N/A,N/A,BLOCKER validation mesure,missing_measurements_spec.md §5.2,
+clinical_decision,F3,Femoral offset — methode calibration mm/px,N/A,mm/px,BLOCKER validation mesure,missing_measurements_spec.md §5.2,
+clinical_decision,F4,Femoral offset — regle A7 FOV court FSP-FSD,N/A,N/A,BLOCKER validation mesure,missing_measurements_spec.md §5.2,
+clinical_decision,F5,Femoral offset — shaft AP bassin suffisant ou landmarks distaux additionnels,N/A,N/A,BLOCKER validation mesure,missing_measurements_spec.md §5.2,
+clinical_decision,F6,Femoral offset — seuils cliniques,N/A,N/A,N/A,BLOCKER validation mesure,missing_measurements_spec.md §5.2,
+clinical_decision,F7,Femoral offset — rediger §3.x landmark_specification,N/A,N/A,N/A,BLOCKER validation mesure,missing_measurements_spec.md §5.2,
+clinical_decision,B1,Bi-ischial — position exacte IT sur tuberosite + illustrations,IT_R IT_L,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §5.3,
+clinical_decision,B2,Bi-ischial — sortie angle vs distance vs inclinaison pelvienne,IT_R IT_L,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §5.3,
+clinical_decision,B3,Bi-ischial — calibration mm/px si distance,IT_R IT_L,N/A,mm/px si distance,BLOCKER pre-training,missing_measurements_spec.md §5.3,
+clinical_decision,B4,Bi-ischial — fiches annotation IT_R IT_L,IT_R IT_L,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §5.3,
+clinical_decision,B5,Bi-ischial — ordre keypoints 16 et flip_idx,IT_R IT_L,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §5.3,
+clinical_decision,B6,Bi-ischial — re-annotation new_26 avant retrain,IT_R IT_L,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §5.3,
+clinical_decision,B7,Bi-ischial — visibilite tuberosites sur corpus AP,IT_R IT_L,N/A,N/A,BLOCKER pre-training,missing_measurements_spec.md §5.3,
+clinical_decision,T1,Ne pas entrainer alpha si A1-A7 ouverts; bi-ischial si B1-B7 ouverts,N/A,N/A,N/A,POLICY pre-training,missing_measurements_spec.md §5.4,
+clinical_decision,T2,Femoral offset seul ne requiert pas retraining (14 kp §11),FHC FSP FSD,N/A,N/A,POLICY pre-training,missing_measurements_spec.md §5.4,
+clinical_decision,T3,Bi-ischial => 16 kp retrain depuis V2 best V3 NO-GO,IT_R IT_L,N/A,N/A,POLICY pre-training,missing_measurements_spec.md §5.4,
+clinical_decision,T4,Alpha — aucun retraining; 14 kp YOLO inchange jusqu validation A1-A7,N/A,N/A,N/A,POLICY pre-training,missing_measurements_spec.md §5.4,
+impact_14_to_16,keypoint_count,Passage 14 a 16 keypoints YOLO,N/A,N/A,N/A,PLANNED NOT IMPLEMENTED,datasets/yolo_pose_new_26/meta/keypoint_order.md,Labels 47→53 cols; flip_idx etendu; V2 incompatible
+impact_14_to_16,yaml_kpt_shape,kpt_shape [14 3] vers [16 3],N/A,N/A,N/A,PLANNED NOT IMPLEMENTED,keypoint_order.md + data.yaml futur,
+impact_14_to_16,model_V2,Modele production 14 kp inchangé,N/A,N/A,N/A,IMPLEMENTED,datasets/yolo_pose_new_26/meta/keypoint_order.md,Ne pas modifier V2

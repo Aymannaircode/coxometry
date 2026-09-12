@@ -1,0 +1,75 @@
+record_type,rule_id,image,landmark,category,item,definition_or_rule,status,source,b6_reference,clinical_validation_required,v_working,v0_candidate,notes
+RULE,B1-DEF,,,definition,IT_R_IT_L_operational,"IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur la radiographie AP du bassin.",FINAL,bi_ischial_spec.md; bi_ischial_annotation_guidelines.md,b6_global_final_QA.md §3,NO,,"Acceptée comme définition opérationnelle du projet post-campagne B6"
+RULE,B1-PLACE-CONTOUR,,,placement,contour_osseux,"Placer le centre du landmark sur le point le plus caudal/inférieur du contour osseux pelvien de la tubérosité ischiatique homolatérale.",FINAL,bi_ischial_annotation_guidelines.md §3,b6_global_final_QA.md — 52/52 anti-fémur PASS,NO,,
+RULE,B1-ANTI-FEMUR,,,anti_femur,interdiction_femur,"IT_* ne doit jamais être placé sur la diaphyse ou le contour du fémur.",FINAL,bi_ischial_annotation_guidelines.md §3.6,b6_global_final_QA.md §3 axe 4,NO,,Pièges B26_01 IT_L et B26_05 IT_R
+RULE,B1-TD,,,td_ne_it,interdiction_substitution,"TD_R / TD_L ne remplacent jamais IT_R / IT_L (A2).",FINAL,bi_ischial_spec.md §8,b6_global_final_QA.md §3 axe 3,NO,,
+RULE,B1-RL,,,convention_rl,cote_patient,"IT_R = droit patient (gauche image) ; IT_L = gauche patient (droite image).",FINAL,bi_ischial_spec.md §4,b6_global_final_QA.md §3 axe 2,NO,,
+RULE,B1-RL-MIRROR,,,convention_rl,pas_miroir,Annoter chaque côté indépendamment ; interdiction symétrie miroir.,FINAL,bi_ischial_annotation_guidelines.md §4.6,b6_global_final_QA.md,NO,,
+RULE,B1-FOV,,,fov,pas_extrapolation,Ne jamais extrapoler un point caudal hors du FOV visible.,FINAL,bi_ischial_annotation_guidelines.md §4.4,b6_global_final_QA.md §3 axe 5,NO,,
+RULE,B1-FOV-COUPE,,,fov,apex_coupe,"Apex caudal coupé par le bord → v=0 si placement exige reconstruction hors os visible.",FINAL,bi_ischial_annotation_guidelines.md §4.4,b6_global_final_QA.md — B26_05,YES,,
+RULE,B1-V2,,,visibility,v2_si_identifiable,"Contour caudal identifiable sans doute raisonnable → v=2.",FINAL,annotation_guidelines.md §1.2,b6_global_final_QA.md — v=2 sur 52/52 working,NO,,
+RULE,B1-V1,,,visibility,v1_interdit,v=1 interdit par défaut pour IT_*.,FINAL,bi_ischial_annotation_guidelines.md §5.2,b6_global_final_QA.md,NO,,
+RULE,B1-V0-IDENT,,,v0,landmark_non_identifiable,"v=0 si repère anatomique requis non suffisamment identifiable pour annotation fiable.",FINAL,bi_ischial_annotation_guidelines.md §6; décision post-B6,b6_global_final_QA.md §5,YES,,
+RULE,B1-V0-DIFF,,,v0,pas_v0_par_difficulte,"Ne pas utiliser v=0 parce que le point est difficile mais identifiable.",FINAL,décision post-B6,b6_global_final_QA.md,YES,,
+RULE,B1-V0-INVENT,,,v0,pas_inventer,Ne pas inventer de coordonnées ; deviner → v=0.,FINAL,annotation_guidelines.md §1.2,b6_global_final_QA.md §3 axe 10,NO,,
+RULE,B1-REVIEW-KEEP,,,review,conservation,REVIEW restent documentés ; pas de conversion automatique REVIEW→PASS.,FINAL,b6_global_final_QA.md,b6_global_final_QA.md — 21 REVIEW/UNRESOLVABLE,YES,,
+RULE,B1-REVIEW-PROMO,,,review,promotion,Promotion label officiel uniquement après validation clinique explicite.,FINAL,décision post-B6,b6_global_final_QA.md §6,YES,,
+RULE,B1-UNRESOLV-B26_26,,,unresolvable,B26_26_IT_R,"B26_26 IT_R = UNRESOLVABLE_REVIEW ; coordonnées working conservées ; ne pas modifier automatiquement.",FINAL,b6_B26_26_ITR_final_review.csv,b6_global_final_QA.md §4,YES,,Candidat v=0 prioritaire ; (552.0; 2088.0) inchangé
+RULE,B5-ORDER,,,b5_prep,keypoint_order,"Index 14 = IT_R (LM-17) ; index 15 = IT_L (LM-18).",PROVISIONAL,bi_ischial_spec.md §15,,NO,,
+RULE,B5-FLIP,,,b5_prep,flip_idx,"flip_idx 16 kp : [1,0,3,2,5,4,7,6,9,8,11,10,13,12,15,14].",PROVISIONAL,bi_ischial_spec.md §16,,NO,,
+RULE,B5-LABELS,,,b5_prep,label_format,Labels YOLO futurs 53 colonnes (5 + 16×3).,DOCUMENTED,bi_ischial_spec.md §17,,NO,,Non appliqué à cette étape
+RULE,B5-B6,,,b5_prep,b6_qa_ready,"B6 QA globale : 52/52 tracés ; 0 FAIL structurel.",READY,b6_global_final_QA.md,B6_GLOBAL_QA_REVIEW,NO,,
+RULE,B5-CLIN,,,b5_prep,clinical_gate,Validation clinique 21 cas avant labels officiels.,REQUIRED,b6_global_final_QA.md §6,,YES,,
+RULE,B5-NOTRAIN,,,b5_prep,no_training,Aucun training avant schéma 16 kp figé et labels officiels créés.,POLICY,bi_ischial_spec.md §19,,NO,,
+LANDMARK,,B26_01,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,HIGH,NO,2,NO,Conservé — référence B6
+LANDMARK,,B26_01,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,Anti-fémur OK
+LANDMARK,,B26_02,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE validé P2
+LANDMARK,,B26_02,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,KEEP P2
+LANDMARK,,B26_03,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE validé P2
+LANDMARK,,B26_03,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,Contraste post-MOVE
+LANDMARK,,B26_04,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,Piège fémoral corrigé P0
+LANDMARK,,B26_04,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,KEEP P1
+LANDMARK,,B26_05,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,YES,PARTIAL FOV — v=2 vs v=0
+LANDMARK,,B26_05,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,YES,PARTIAL FOV — v=2 vs v=0
+LANDMARK,,B26_06,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Candidat v=0 — apex indéterminable
+LANDMARK,,B26_06,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,Correction P0
+LANDMARK,,B26_07,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,A-GAS07
+LANDMARK,,B26_07,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,KEEP P3
+LANDMARK,,B26_08,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,Apex approximatif P3
+LANDMARK,,B26_08,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,Aligné vs IT_R P0
+LANDMARK,,B26_09,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,FOV serré post-MOVE
+LANDMARK,,B26_09,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,Correction P0
+LANDMARK,,B26_10,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_10,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_11,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Candidat v=0 — contraste très faible
+LANDMARK,,B26_11,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,Rotation + contraste
+LANDMARK,,B26_12,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE P1 — bord FOV
+LANDMARK,,B26_12,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE P1 — bord FOV
+LANDMARK,,B26_13,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_13,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_14,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Candidat v=0
+LANDMARK,,B26_14,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,Contraste post-MOVE
+LANDMARK,,B26_15,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Candidat v=0 bilatéral
+LANDMARK,,B26_15,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Candidat v=0 bilatéral
+LANDMARK,,B26_16,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,Réserve visuelle P3
+LANDMARK,,B26_16,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE validé P2
+LANDMARK,,B26_17,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_17,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_18,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,KEEP P2
+LANDMARK,,B26_18,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,Contraste post-MOVE
+LANDMARK,,B26_19,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,FOV + contraste post-MOVE
+LANDMARK,,B26_19,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Candidat v=0 — soft-tissue
+LANDMARK,,B26_20,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_20,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE IMAGE_REQUIRED
+LANDMARK,,B26_21,IT_R,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Candidat v=0 — apex incertain
+LANDMARK,,B26_21,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE validé P2
+LANDMARK,,B26_22,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,KEEP P2
+LANDMARK,,B26_22,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE P1
+LANDMARK,,B26_23,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE validé P2
+LANDMARK,,B26_23,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,MOVE validé P2
+LANDMARK,,B26_24,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,KEEP P3
+LANDMARK,,B26_24,IT_L,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,KEEP P3
+LANDMARK,,B26_25,IT_R,corpus,final_status,PASS,PASS,b6_global_final_QA.csv,MEDIUM,NO,2,NO,Correction P0
+LANDMARK,,B26_25,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,VERY_LOW_CONTRAST
+LANDMARK,,B26_26,IT_R,corpus,final_status,UNRESOLVABLE_REVIEW,UNRESOLVABLE_REVIEW,b6_global_final_QA.csv,LOW,YES,2,YES,Apex indéterminé — ne pas modifier auto
+LANDMARK,,B26_26,IT_L,corpus,final_status,REVIEW,REVIEW,b6_global_final_QA.csv,MEDIUM,YES,2,NO,Asymétrie vs IT_R incertain

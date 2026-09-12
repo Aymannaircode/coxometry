@@ -1,0 +1,56 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "P2_MANUAL_REVIEW_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_16",
+  "annotation_order": 16,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_16.png",
+  "image_width": 3006,
+  "image_height": 2401,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_P2_manual_review",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "standard",
+  "ambiguities": [],
+  "IT_R": {
+    "x": 730.4,
+    "y": 2245.7,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 1978.0,
+    "y": 2198.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "P2: IT_L MOVE — Replacé sur bord cortical caudal ischion G — cohérent vs IT_R PASS",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_16.json",
+  "correction_history": [
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P2",
+      "x_old": 1988.0,
+      "y_old": 2158.2,
+      "x_new": 1978.0,
+      "y_new": 2198.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "P2 revue — repère central vs apex caudal courbe inférieure ischion G",
+      "comment": "Replacé sur bord cortical caudal ischion G — cohérent vs IT_R PASS",
+      "reviewer": "agent_B6_P2_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "P2_MANUAL_REVIEW_COMPLETED / QA_REQUIRED"
+}

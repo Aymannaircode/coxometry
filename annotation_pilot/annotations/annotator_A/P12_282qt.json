@@ -1,0 +1,36 @@
+﻿{
+  "schema_version": "mvp-pilot-1.0",
+  "image_id": "P12",
+  "source_file": "282qt.jpg",
+  "source_dataset": "Dataset1_MTDDH_pilot_only",
+  "view": "AP_pelvis",
+  "population_note": "pediatric_DDH_image_used_for_protocol_test_only",
+  "annotator_id": "annotator_A",
+  "annotation_date": null,
+  "guidelines_version": "annotation_guidelines.md_2026-07-17",
+  "image_width": null,
+  "image_height": null,
+  "landmarks": [
+    {"id": "LM-01", "name": "TD_R",  "side": "right",  "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-02", "name": "TD_L",  "side": "left",   "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-03", "name": "FHC_R", "side": "right",  "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-04", "name": "FHC_L", "side": "left",   "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-05", "name": "ASL_R", "side": "right",  "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-06", "name": "ASL_L", "side": "left",   "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-07", "name": "ASM_R", "side": "right",  "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-08", "name": "ASM_L", "side": "left",   "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-09", "name": "FNM_R", "side": "right",  "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-10", "name": "FNM_L", "side": "left",   "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-11", "name": "FSP_R", "side": "right",  "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-12", "name": "FSP_L", "side": "left",   "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-13", "name": "FSD_R", "side": "right",  "x": null, "y": null, "v": null, "notes": ""},
+    {"id": "LM-14", "name": "FSD_L", "side": "left",   "x": null, "y": null, "v": null, "notes": ""}
+  ],
+  "image_level": {
+    "pelvic_rotation_suspected": null,
+    "fov_diaphysis_insufficient_R": null,
+    "fov_diaphysis_insufficient_L": null,
+    "overall_annotation_feasible": null
+  },
+  "ambiguity_flags": []
+}

@@ -1,0 +1,128 @@
+{
+  "_WARNING": "PILOT / NON-OFFICIAL — NOT part of official dataset, labels, or YOLO training",
+  "_schema": "bi-ischial-review-1.0",
+  "_status": "PROPOSED / CLINICAL VALIDATION REQUIRED",
+  "_review_type": "B6_read_only_case_review",
+  "image_id": "B26_05",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_05.png",
+  "image_width": 3008,
+  "image_height": 3008,
+  "split": "train",
+  "review_date": "2026-08-28",
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur l'AP bassin",
+  "reviewer": "agent_B6_review",
+  "official_labels_modified": false,
+  "b7_visibility": {
+    "IT_R": "PARTIAL",
+    "IT_L": "PARTIAL",
+    "global_quality": "MOYENNE",
+    "issue": "bord de l'image"
+  },
+  "review_visibility": {
+    "IT_R": "PARTIAL",
+    "IT_L": "PARTIAL",
+    "notes": "Tubérosités identifiables; repère caudal proche bord FOV; ambiguïté y inter-annotateurs"
+  },
+  "landmarks_pilot": [
+    {
+      "name": "IT_R",
+      "side": "right",
+      "id_proposed": "LM-17",
+      "x": 705.0,
+      "y": 2892.0,
+      "x_norm": 0.234375,
+      "y_norm": 0.961436,
+      "v_proposed": 2,
+      "v_proposed_status": "CLINICAL VALIDATION REQUIRED — v=0 also defensible",
+      "margin_bottom_px": 116,
+      "margin_bottom_pct": 3.9,
+      "notes": "Point caudal du contour osseux tubérosité ischiatique droite (gauche image). Repère conservateur: dernier cortex net dans FOV sans extrapolation."
+    },
+    {
+      "name": "IT_L",
+      "side": "left",
+      "id_proposed": "LM-18",
+      "x": 2472.0,
+      "y": 2876.0,
+      "x_norm": 0.821809,
+      "y_norm": 0.956117,
+      "v_proposed": 2,
+      "v_proposed_status": "CLINICAL VALIDATION REQUIRED — v=0 also defensible",
+      "margin_bottom_px": 132,
+      "margin_bottom_pct": 4.4,
+      "notes": "Point caudal du contour osseux tubérosité ischiatique gauche (droite image). Légèrement plus confortable que IT_R mais toujours PARTIAL B7."
+    }
+  ],
+  "reference_official_14kp": {
+    "path": "annotation_pilot/annotations/new_26/B26_05.json",
+    "TD_R": { "x": 1429.14, "y": 2236.54 },
+    "TD_L": { "x": 1943.24, "y": 2176.5 },
+    "FSD_R": { "x": 541.48, "y": 2908.52 },
+    "FSD_L": { "x": 2591.39, "y": 2914.28 },
+    "FSP_R": { "x": 714.57, "y": 2080.02 },
+    "FSP_L": { "x": 2524.81, "y": 2052.79 }
+  },
+  "checks": {
+    "TD_not_used_as_IT": true,
+    "IT_R_left_of_image_center": true,
+    "IT_L_right_of_image_center": true,
+    "IT_caudal_to_TD_bilateral": true,
+    "IT_lateral_to_TD_bilateral": true,
+    "IT_medial_to_FSD_bilateral": true,
+    "femur_trap_present_IT_R": true,
+    "femur_trap_present_IT_L": true,
+    "border_fov_critical": true
+  },
+  "inter_annotator_simulation": {
+    "annotator_A_conservative": {
+      "IT_R": { "x": 705.0, "y": 2892.0 },
+      "IT_L": { "x": 2472.0, "y": 2876.0 }
+    },
+    "annotator_B_border_max": {
+      "IT_R": { "x": 618.0, "y": 3002.0 },
+      "IT_L": { "x": 2488.0, "y": 3002.0 }
+    },
+    "delta_y_px_A_vs_B": {
+      "IT_R": 110,
+      "IT_L": 126
+    },
+    "reproducibility_estimate_pct": {
+      "IT_R": "55-65",
+      "IT_L": "60-70"
+    }
+  },
+  "rejected_candidates": [
+    {
+      "name": "IT_R_femur",
+      "x": 468.0,
+      "y": 3006.0,
+      "reason": "Trop latéral — bord caudal diaphyse fémorale droite, non tubérosité ischiatique"
+    },
+    {
+      "name": "IT_R_border_max",
+      "x": 618.0,
+      "y": 3002.0,
+      "reason": "Apex caudal au contact bord image — interprétation maximaliste; dispersion y vs repère conservateur"
+    },
+    {
+      "name": "IT_L_femur",
+      "x": 2575.0,
+      "y": 2912.0,
+      "reason": "Trop latéral — diaphyse fémorale gauche, proche FSD_L"
+    },
+    {
+      "name": "IT_L_border_max",
+      "x": 2488.0,
+      "y": 3002.0,
+      "reason": "Apex caudal au contact bord image — interprétation maximaliste"
+    }
+  ],
+  "review_conclusions": {
+    "A_definition_applicable": "YES_WITH_RESERVATIONS",
+    "B_specific_difficulty": "minimal_caudal_margin_border_ambiguity_femur_trap_v_threshold",
+    "C_modify_B4_guide": "YES_P0_border_rule_and_anti_femur",
+    "D_add_femoral_trap_rule": "YES",
+    "E_start_B6_campaign_26": "YES_CONDITIONAL",
+    "decision": "READY_FOR_B6_CONDITIONAL"
+  }
+}

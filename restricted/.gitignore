@@ -1,0 +1,10 @@
+# Never commit identity linkage, secrets, or identifiable extracts.
+linkage/*
+!linkage/.gitkeep
+*.csv
+*.json
+*.xlsx
+*.tsv
+secrets/
+*.key
+*.pem

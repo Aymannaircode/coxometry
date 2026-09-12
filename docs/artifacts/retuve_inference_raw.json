@@ -1,0 +1,99 @@
+{
+  "status": "error",
+  "error": {
+    "type": "IndexError",
+    "message": "list index out of range",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\g\\OneDrive\\Desktop\\Projet-Ayman\\scripts\\retuve_feasibility_inference.py\", line 115, in main\n    hip_data, annotated_img, dev_metrics = analyse_hip_xray_2D(\n                                           ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\g\\OneDrive\\Desktop\\Projet-Ayman\\.venv\\Lib\\site-packages\\retuve\\funcs.py\", line 173, in analyse_hip_xray_2D\n    img = image_arrays[0]\n          ~~~~~~~~~~~~^^^\nIndexError: list index out of range\n"
+  },
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "weights": "C:\\Users\\g\\OneDrive\\Desktop\\Projet-Ayman\\.venv\\Lib\\site-packages\\retuve_yolo_plugin/weights/v1.0/hip-yolo-xray-pose.pt",
+  "weights_exists": true,
+  "image_source": "Cases.XRAY_JPG (radoss-creative-commons / Retuve testdata)",
+  "image_path": "/tmp/radstract-testdata/78a236dd-e8a9-489e-ad71-fd1c9845a568\\331_DDH_115.jpg",
+  "image_size": {
+    "width": 331,
+    "height": 331
+  },
+  "raw_yolo": {
+    "num_detections": 3,
+    "detections": [
+      {
+        "class_id": 0,
+        "box_confidence": 0.8376321792602539,
+        "box_xyxy": [
+          41.941307067871094,
+          129.60482788085938,
+          97.12803649902344,
+          184.67144775390625
+        ],
+        "keypoints_xy": [
+          [
+            50.64445495605469,
+            148.939453125
+          ],
+          [
+            88.63753509521484,
+            164.56214904785156
+          ]
+        ],
+        "keypoints_conf": [
+          0.9991886019706726,
+          0.9999899864196777
+        ]
+      },
+      {
+        "class_id": 0,
+        "box_confidence": 0.8201791048049927,
+        "box_xyxy": [
+          220.44586181640625,
+          121.10658264160156,
+          271.88824462890625,
+          172.1087188720703
+        ],
+        "keypoints_xy": [
+          [
+            263.0303955078125,
+            135.5330047607422
+          ],
+          [
+            229.87942504882812,
+            155.3559112548828
+          ]
+        ],
+        "keypoints_conf": [
+          0.999144434928894,
+          0.9998096823692322
+        ]
+      },
+      {
+        "class_id": 1,
+        "box_confidence": 0.5397972464561462,
+        "box_xyxy": [
+          240.5990753173828,
+          150.80374145507812,
+          287.62384033203125,
+          198.7215118408203
+        ],
+        "keypoints_xy": [
+          [
+            264.1450500488281,
+            169.6133575439453
+          ],
+          [
+            265.4639892578125,
+            182.9466552734375
+          ]
+        ],
+        "keypoints_conf": [
+          0.9989527463912964,
+          0.9996715784072876
+        ]
+      }
+    ]
+  },
+  "retuve_landmarks": {},
+  "retuve_metrics": null,
+  "annotated_image": null,
+  "labels_json_path": "/tmp/radstract-testdata/78a236dd-e8a9-489e-ad71-fd1c9845a568\\331_DDH_115.json",
+  "image_size_bytes": 10037
+}

@@ -1,0 +1,134 @@
+V5 SESSION MANIFEST — 2026-08-29
+=================================
+Generated: 2026-08-29 (end of session, pre-shutdown)
+Mode: READ-ONLY verification — no training, no checkpoint/dataset modifications
+
+PROJECT STATE
+-------------
+Phase: V5 Phase 2 COMPLETE + independently validated
+Verdict: V5_PHASE2_FINAL_SUCCESS
+Production model: V2 (14 KP) — unchanged
+V5 Phase 2 checkpoint: best_it.pt — trained IT head, frozen 14 KP/detection
+
+CHECKPOINTS (critical)
+----------------------
+[V2 production]
+path: runs/pose/runs/pose/runs/yolo_pose_new_26_v2-3/weights/best.pt
+size: 5947464 bytes
+date: 2026-08-23 17:12:41 UTC
+sha256: 1F92D0867B4CD86EB6A4E3EC6111F812824B1B0D4D8DCD1D1EBE6C00EF2C48B8
+note: canonical path (runs/pose/yolo_pose_new_26_v2-3/ does NOT exist)
+
+[V5 surgical init — Phase 0 reference]
+path: runs/pose/yolo_pose_new_26_v5_16kp/weights/v5_surgical_init.pt
+size: 11745287 bytes
+date: 2026-08-29 01:01:58 UTC
+sha256: 4C31985AB02863CD086F0C3D8272CE267E3AC70F54324B3266EC47C0F24D3E3A
+note: DO NOT MODIFY
+
+[V5 Phase 2 best — primary IT checkpoint]
+path: runs/pose/yolo_pose_new_26_v5_phase2/run_20260829_032756/weights/best_it.pt
+size: 24963226 bytes
+date: 2026-08-29 02:36:09 UTC
+sha256: 2E3D3E48C800C1583D427844AF84835EF0115E6456EC1F6096A4ACECEDB257F6
+note: DO NOT OVERWRITE
+
+[V5 Phase 2 last]
+path: runs/pose/yolo_pose_new_26_v5_phase2/run_20260829_032756/weights/last_it.pt
+size: 24963226 bytes
+date: 2026-08-29 02:41:25 UTC
+sha256: 8575F2B7B44E7195C96F3C5FCBFB65A28E0BB5ACA23C4D18BF4E4E538691C82D
+
+[V4 — historical only, no production checkpoint]
+runs/pose/yolo_pose_new_26_v4/ (legacy 14 KP)
+runs/pose/yolo_pose_new_26_v4_16kp/ (absent — no best.pt)
+reports: datasets/yolo_pose_new_26/v4_*.md
+
+DATASET
+-------
+root: datasets/yolo_pose_new_26/
+images: 26 total (21 train + 5 val)
+labels: 21 train + 5 val
+kpt_shape: [16, 3]
+columns per label line: 53
+IT_R index: 14
+IT_L index: 15
+flip_idx: [1,0,3,2,5,4,7,6,9,8,11,10,13,12,15,14]
+data.yaml: present
+dataset.yaml: present
+split.json: train=21 val=5 seed=42 overlap=empty
+val IDs: B26_10 B26_13 B26_17 B26_20 B26_26
+
+MAIN SCRIPTS
+------------
+annotation_pilot/scripts/v5_surgical_init_phase0.py
+annotation_pilot/scripts/train_yolo_pose_v5_phase1.py
+annotation_pilot/scripts/train_yolo_pose_v5_phase1_v2.py
+annotation_pilot/scripts/train_yolo_pose_v5_phase1_v3.py
+annotation_pilot/scripts/v5_phase2_dedicated_head_dryrun.py
+annotation_pilot/scripts/train_yolo_pose_v5_phase2.py
+annotation_pilot/scripts/v5_phase2_final_QA.py
+annotation_pilot/scripts/v5_it_head_capacity_diagnostic.py
+annotation_pilot/scripts/v5_phase1_freeze_lifecycle_debug.py
+annotation_pilot/scripts/v5_phase1_v2_epoch1_safety_audit.py
+annotation_pilot/scripts/v5_phase1_posttraining_diagnostic.py
+
+KEY REPORTS
+-----------
+Session checkpoint: datasets/yolo_pose_new_26/V5_SESSION_CHECKPOINT_2026-08-29.md
+Final validation: datasets/yolo_pose_new_26/v5_phase2_final_independent_validation.md
+Decoder fix QA: datasets/yolo_pose_new_26/v5_phase2_decoder_fix_QA.md
+Phase 2 dryrun: datasets/yolo_pose_new_26/v5_phase2_dedicated_head_dryrun.md
+Phase 2 preflight: datasets/yolo_pose_new_26/v5_phase2_training_preflight.md
+Surgical init: datasets/yolo_pose_new_26/v5_surgical_init_report.md
+B6 final: datasets/yolo_pose_new_26/b6_global_final_QA.md
+B5 promotion: datasets/yolo_pose_new_26/b5_16kp_promotion_report.md
+
+VALIDATED RESULTS (independent validation, decoder corrected)
+---------------------------------------------------------------
+Verdict: V5_PHASE2_FINAL_SUCCESS
+IT global mean: 22.89 px (100% < 75 px)
+14 KP mean: 134.95 px (identical V2)
+Detection: 5/5 identical V2
+Freeze: frozen zones delta=0, IT head 62/66 tensors changed
+Leakage: train=21 val=5 overlap=empty
+
+Per-image IT (px640):
+  B26_10: IT_R=18.3  IT_L=25.4
+  B26_13: IT_R=28.7  IT_L=33.6
+  B26_17: IT_R=16.2  IT_L=10.6
+  B26_20: IT_R=30.6  IT_L=11.6
+  B26_26: IT_R=NA(v=0)  IT_L=30.9
+
+DECODER BUG (do not revert)
+---------------------------
+Old training metric ~600px was WRONG (grid coords vs px640 GT).
+Fix: pred_dec[..., :2] *= stride_tensor in _decode_it_errors()
+Corrected validation: ~22.89 px
+DO NOT use old ~598px training_report IT_mean for model evaluation.
+
+ARCHITECTURE SUMMARY
+--------------------
+V2: backbone + neck + 14 KP (production)
+V5 surgical: V2 + IT_R/IT_L in cv4 (v5_surgical_init.pt)
+V5 Phase 2: frozen V2 base + ITHeadMultiScaleFusion (362898 params)
+  P3/P4/P5 fusion, IT_R ch 42-44, IT_L ch 45-47
+  IT-only loss, v=0 excluded from position loss
+
+NEXT STEP
+---------
+Decide validation/integration path for best_it.pt into production pipeline.
+NO additional training before explicit decision.
+
+SHUTDOWN VERIFICATION
+---------------------
+best_it.pt: OK
+last_it.pt: OK
+v5_surgical_init.pt: OK
+V2 best.pt: OK
+labels/yaml: OK
+no critical files deleted: OK
+no critical checkpoints modified: OK
+no YOLO training running: OK
+
+SAFE_TO_SHUTDOWN = YES

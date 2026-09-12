@@ -1,0 +1,32 @@
+# YOLO Pose — bassin adulte AP (lot new_26, 26 images)
+# Généré automatiquement — ne pas éditer manuellement sans regénérer.
+# Usage futur : yolo train data=dataset.yaml model=yolo11n-pose.pt
+
+path: C:/Users/g/OneDrive/Desktop/Projet-Ayman/datasets/yolo_pose_new_26
+train: images/train
+val: images/val
+
+kpt_shape: [16, 3]
+flip_idx: [1, 0, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14]
+
+names:
+  0: pelvis
+
+kpt_names:
+  0:
+    - TD_R
+    - TD_L
+    - FHC_R
+    - FHC_L
+    - ASL_R
+    - ASL_L
+    - ASM_R
+    - ASM_L
+    - FNM_R
+    - FNM_L
+    - FSP_R
+    - FSP_L
+    - FSD_R
+    - FSD_L
+    - IT_R
+    - IT_L

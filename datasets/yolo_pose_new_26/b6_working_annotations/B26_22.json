@@ -1,0 +1,56 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "P1_MANUAL_REVIEW_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_22",
+  "annotation_order": 22,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_22.png",
+  "image_width": 3006,
+  "image_height": 2470,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_P1_manual_review",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "standard",
+  "ambiguities": [],
+  "IT_R": {
+    "x": 828.0,
+    "y": 2308.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 2024.0,
+    "y": 2238.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "P1: IT_L MOVE — apex caudal ischion G repositionné sur courbe inférieure identifiable (validation indépendante)",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_22.json",
+  "correction_history": [
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P1",
+      "x_old": 2028.4,
+      "y_old": 2154.0,
+      "x_new": 2024.0,
+      "y_new": 2238.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "P1 revue — trop crânial vs courbe caudale ischion G visible ; asymétrie notée sans usage symétrie",
+      "comment": "Apex caudal ischion G sur bord cortical inférieur — os pelvien confirmé visuellement",
+      "reviewer": "agent_B6_P1_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "P1_MANUAL_REVIEW_COMPLETED / QA_REQUIRED"
+}

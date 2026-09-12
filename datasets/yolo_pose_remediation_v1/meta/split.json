@@ -1,0 +1,72 @@
+{
+  "dataset": "yolo_pose_remediation_v1",
+  "seed_version": "v1.0_seed_26",
+  "updated_utc": "2026-09-04T18:28:17Z",
+  "source_dataset": "datasets/yolo_pose_new_26",
+  "source_split_seed": 42,
+  "policy": {
+    "preserve_original_val_as_continuity_probe": true,
+    "no_silent_reshuffle": true,
+    "no_fabricated_test_cases": true,
+    "patient_level_split_required": true,
+    "patient_identity_available": true,
+    "patient_identity_source": "DICOM PatientID (+ PatientName cross-check)",
+    "test_set_status": "EMPTY_AT_SEED",
+    "final_evaluation_ready": false,
+    "expansion_status": "BLOCKED_INSUFFICIENT_REAL_DICOM_POOL",
+    "note": "Step D inventory found 33 empty PATIENT_* dirs, 26 already-used a_annoter DICOMs, 8 a_verifier DICOMs (all PENDING_PHYSICIAN), 2 rejetees (excluded). Max unique new patients after de-dup = 6 \u2192 total would be 32 << 40\u201380 target and cannot form >=15 held-out test cases. Final train/val/test redesign DEFERRED. Seed assignment unchanged. Continuity probe preserved."
+  },
+  "train": [
+    "B26_01",
+    "B26_02",
+    "B26_03",
+    "B26_04",
+    "B26_05",
+    "B26_06",
+    "B26_07",
+    "B26_08",
+    "B26_09",
+    "B26_11",
+    "B26_12",
+    "B26_14",
+    "B26_15",
+    "B26_16",
+    "B26_18",
+    "B26_19",
+    "B26_21",
+    "B26_22",
+    "B26_23",
+    "B26_24",
+    "B26_25"
+  ],
+  "val": [
+    "B26_10",
+    "B26_13",
+    "B26_17",
+    "B26_20",
+    "B26_26"
+  ],
+  "test": [],
+  "continuity_probe_ids": [
+    "B26_10",
+    "B26_13",
+    "B26_17",
+    "B26_20",
+    "B26_26"
+  ],
+  "counts": {
+    "train": 21,
+    "val": 5,
+    "test": 0,
+    "total": 26
+  },
+  "expansion_candidates_pending_physician": [
+    "R26_01",
+    "R26_02",
+    "R26_03",
+    "R26_04",
+    "R26_05",
+    "R26_06"
+  ],
+  "expansion_candidates_not_promoted_to_yolo": true
+}

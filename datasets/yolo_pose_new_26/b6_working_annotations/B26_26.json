@@ -1,0 +1,94 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "UNRESOLVABLE_REVIEW / QA_REQUIRED",
+  "image_id": "B26_26",
+  "annotation_order": 26,
+  "split": "val",
+  "source_image": "datasets/yolo_pose_new_26/images/val/B26_26.png",
+  "image_width": 2822,
+  "image_height": 2426,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_ITR_final_supervised",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "review_recommended",
+  "ambiguities": [
+    "A-IMGREQ: revue clinique recommandée (contraste faible)",
+    "A-ITR26: contour caudal ischion D indéterminable — apex non identifiable sans extrapolation (revue finale 2026-08-29)"
+  ],
+  "IT_R": {
+    "x": 552.0,
+    "y": 2088.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 1998.0,
+    "y": 1998.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "IT_R: UNRESOLVABLE_REVIEW — apex caudal ischion D non identifiable (bruit/contrast local) ; coordonnées conservées (552,2088) | IT_L: PASS MEDIUM revue supervisée — inchangé (1998,1998)",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_26.json",
+  "correction_history": [
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_R",
+      "priority": "P0_IMAGE_REQUIRED",
+      "x_old": 538.3,
+      "y_old": 2030.0,
+      "x_new": 552.0,
+      "y_new": 2088.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Offset initial ? ~58 px trop cr�nial ; contraste local faible",
+      "comment": "Apex caudal ischion D ? bord osseux rep�r� malgr� bruit ; revue clinique recommand�e",
+      "reviewer": "agent_B6_image_required_manual_review",
+      "review_status": "MOVE",
+      "confidence": "LOW"
+    },
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P0_IMAGE_REQUIRED",
+      "x_old": 2002.9,
+      "y_old": 1932.9,
+      "x_new": 1998.0,
+      "y_new": 1998.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Offset initial ? ~65 px trop cr�nial vs bord caudal ischion G",
+      "comment": "Apex caudal ischion G sur cortex pelvien ? m�dial au f�mur",
+      "reviewer": "agent_B6_image_required_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    },
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_R",
+      "priority": "P1_FINAL_SUPERVISED",
+      "x_old": 552.0,
+      "y_old": 2088.0,
+      "x_new": 552.0,
+      "y_new": 2088.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Revue finale supervis�e ? contour caudal ischion D ind�terminable ; qualit� image emp�che annotation certaine",
+      "comment": "Multiples zooms pleine r�solution (tight/medium/wide, contraste �1.5?2.5, bande caudale) ; zone ischiatique identifiable mais apex cortical = gradient bruit� sans bord net ; pas de d�placement ? REVIEW honn�te pr�f�r� � position invent�e",
+      "reviewer": "agent_B6_ITR_final_supervised",
+      "review_status": "UNRESOLVABLE_REVIEW",
+      "confidence": "LOW",
+      "final_decision": "UNRESOLVABLE_REVIEW"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "UNRESOLVABLE_REVIEW / QA_REQUIRED",
+  "IT_R_final_decision": "UNRESOLVABLE_REVIEW",
+  "IT_R_final_confidence": "LOW"
+}

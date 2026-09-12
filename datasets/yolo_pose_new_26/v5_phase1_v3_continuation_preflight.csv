@@ -1,0 +1,42 @@
+cont_args_epochs,cont_args_model,cont_args_pretrained,cont_args_resume,cont_criterion,cont_ema_mode,cont_freeze,cont_grad,cont_label,cont_loss,cont_n_opt,cont_optimizer_zones,cont_start_epoch,cont_trainer_class,cv4_it_changed,cv4_it_max,cv4_old_changed,cv4_old_max,epoch_field,error,has_ema,has_optimizer,label,metric,n_it_tensors,n_old_tensors,path,resume_assertion_passes,section,setup_ok,start_epoch_computed,stripped_by_final_eval,target_epochs,train_args_epochs,value
+,,,,,,,,,,,,,,,,,,-1,,False,False,epoch1_best,,,,runs\pose\yolo_pose_new_26_v5_phase1_it_v3\weights\best.pt,,checkpoint_meta,,,,,1,
+,,,,,,,,,,,,,,,,,,-1,,False,False,epoch1_last,,,,runs\pose\yolo_pose_new_26_v5_phase1_it_v3\weights\last.pt,,checkpoint_meta,,,,,1,
+,,,,,,,,,,,,,,,,,,-1,,False,False,surgical_init,,,,runs\pose\yolo_pose_new_26_v5_16kp\weights\v5_surgical_init.pt,,checkpoint_meta,,,,,100,
+,,,,,,,,,,,,,,5,0.0284881591796875,0,0.0,,,,,,best_vs_surgical,36,36,,,it_preservation,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,best_vs_last_max_diff,,,,,parity,,,,,,0.0
+,,,,,,,,,,,,,,,,,,-1,,False,False,,,,,,False,resume_native,,0,True,15,1,
+15,C:\Users\g\OneDrive\Desktop\Projet-Ayman\runs\pose\yolo_pose_new_26_v5_phase1_it_v3\weights\best.pt,True,False,Phase1ITOnlyPoseLoss,ema_restricted_trainable,"{'backbone_trainable': 0, 'cv2_trainable': 0, 'cv3_trainable': 0, 'dfl_trainable': 0, 'cv4_hook_params': 24, 'total_trainable': 24, 'total_frozen': 256, 'gradient_hooks': 24}","{'backbone_grad': 0, 'cv2_grad': 0, 'cv3_grad': 0, 'cv4_old_grad': 0, 'cv4_it_grad': 3, 'cv4_trainable_hooks': 24, 'dfl_grad': 0}",controlled_best_pt_epochs15,"{'box': 0.0, 'pose': 11.890522003173828, 'kobj': 0.6758378744125366, 'cls': 0.0, 'dfl': 0.0}",24,{'cv4_it': 24},0,_Trainer,,,,,,,,,,,,,,,continuation_probe,,,,,,
+,,,,,,,,,,,,,,,,,,,"C:\Users\g\OneDrive\Desktop\Projet-Ayman\runs\pose\yolo_pose_new_26_v5_phase1_it_v3\weights\last.pt training to 1 epochs is finished, nothing to resume.
+Start a new training without resuming, i.e. 'yolo train model=C:\Users\g\OneDrive\Desktop\Projet-Ayman\runs\pose\yolo_pose_new_26_v5_phase1_it_v3\weights\last.pt'",,,resume_true_attempt,,,,,,resume_probe,False,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,epoch1_best_exists,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,epoch1_best_unmodified_readable,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,best_equals_last,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,it_weights_preserved_vs_surgical,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,frozen_zones_match_surgical,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,cv4_old_unchanged_vs_surgical,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,native_resume_blocked_stripped_ckpt,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,native_resume_no_optimizer,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,controlled_uses_best_not_surgical,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,controlled_pretrained_true,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,controlled_epochs_15,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,controlled_resume_false,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,custom_trainer_active,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,freeze_backbone_0,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,freeze_cv2_0,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,freeze_cv3_0,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,freeze_dfl_0,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,freeze_cv4_it_24,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,optimizer_it_only_24,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,optimizer_no_backbone,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,criterion_it_only,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,det_loss_zero,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,cv4_it_grad_active,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,cv4_old_grad_zero,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,ema_restricted,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,post_setup_matches_epoch1_best_frozen,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,post_setup_cv4_old_unchanged,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,post_setup_it_preserved,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,it_not_reset_to_surgical,,,,,check,,,,,,True
+,,,,,,,,,,,,,,,,,,,,,,,verdict,,,,,summary,,,,,,V5_PHASE1_V3_CONTINUATION_READY
+,,,,,,,,,,,,,,,,,,,,,,,recommended_strategy,,,,,summary,,,,,,controlled_from_best_pt
+,,,,,,,,,,,,,,,,,,,,,,,native_resume_status,,,,,summary,,,,,,BLOCKED_strip_optimizer_epoch_-1

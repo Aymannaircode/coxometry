@@ -1,0 +1,6 @@
+{
+  "generated_at": "2026-08-23T21:26:47.349270+00:00",
+  "model": "runs\\pose\\yolo_pose_new_26_v3\\weights\\best.pt",
+  "predictions_ok": 25,
+  "total_cases": 26
+}

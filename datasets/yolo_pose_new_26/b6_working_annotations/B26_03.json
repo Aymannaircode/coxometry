@@ -1,0 +1,72 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "P2_MANUAL_REVIEW_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_03",
+  "annotation_order": 7,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_03.png",
+  "image_width": 3030,
+  "image_height": 2410,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_P2_manual_review",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "standard",
+  "ambiguities": [],
+  "IT_R": {
+    "x": 718.0,
+    "y": 2188.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 2068.0,
+    "y": 2068.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "P2: IT_R MOVE — Replacé sur bord cortical caudal ischion D — os pelvien confirmé visuellement | P2: IT_L MOVE — Apex caudal ischion G sur courbe corticale inférieure — validation indépendante",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_03.json",
+  "correction_history": [
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_R",
+      "priority": "P2",
+      "x_old": 732.2,
+      "y_old": 2141.2,
+      "x_new": 718.0,
+      "y_new": 2188.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "P2 revue — repère en zone soft-tissue latérale au cortex ischion D",
+      "comment": "Replacé sur bord cortical caudal ischion D — os pelvien confirmé visuellement",
+      "reviewer": "agent_B6_P2_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    },
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P2",
+      "x_old": 2074.0,
+      "y_old": 2026.0,
+      "x_new": 2068.0,
+      "y_new": 2068.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "P2 revue — repère trop crânial vs bord inférieur osseux ischion G visible",
+      "comment": "Apex caudal ischion G sur courbe corticale inférieure — validation indépendante",
+      "reviewer": "agent_B6_P2_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "P2_MANUAL_REVIEW_COMPLETED / QA_REQUIRED"
+}

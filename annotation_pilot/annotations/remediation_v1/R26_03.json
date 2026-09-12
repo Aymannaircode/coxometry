@@ -1,0 +1,20 @@
+{
+  "schema_version": "mvp-pilot-1.0",
+  "image_id": "R26_03",
+  "source_file": "1.3.12.2.1107.5.3.63.40605.12.202607231823530408",
+  "source_dataset": "bassin_a_verifier",
+  "view": "AP_pelvis",
+  "population_note": "PENDING_PHYSICIAN_ADULT_CONFIRM",
+  "annotator_id": null,
+  "annotation_date": null,
+  "guidelines_version": "annotation_guidelines.md + phase10c_stepA_definition_fov_lock.md",
+  "image_width": 2844,
+  "image_height": 2357,
+  "landmarks": [],
+  "status": "NOT_ANNOTATED",
+  "notes": "ASL_hard left + SHAFT_hard; age 016Y \u2014 PENDING physician adult confirm",
+  "fov_policy_review_required": "YES",
+  "hard_tags": "OVERLAP;ROT_mild;SHAFT_hard;ASL_hard",
+  "do_not_invent_coordinates": true,
+  "do_not_apply_0_5_head_diameter_cutoff": true
+}

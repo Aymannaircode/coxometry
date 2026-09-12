@@ -1,0 +1,14 @@
+﻿section,split,landmark,v2,v3,delta_v3_minus_v2
+landmark_mean_px,train,ASL_R,142.86,951.74,808.88
+landmark_mean_px,train,ASL_L,538.18,584.45,46.27
+landmark_mean_px,train,ASM_L,77.59,614.97,537.38
+landmark_mean_px,train,FHC_L,52.49,176.95,124.46
+landmark_mean_px,train,FNM_L,52.78,112.06,59.27
+landmark_mean_px,val,ASL_R,147.73,969.39,821.66
+landmark_mean_px,val,ASL_L,471.72,579.38,107.66
+landmark_mean_px,val,ASM_L,80.94,700.48,619.54
+landmark_mean_px,val,FHC_L,80.94,217.30,136.36
+landmark_mean_px,val,FNM_L,81.05,177.53,96.47
+geometry,all,VCE_L_negative_count,21,22,
+geometry,all,Tonnis_L_extreme_count,6,22,
+verdict,,V2,,ASL_L V3 n'a pas baissé de ≥20 % vs V2 (critère pixel-level).,

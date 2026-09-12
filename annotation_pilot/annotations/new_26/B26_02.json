@@ -1,0 +1,148 @@
+{
+  "schema_version": "mvp-pilot-1.0",
+  "image_id": "B26_02",
+  "source_file": "1.3.12.2.1107.5.3.63.40605.12.202607151115173176",
+  "source_dataset": "bassin_a_annoter",
+  "view": "AP_pelvis",
+  "population_note": "adult_pelvis_AP_selected",
+  "annotator_id": "annotator_A",
+  "annotation_date": null,
+  "guidelines_version": "annotation_guidelines.md_2026-07-17",
+  "image_width": 3030,
+  "image_height": 1975,
+  "landmarks": [
+    {
+      "id": "LM-01",
+      "name": "TD_R",
+      "side": "right",
+      "x": 930.26,
+      "y": 1559.61,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-02",
+      "name": "TD_L",
+      "side": "left",
+      "x": 1640.77,
+      "y": 1559.61,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-03",
+      "name": "FHC_R",
+      "side": "right",
+      "x": 715.35,
+      "y": 980.68,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-04",
+      "name": "FHC_L",
+      "side": "left",
+      "x": 1868.83,
+      "y": 971.91,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-05",
+      "name": "ASL_R",
+      "side": "right",
+      "x": 377.97,
+      "y": 594.21,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-06",
+      "name": "ASL_L",
+      "side": "left",
+      "x": 2173.53,
+      "y": 639.6,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-07",
+      "name": "ASM_R",
+      "side": "right",
+      "x": 847.03,
+      "y": 649.69,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-08",
+      "name": "ASM_L",
+      "side": "left",
+      "x": 1714.56,
+      "y": 634.56,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-09",
+      "name": "FNM_R",
+      "side": "right",
+      "x": 519.19,
+      "y": 1164.15,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-10",
+      "name": "FNM_L",
+      "side": "left",
+      "x": 2077.7,
+      "y": 1174.24,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-11",
+      "name": "FSP_R",
+      "side": "right",
+      "x": 466.15,
+      "y": 1423.77,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-12",
+      "name": "FSP_L",
+      "side": "left",
+      "x": 2099.72,
+      "y": 1420.05,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-13",
+      "name": "FSD_R",
+      "side": "right",
+      "x": 386.73,
+      "y": 1940.97,
+      "v": 2,
+      "notes": ""
+    },
+    {
+      "id": "LM-14",
+      "name": "FSD_L",
+      "side": "left",
+      "x": 2241.08,
+      "y": 1960.98,
+      "v": 2,
+      "notes": ""
+    }
+  ],
+  "image_level": {
+    "pelvic_rotation_suspected": null,
+    "fov_diaphysis_insufficient_R": null,
+    "fov_diaphysis_insufficient_L": null,
+    "overall_annotation_feasible": null
+  },
+  "ambiguity_flags": []
+}

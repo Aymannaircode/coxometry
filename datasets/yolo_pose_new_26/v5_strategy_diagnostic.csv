@@ -1,0 +1,63 @@
+section,item_id,topic,question,answer,status,detail,v2_value,v4_value,v5_recommendation,evidence
+architecture,ARCH01,model_yaml,Architecture exacte,fichier yolo11n-pose.yaml scale n depth=0.50 width=0.25,OK,YOLO11 196 layers ~2.85M params,14 KP nk=42,16 KP nk=48,identique V2,ultralytics/cfg/models/11/yolo11-pose.yaml
+architecture,ARCH02,backbone,Backbone layers 0-22,Conv+C3k2+SPF+C2PSA FPN neck,OK,505/541 tensors transferables depuis V2,preserved,preserved,freeze integral, v4_preflight XF03
+architecture,ARCH03,detect_head,Box head cv2,cv2 DFL box regression per P3/P4/P5,OK,shape match V2->V16,preserved,preserved,freeze integral,v4_preflight XF04
+architecture,ARCH04,cls_head,Cls head cv3,cv3 class pelvis,OK,shape match V2->V16,preserved,preserved,freeze integral,v4_preflight XF05
+architecture,ARCH05,pose_head,Pose head cv4,cv4 3-scale keypoint tower c4=max(ch//4 nk),CRITICAL,c4=nk donc 42 vs 48 - ALL cv4 tensors mismatch,reinit random,reinit random,surgery manuelle + gel,probe V5 2026-08-29
+architecture,ARCH06,layer_index,Detect/Pose layer index,layer 23 sur 24 total,OK,freeze=22 gele backbone seulement,23,23,masque gradient custom sur cv4,v4_preflight + probe
+architecture,ARCH07,params_delta,Param count delta 14 vs 16 KP,+40482 params dont +40482 cv4,OK,impact faible vs total 2.85M,2812929,2853411,surgery sur delta uniquement,probe V5
+pose_head,PH01,cv4_structure,cv4 par echelle,Conv(->c4) + Conv(c4->c4) + Conv2d(c4->nk),OK,3 echelles P3 P4 P5,42 channels,48 channels,copie bloc superieur gauche,head.py Pose.__init__
+pose_head,PH02,cv4_p3_conv1,P3 conv1 weight shape,(42 64 3 3) vs (48 64 3 3),MISMATCH,0/36 cv4 auto-transferred,(42 64 3 3),(48 64 3 3),W[:42]<-V2 W[42:48]<-0,probe V5
+pose_head,PH03,cv4_p3_conv2,P3 conv2 weight shape,(42 42 3 3) vs (48 48 3 3),MISMATCH,hidden dim change avec nk,(42 42 3 3),(48 48 3 3),W[:42,:42]<-V2 reste<-0,probe V5
+pose_head,PH04,cv4_p3_out,P3 output weight shape,(42 42 1 1) vs (48 48 1 1),MISMATCH,42 KP rows + 6 IT rows,(42 42 1 1),(48 48 1 1),W[:42,:42]<-V2 IT block init sep,probe V5
+pose_head,PH05,ultralytics_load,intersect_dicts auto load,505/541 transferred 36 cv4 ignored,OK,comportement attendu Ultralytics,505 loaded,0 cv4 loaded,surgery AVANT train,v4_preflight XF06
+mapping,MAP01,kp_order,Indices 0-13,TD_R..FSD_L identiques V2,OK,B5 promotion inchangee,0-13,0-13,preserve via surgery,meta/keypoint_order.md
+mapping,MAP02,kp_it_r,Index 14 IT_R,LM-17 nouveau,OK,cols label 47-49,N/A,14,train-only init canaux 42-44,data.yaml
+mapping,MAP03,kp_it_l,Index 15 IT_L,LM-18 nouveau,OK,cols label 50-52,N/A,15,train-only init canaux 45-47,data.yaml
+mapping,MAP04,flip_idx,Augmentation miroir,"[1,0,3,2,5,4,7,6,9,8,11,10,13,12,15,14]",OK,IT_R<->IT_L indices 14<->15,14 kp flip,16 kp flip,fliplr=0.5,data.yaml
+mapping,MAP05,flat_index,Flat tensor mapping,kp_i dim_d -> i*3+d,OK,14 KP = plats 0-41 IT = 42-47,0-41,0-47,geler 0-41 entrainer 42-47,probe V5
+mapping,MAP06,label_format,Format YOLO label,53 cols = 5 + 16*3,OK,26/26 labels conformes B5,49 cols,53 cols,unchanged,b5_16kp_final_QC
+transfer,TR01,auto_transfer,Transfert direct auto Ultralytics,NON - shape exact requise,BLOCKER,36 cv4 tensors ignores,14 KP lost,14 KP lost,surgery obligatoire,v4_preflight XF06
+transfer,TR02,manual_transfer,Transfert manuel V2 cv4->V16,OUI par blocs superieurs/gauches,OK,probe simulation reussie 3 scales,feasible,not done,surgical_init script,V5 probe 2026-08-29
+transfer,TR03,backbone_transfer,Backbone V2->V16,OUI integral,OK,505 tensors match,preserved,preserved,freeze, v4_preflight
+transfer,TR04,box_cls_transfer,Box+cls V2->V16,OUI integral,OK,torch.allclose post-load,preserved,preserved,freeze,v4_preflight XF04 XF05
+transfer,TR05,cross_talk,Cross-talk hidden channels,random init rows 42-47 affecte sorties 0-41 si non zero,WARNING,zero-init cross cols/lignes requis,NA,813px all KP,W[42:,:42]=0 + freeze,analyse V5
+transfer,TR06,epoch0_parity,Validation pre-training,mean error 14 KP <=150px vs V2 @640,MANDATORY,gating avant tout --train,128px,813px,abort si fail, v4_vs_v2 eval
+init_it,IT01,separate_init,Init separee IT_R IT_L,OUI canaux plats 42-47,OK,6 canaux x y v par echelle,NA,random,init IT apres surgery zero cross-talk,section 6 V5
+init_it,IT02,geom_warmstart,Init geometrique IT,regression depuis FSD caudal possible,OPTIONAL,non valide sur corpus,NA,NA,optionnel si FT echoue,bi_ischial policy
+freeze,FR01,backbone,Freeze backbone layers 0-22,OUI,OK,freeze=22 API Ultralytics,trainable,drift minimal,requires_grad=False,trainer.py freeze
+freeze,FR02,box_head,Freeze cv2 box,OUI requis,OK,API freeze=23 insuffisant,stable,conf 0.886,conf preserve,gel manuel cv2
+freeze,FR03,cls_head,Freeze cv3 cls,OUI requis,OK,idem,stable,stable,gel manuel cv3
+freeze,FR04,pose_old,Freeze 14 KP canaux 0-41,OUI requis,CRITICAL,sinon repetition echec V4,128px mean,813px mean,masque gradient cv4[0:42],v4 anatomical eval
+freeze,FR05,pose_it,Train IT canaux 42-47,seul bloc entrainable phase 1,OK,6 canaux par echelle,NA,818px IT,requires_grad True IT only,section 8 V5
+freeze,FR06,api_limit,Limitation freeze Ultralytics,freeze=N par layer index pas par canal,BLOCKER,freeze=23 gele IT aussi,NA,NA,custom grad mask,trainer.py
+finetune,FT01,lr,Learning rate IT-only,<=1e-5 AdamW,OK,V4 lr 3e-5 global insuffisant,0.01 V1->V2,3e-5,1e-5 IT only,v4_training_config
+finetune,FT02,imgsz,Resolution,640 aligne V2,OK,V4 imgsz 960 + pose reinit = double choc,640,960,640,v4 vs v2 eval
+finetune,FT03,epochs,Epochs max,50 IT-only patience 30,OK,V4 22 ep pose loss ~11 stagnant,100,22,50 IT eval pixel,v4_16kp-2 results.csv
+finetune,FT04,augment,Augmentations,mosaic=0 randaugment=null fliplr=0.5,OK,anti-V3/V4,mosaic 1.0,mosaic 0,identique V4 conservateur,v4_training_config
+finetune,FT05,loss_mask,Loss sur IT seul,masquer indices KP 0-13 dans loss custom ou zero grad,OK,14 KP deja appris V2,12.0 pose all,12.0 pose all,IT indices 14-15 only,loss.py kpt_mask
+finetune,FT06,guardrail,Abort condition,14 KP error >200px apres ep1 -> stop,MANDATORY,anti-regression,128px,813px,hard abort,v4 failure pattern
+v0_impact,V001,it_r_v0,IT_R v=0 count,6/26 dont 5 train,OK,exclus loss position kpt_mask,0,6,16 train samples actifs,dataset probe V5
+v0_impact,V002,it_l_v0,IT_L v=0 count,2/26 dont 1 train B26_15,OK,exclus loss position,0,2,19 train samples actifs,dataset probe V5
+v0_impact,V003,loss_mechanism,v=0 dans Ultralytics,kpt_mask = gt_v != 0,OK,pas penalite position v=0,NA,NA,natif OK,loss.py L793
+v0_impact,V004,b26_26,B26_26 IT_R UNRESOLVABLE,v=0 correct pas de signal position,OK,working v=2 conserve label v=0 YOLO,NA,NA,exclure eval position,bi_ischial_final_policy
+v0_impact,V005,effective_supervision,Supervision effective IT train,IT_R 16 IT_L 19 images v=2,MARGINAL,23pct IT_R sans label position,NA,0pct IT correct,suffisant si 14KP gelés,dataset + V4 eval
+dataset,DS01,split,Split officiel,21 train 5 val 26 total,OK,B5 QC validated,21,21,unchanged,meta/split.json
+dataset,DS02,14kp_labels,14 KP labels train,tous v=2 sur 26 images,OK,364 eval pairs v>=2,26/26 v2,26/26 v2,preserve not relearn,dataset probe
+dataset,DS03,it_review,IT QA REVIEW,20 REVIEW + 1 UNRESOLVABLE sur 52 IT landmarks,WARNING,qualite annotation IT incertaine,NA,NA,eval clinique post-FT,b6_global_final_QA
+dataset,DS04,joint_16kp,21 images pour 16 KP joint,INSUFFISANT,V4 preuve 813px all landmarks,128px,813px,interdit sans surgery,v4_vs_v2 anatomical
+dataset,DS05,it_only,21 images pour IT-only,MARGINAL,16-19 samples position actifs,NA,818px IT,50 ep max + fallback, V4 IT 0pct correct
+v4_evidence,V4E01,mean_14kp,V4 erreur 14 KP communs,813 px vs V2 128 px,FAIL,x6.3 degradation,128.48,813.00,surgery required,v4_vs_v2_anatomical_evaluation.md
+v4_evidence,V4E02,mean_it,V4 erreur IT pooled,818 px 0pct CORRECT,FAIL,44 evals all INCORRECT,NA,818.11,IT-only phase,v4_vs_v2 anatomical
+v4_evidence,V4E03,pose_loss,V4 val/pose_loss,stagnant ~10.7 epoch 22,FAIL,V2 final 1.672,1.672,10.6678,parity gate,v4_16kp-2 results.csv
+v4_evidence,V4E04,map_pose,V4 mAP50 pose,0.0 toutes epochs 1-22,FAIL,metrique non informative ici,0.995,0.0,pixel eval not mAP,v4_16kp-2 results.csv
+v4_evidence,V4E05,box_recall,V4 box recall,1.0 preserved,OK,backbone+box OK detection,1.0,1.0,freeze box,v4_16kp-2 results.csv
+v4_evidence,V4E06,asl_l,V4 ASL_L degradation,525px V2 -> 1245px V4,WORST,landmark deja faible empire,525.40,1245.34,ne pas retrain ASL,v4_vs_v2 eval
+alternative,ALT01,v2_plus_it,V2 14KP + detecteur IT separe,fallback robuste si surgery/IT echoue,OK,V2 intact zero regression,128px prod,NA,Phase 2 fallback,section 11 V5
+alternative,ALT02,it_head_type,Tete IT separee recommandee,petite conv sur features P3/P4 V2 gelees,OK,2 passes inference,NA,NA,si IT mean >300px post phase1,section 11 V5
+alternative,ALT03,single_model,Avantage modele unique,1 inference 1 artifact,OK,si surgery reussit,NA,NA,Phase 0-1 prioritaire,user objective 16KP
+strategy,STR01,phase0,Phase 0 pre-requis,surgical_init + epoch0 parity <=150px,MANDATORY,ZERO training avant validation,128px ref,813px V4,script custom + eval 26 cases,section 12 V5
+strategy,STR02,phase1,Phase 1 IT-only FT,gel all sauf cv4 canaux 42-47 lr 1e-5 imgsz 640,RECOMMENDED,50 ep max patience 30,NA,failed V4,primary V5 path,section 12 V5
+strategy,STR03,phase2,Phase 2 fallback,V2 prod + IT head separe,CONDITIONAL,si parity fail ou IT>300px,128px,813px,plan B,section 11 V5
+strategy,STR04,do_not_repeat,Interdictions V5,no global 16KP FT no imgsz960 no train sans parity,BLOCKER,lecons V3 V4,NA,V4 config,hard rules, v3_failure v4 eval
+strategy,STR05,verdict,Conclusion finale,STRATEGY_RECOMMENDED,OK,surgery+gel+IT-only @640 pre-train parity gate,128px prod,813px fail,surgical init then IT-only FT,v5_strategy_diagnostic.md

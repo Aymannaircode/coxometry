@@ -1,0 +1,51 @@
+section,item_id,topic,status,value_documented,source_doc,action_required,notes
+meta,GLOBAL,Statut global mesure,SPECIFICATION REQUIRED,Ingrédients FHC + SHAFT documentés; métrique et mm/px à figer,docs/landmark_specification.md §11,Revue clinique F1-F7 avant implémentation,Aucune modification code/dataset
+definition,D1,Definition mesure — ingrédients,DEFINED,offset fémoral = axe diaphysaire + FHC; définition d'offset à figer,docs/landmark_specification.md §11,Aucune,§11 Hors MVP
+definition,D4,Definition clinique exacte,SPECIFICATION REQUIRED,Type distance/projection non documenté (perpendiculaire? horizontale? médiale/latérale?),docs/landmark_specification.md §11; missing_measurements_spec.md §1.1,Revue clinique F1,Ne pas inventer définition clinique
+definition,D4b,Reference pelvienne requise?,SPECIFICATION REQUIRED,Non mentionnée pour offset; ITH/TD non cités §11,docs/landmark_specification.md §11,F1,TD requis pour VCE/Tönnis pas pour offset
+definition,D4c,Axe col NECK=FHC→FNM,SPECIFICATION REQUIRED,Non cité pour offset §11; existe §2.3 pour CCD,docs/landmark_specification.md §2.3 §11,F1,Distinction CCD vs offset
+fhc,D2,Point reference FHC,DEFINED,Centre cercle best-fit Mose tête fémorale LM-03/04,docs/landmark_specification.md §4 LM-03/04,Aucune,Point tête §11
+fhc,D2b,Invalidité FHC A5,DEFINED,v=0 si cercle non ajustable; ne pas inventer centre,docs/landmark_specification.md §4 A5,F7 formaliser impact offset,Analogie CCD: mesure côté impossible
+shaft,D3,Axe SHAFT,DEFINED,SHAFT_side = droite(FSP_side FSD_side),docs/landmark_specification.md §2.3,Aucune,Axe diaphysaire
+shaft,D3b,FSP proximal,DEFINED,Sous petit trochanter; axe médian diaphyse proximale LM-11/12,docs/landmark_specification.md §4 LM-11/12,Aucune,A7 niveau exact à illustrer
+shaft,D3c,FSD distal,DEFINED,Plus distal visible FOV; entre corticales LM-13/14,docs/landmark_specification.md §4 LM-13/14,Aucune,Limité au cadrage AP bassin
+shaft,D3d,Nature axe 2D,DEFINED,Corde 2D FSP-FSD; acceptable si courbure diaphyse,docs/annotation_guidelines.md §2.7,Aucune,Qualité shaft pour offset incertaine F5
+distance,D5,Distance geometrique exacte,SPECIFICATION REQUIRED,Etape 3 relation métrique FHC vs SHAFT non figée,docs/landmark_specification.md §11; missing_measurements_spec.md §1.3,F1,Absence §3.x dédiée
+distance,D5b,Formule numerique,SPECIFICATION REQUIRED,Aucune formule close; pas femoral_offset() code,missing_measurements_audit.md §2,F1 puis F7,Implémentation hors scope actuel
+sign,D6,Convention de signe,SPECIFICATION REQUIRED,Non documentée (médial/latéral positif?),missing_measurements_spec.md §1.4,F2,Ne pas extrapoler Tönnis A4
+unit,D7,Unite sortie,SPECIFICATION REQUIRED,mm implicite via calibration mm/px §11; non formalisé,missing_measurements_spec.md §1.4,F2,Pas de sortie pixels clinique documentée
+calibration,D8,Methode mm/px,SPECIFICATION REQUIRED,Requise §11; aucune méthode (marker DICOM teardrop diamètre tête),docs/landmark_specification.md §11; missing_measurements_spec.md §1.5,F3,Absent mvp_geometry backend Flutter
+calibration,D9,Sans calibration,SPECIFICATION REQUIRED,Conduite non documentée,missing_measurements_spec.md §1.5,F3 lié,Conversion offset_mm impossible selon spec actuelle
+fov,D10,FOV court axe instable,PROVISIONAL,FSP≈FSD → axe diaphysaire instable; extension audit vers offset,missing_measurements_audit.md §2; docs/landmark_specification.md §4 A7,F4,Extension logique pas règle §11 explicite
+fov,D10b,Seuil separation FSP-FSD,PROVISIONAL,>= 0.5 × diamètre apparent tête homolatérale sinon v=0 FSD,docs/annotation_guidelines.md §2.7; docs/landmark_specification.md §4 A7,F4 valider pour offset,Convention projet provisoire; documenté pour CCD
+fov,D10c,Conduite seuil non respecté,DEFINED pour CCD,v=0 FSD; CCD non calculable ce côté,docs/annotation_guidelines.md §2.7,F4 étendre à offset?,Application offset SPECIFICATION REQUIRED
+fov,D11,Shaft AP bassin suffisant?,SPECIFICATION REQUIRED,Analyses dataset: axe diaphysaire long requis; qualité incertaine AP seul,docs/dataset1_analysis.md §14; docs/dataset_analysis.md §14,F5,Landmarks distaux additionnels?
+validity,V1,FHC v=0,SPECIFICATION REQUIRED,Impact offset non décrit; A5 définit v=0,docs/landmark_specification.md §4 A5,F7,Analogie mesure impossible côté
+validity,V2,FSD v=0 A7,SPECIFICATION REQUIRED,CCD non calculable; extension offset audit,missing_measurements_audit.md §2,F4 F7,CCD explicite offset implicite
+validity,V3,FSP v=0,SPECIFICATION REQUIRED,Non décrit spécifiquement offset,docs/annotation_guidelines.md,F7,Impossible construire SHAFT
+validity,V4,Sans mm/px,SPECIFICATION REQUIRED,Mesure mm impossible selon §11,docs/landmark_specification.md §11,F3,Refus ou indisponible à figer
+validity,V5,Corticale unique visible,DEFINED,v=0 point diaphyse,docs/annotation_guidelines.md §2.7,F7,Annotation
+validity,V6,Inversion R/L axes,SPECIFICATION REQUIRED QC,Axes FSP-FSD ne doivent pas se croiser aberramment,docs/annotation_guidelines.md §2.7,F7,QC annotation pas règle offset output
+threshold,D13,Seuils cliniques normal/pathologique,SPECIFICATION REQUIRED,Aucun seuil offset dans le projet,missing_measurements_spec.md §5.2 F6,F6,Aucun défaut projet
+threshold,D13b,Seuil geometrique A7,PROVISIONAL,0.5 × diamètre tête FSP-FSD,docs/annotation_guidelines.md §2.7,F4,Seuil annotation pas clinique offset
+bilateral,D14,Mesure par cote,PARTIELLEMENT DEFINED,Landmarks R/L; logique par hanche implicite (comme CCD §3.3),docs/landmark_specification.md §3.3 §2.1,F7,CCD: sur chaque hanche
+bilateral,D14b,Comparaison R vs L,SPECIFICATION REQUIRED,Non documentée pour offset,missing_measurements_spec.md §1.4,F2 F7,Différence bilatérale?
+bilateral,D14c,Cote manquant unilateral,SPECIFICATION REQUIRED,Non documentée pour offset,docs/landmark_specification.md §10,F7,MVP angles: un côté v=0 possible
+landmarks,L1,FHC_R FHC_L,DEFINED,LM-03/04 centre tête,docs/landmark_specification.md §2.1,Aucune,Dans 14 kp
+landmarks,L2,FSP_R FSP_L,DEFINED,LM-11/12 axe diaphyse proximal,docs/landmark_specification.md §2.1,Aucune,Dans 14 kp
+landmarks,L3,FSD_R FSD_L,DEFINED,LM-13/14 axe diaphyse distal FOV,docs/landmark_specification.md §2.1,Aucune,Dans 14 kp
+landmarks,L4,SHAFT derive,DEFINED,droite(FSP FSD) non annotée,docs/landmark_specification.md §2.3,Aucune,Ligne dérivée
+landmarks,L5,Landmarks non requis,DEFINED,TD ASL ASM FNM non cités offset §11,docs/landmark_specification.md §11,Aucune,NECK pas pour offset
+landmarks,L6,14 kp suffisants ingredients,DEFINED,Oui FHC+FSP+FSD par côté; pas retraining T2,docs/landmark_specification.md §11; missing_measurements_spec.md §5.4 T2,Aucune pour landmarks,Nouveaux kp non identifiés
+landmarks,L7,14 kp suffisants mesure deployable,NON DEPLOYABLE,Définition + mm/px non figés,missing_measurements_audit.md §2,F1-F7,Ingrédients OK mesure non validée
+pipeline,P1,Code femoral_offset,ABSENT,Pas de fonction; homonymie offset=ASL_L refinement,missing_measurements_audit.md §2,F1-F7 puis implémentation,Hors scope spec actuelle
+pipeline,P2,Tests offset,ABSENT,Aucun test analytique offset,missing_measurements_audit.md,F7 puis implémentation,
+pipeline,P3,API Flutter offset,ABSENT,Pas de champ MeasureOut,missing_measurements_audit.md,F7 puis implémentation,
+clinical_decision,F1,Metrique exacte FHC vs SHAFT,SPECIFICATION REQUIRED,BLOCKER validation mesure,missing_measurements_spec.md §5.2,Revue clinique,
+clinical_decision,F2,Signe et unite mm,SPECIFICATION REQUIRED,BLOCKER validation mesure,missing_measurements_spec.md §5.2,Revue clinique,
+clinical_decision,F3,Calibration mm/px,SPECIFICATION REQUIRED,BLOCKER validation mesure,missing_measurements_spec.md §5.2,Revue clinique,
+clinical_decision,F4,Regle A7 FOV court,SPECIFICATION REQUIRED,BLOCKER validation mesure,missing_measurements_spec.md §5.2,Valider seuil 0.5× tête pour offset
+clinical_decision,F5,Shaft AP suffisant,SPECIFICATION REQUIRED,BLOCKER validation mesure,missing_measurements_spec.md §5.2,Landmarks distaux?
+clinical_decision,F6,Seuils cliniques,SPECIFICATION REQUIRED,BLOCKER validation mesure,missing_measurements_spec.md §5.2,Aucun défaut projet
+clinical_decision,F7,Rediger section 3.x,SPECIFICATION REQUIRED,BLOCKER validation mesure,missing_measurements_spec.md §5.2,Format VCE/Tönnis/CCD
+policy,T2,Pas de retraining,DEFINED,Femoral offset seul ne requiert pas retraining 14 kp,missing_measurements_spec.md §5.4 T2,Aucune,Implémentation mvp_geometry après spec

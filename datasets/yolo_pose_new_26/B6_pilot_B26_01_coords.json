@@ -1,0 +1,58 @@
+{
+  "_WARNING": "PILOT / NON-OFFICIAL — NOT part of official dataset, labels, or YOLO training",
+  "_schema": "bi-ischial-pilot-1.0",
+  "_status": "PROPOSED / CLINICAL VALIDATION REQUIRED",
+  "image_id": "B26_01",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_01.png",
+  "image_width": 2730,
+  "image_height": 2665,
+  "split": "train",
+  "pilot_date": "2026-08-28",
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur l'AP bassin",
+  "annotator": "agent_pilot_B6",
+  "official_labels_modified": false,
+  "landmarks_pilot": [
+    {
+      "name": "IT_R",
+      "side": "right",
+      "id_proposed": "LM-17",
+      "x": 548.0,
+      "y": 2140.0,
+      "x_norm": 0.200733,
+      "y_norm": 0.803002,
+      "v": 2,
+      "notes": "Point caudal du contour osseux tubérosité ischiatique droite patient (gauche image). Repère cortical inférieur net."
+    },
+    {
+      "name": "IT_L",
+      "side": "left",
+      "id_proposed": "LM-18",
+      "x": 1756.0,
+      "y": 2143.0,
+      "x_norm": 0.643223,
+      "y_norm": 0.804128,
+      "v": 2,
+      "notes": "Point caudal du contour osseux tubérosité ischiatique gauche patient (droite image). Candidat retenu après rejet point trop latéral (fémur)."
+    }
+  ],
+  "reference_official_14kp": {
+    "path": "annotation_pilot/annotations/new_26/B26_01.json",
+    "TD_R": { "x": 928.9, "y": 1889.73 },
+    "TD_L": { "x": 1592.38, "y": 1953.35 }
+  },
+  "checks": {
+    "TD_not_used_as_IT": true,
+    "IT_R_left_of_image_center": true,
+    "IT_L_right_of_image_center": true,
+    "IT_caudal_to_TD_bilateral": true,
+    "IT_lateral_to_TD_bilateral": true
+  },
+  "rejected_candidates": [
+    {
+      "name": "IT_L_auto",
+      "x": 2136.0,
+      "y": 2117.0,
+      "reason": "Trop latéral — projection sur diaphyse fémorale, non tubérosité ischiatique"
+    }
+  ]
+}

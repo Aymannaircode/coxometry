@@ -1,0 +1,17 @@
+﻿order,pilot_id,image_file,annotation_file,status
+1,P01,../../images/P01_a308.jpg,P01_a308.json,pending
+2,P02,../../images/P02_a245.jpg,P02_a245.json,pending
+3,P03,../../images/P03_e65.jpg,P03_e65.json,pending
+4,P04,../../images/P04_w84.jpg,P04_w84.json,pending
+5,P05,../../images/P05_y44.jpg,P05_y44.json,pending
+6,P06,../../images/P06_a322.jpg,P06_a322.json,pending
+7,P07,../../images/P07_b31.jpg,P07_b31.json,pending
+8,P08,../../images/P08_11ebyy.jpg,P08_11ebyy.json,pending
+9,P09,../../images/P09_b1.jpg,P09_b1.json,pending
+10,P10,../../images/P10_170qt.jpg,P10_170qt.json,pending
+11,P11,../../images/P11_259qt.jpg,P11_259qt.json,pending
+12,P12,../../images/P12_282qt.jpg,P12_282qt.json,pending
+13,P13,../../images/P13_a311.jpg,P13_a311.json,pending
+14,P14,../../images/P14_h27.jpg,P14_h27.json,pending
+15,P15,../../images/P15_c82.jpg,P15_c82.json,pending
+16,P16,../../images/P16_a425.jpg,P16_a425.json,pending

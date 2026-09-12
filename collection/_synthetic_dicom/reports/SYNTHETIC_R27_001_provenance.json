@@ -1,0 +1,27 @@
+{
+  "Case_ID": "SYNTHETIC_R27_001",
+  "source_file_hash": "010ea9df7e5bb67b032de95ea5852beb60ce1ea2b0c7f5e2bc666eafdb4c06de",
+  "deidentified_file_hash": "3b44e8d5aa5950f4cd3b6e366272c7c29ec266ec7416489a8812fa0e0b1919c5",
+  "pixel_hash": "8c426a73d66fda0f60b17866613e2ad4e30efbea2a6663f20725feecf9d1b5b7",
+  "source_type": "DICOM_DX_SYNTHETIC",
+  "synthetic": true,
+  "modality": "DX",
+  "rows": 128,
+  "columns": 128,
+  "pixel_spacing": [
+    0.2,
+    0.2
+  ],
+  "orientation": "['A', 'F']",
+  "deidentification_status": "DEIDENTIFIED",
+  "pixel_phi_check": "PASS_SYNTHETIC",
+  "integrity_status": "INTEGRITY_OK",
+  "duplicate_status": "UNIQUE",
+  "eligibility_status": "SYNTHETIC_DRY_RUN_ONLY",
+  "created_at": "2026-09-04T22:38:20Z",
+  "tool_version": "phase11c3-synthetic-intake-0.1.0",
+  "gate_status": "PASS",
+  "would_enter_03_deidentified": true,
+  "clinical_03_written": false,
+  "note": "Synthetic dry-run only. PASS does not authorize real-patient import or writing into collection/03_DEIDENTIFIED."
+}

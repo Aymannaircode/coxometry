@@ -1,0 +1,90 @@
+# YOLO Pose V5 Phase 1 — IT-only fine-tuning (16 KP)
+# Init depuis v5_surgical_init.pt (Phase 0 validée).
+# NE PAS lancer sans preflight OK : v5_phase1_preflight.md → V5_PHASE1_READY
+#
+# Preflight (gradient probe, NO training) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v5_phase1.py
+#
+# Lancer entraînement (explicite) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v5_phase1.py --train
+
+version: "v5_phase1_it_only"
+description: "IT-only fine-tuning depuis surgical init — gel 14 KP + cv4 canaux 42-47"
+
+init:
+  source: runs/pose/yolo_pose_new_26_v5_16kp/weights/v5_surgical_init.pt
+  note: "Phase 0 V5_PHASE0_GO — ne jamais init depuis V2 direct (cv4 mismatch)"
+
+data: datasets/yolo_pose_new_26/data.yaml
+
+run:
+  project: runs/pose
+  name: yolo_pose_new_26_v5_phase1_it
+  exist_ok: false
+
+train:
+  epochs: 15
+  patience: 8
+  imgsz: 640
+  batch: 1
+  device: cpu
+  workers: 4
+  cache: false
+  amp: true
+  deterministic: true
+  seed: 42
+  fraction: 1.0
+  val: true
+  save: true
+  save_period: -1
+  plots: true
+  verbose: true
+
+optimizer:
+  name: AdamW
+  lr0: 0.00001
+  lrf: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 2
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.01
+  cos_lr: false
+
+loss:
+  pose: 12.0
+  kobj: 1.0
+  box: 7.5
+  cls: 0.5
+  dfl: 1.5
+
+# IT-only : masquer loss KP indices 0-13 (en plus du gel cv4)
+it_only:
+  train_kp_indices: [14, 15]
+  old_nk: 42
+  new_nk: 48
+
+augment:
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  auto_augment: null
+  erasing: 0.0
+  close_mosaic: 0
+  fliplr: 0.5
+  flipud: 0.0
+  degrees: 0.0
+  translate: 0.03
+  scale: 0.15
+  shear: 0.0
+  perspective: 0.0
+  hsv_h: 0.005
+  hsv_s: 0.3
+  hsv_v: 0.2
+
+guardrails:
+  epoch0_mean_14kp_max_px: 150.0
+  epoch1_abort_mean_14kp_px: 200.0
+  epoch1_warning_mean_14kp_px: 135.0
+  epoch1_abort_ratio_vs_v2: 1.5

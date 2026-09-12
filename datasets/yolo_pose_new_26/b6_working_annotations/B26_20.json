@@ -1,0 +1,72 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation ? NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "IMAGE_REQUIRED_REVIEW_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_20",
+  "annotation_order": 20,
+  "split": "val",
+  "source_image": "datasets/yolo_pose_new_26/images/val/B26_20.png",
+  "image_width": 2701,
+  "image_height": 2514,
+  "definition_working": "IT_R / IT_L = point caudal/inf�rieur identifiable du contour osseux de chaque tub�rosit� ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_image_required_manual_review",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "standard",
+  "ambiguities": [],
+  "IT_R": {
+    "x": 688.0,
+    "y": 2208.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 1888.0,
+    "y": 2188.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "IT_R: Repositionn� sur cortex ischiatique caudal ? remont� depuis zone soft-tissue | IT_L: Apex caudal ischion G sur bord osseux inf�rieur ? coh�rence bilat�rale r�tablie",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_20.json",
+  "correction_history": [
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_R",
+      "priority": "P0_IMAGE_REQUIRED",
+      "x_old": 667.2,
+      "y_old": 2245.2,
+      "x_new": 688.0,
+      "y_new": 2208.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Offset initial ? ~37 px trop caudal ; rep�re en zone tissus mous sous ischion",
+      "comment": "Repositionn� sur cortex ischiatique caudal ? remont� depuis zone soft-tissue",
+      "reviewer": "agent_B6_image_required_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    },
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P0_IMAGE_REQUIRED",
+      "x_old": 1900.6,
+      "y_old": 2135.1,
+      "x_new": 1888.0,
+      "y_new": 2188.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Offset initial ? ~53 px trop cr�nial ; asym�trie y 110 px vs IT_R corrig�",
+      "comment": "Apex caudal ischion G sur bord osseux inf�rieur ? coh�rence bilat�rale r�tablie",
+      "reviewer": "agent_B6_image_required_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "IMAGE_REQUIRED_REVIEW_COMPLETED / QA_REQUIRED"
+}

@@ -1,0 +1,19 @@
+metric_id,category,v4_value,v4_detail,v2_final_value,v2_best_pose_epoch80,delta_vs_v2_final,notes
+1_epoch_reached,Epoch réellement atteint,NA,run absent,100,100,NA,Run V4_16kp introuvable — métrique non disponible
+2_best_pt_epoch,Epoch du best.pt,NA,run absent,80,80,NA,Run V4_16kp introuvable — métrique non disponible
+3_map50_box,mAP50 box,NA,run absent,0.99500,NA,NA,Run V4_16kp introuvable — métrique non disponible
+4_map50_95_box,mAP50-95 box,NA,run absent,0.84525,NA,NA,Run V4_16kp introuvable — métrique non disponible
+5_map50_pose,mAP50 pose,NA,run absent,0.99500,NA,NA,Run V4_16kp introuvable — métrique non disponible
+6_map50_95_pose,mAP50-95 pose,NA,run absent,0.64625,0.69200,NA,Run V4_16kp introuvable — métrique non disponible
+7_precision_box,Precision box,NA,run absent,0.99036,NA,NA,Run V4_16kp introuvable — métrique non disponible
+7_recall_box,Recall box,NA,run absent,1.00000,NA,NA,Run V4_16kp introuvable — métrique non disponible
+7_precision_pose,Precision pose,NA,run absent,0.99036,NA,NA,Run V4_16kp introuvable — métrique non disponible
+7_recall_pose,Recall pose,NA,run absent,1.00000,NA,NA,Run V4_16kp introuvable — métrique non disponible
+8_train_box_loss,train/box_loss,NA,run absent,0.56675,NA,NA,Run V4_16kp introuvable — métrique non disponible
+9_train_pose_loss,train/pose_loss,NA,run absent,1.70585,NA,NA,Run V4_16kp introuvable — métrique non disponible
+10_train_cls_loss,train/cls_loss,NA,run absent,0.38534,NA,NA,Run V4_16kp introuvable — métrique non disponible
+11_val_box_loss,val/box_loss,NA,run absent,0.61364,NA,NA,Run V4_16kp introuvable — métrique non disponible
+12_val_pose_loss,val/pose_loss,NA,run absent,1.67233,NA,NA,Run V4_16kp introuvable — métrique non disponible
+13_val_cls_loss,val/cls_loss,NA,run absent,0.32474,NA,NA,Run V4_16kp introuvable — métrique non disponible
+14_early_stopping,Early stopping,NA — run absent,,NON — 100/100 epochs (patience=100),,,V2: best mAP50-95 pose epoch 80
+15_run_status,Run directory status,NOT_FOUND,runs/pose/yolo_pose_new_26_v4_16kp/,,,,

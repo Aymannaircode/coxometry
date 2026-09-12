@@ -1,0 +1,174 @@
+﻿section,metric,value,case_id,detail
+summary,cases,26,,
+summary,measurements_expected,156,,
+summary,measurements_missing,0,,
+measure_stats,VCE_R,26,,count
+measure_stats,VCE_R,42.81,,mean
+measure_stats,VCE_R,42.16,,median
+measure_stats,VCE_R,3.85,,stdev
+measure_stats,VCE_R,36.52,,min
+measure_stats,VCE_R,50.16,,max
+measure_stats,VCE_R,39.80,,q1
+measure_stats,VCE_R,46.32,,q3
+measure_stats,VCE_R,0,,negative_count
+measure_stats,VCE_R,0,,above_180_count
+measure_stats,VCE_R,0,,missing
+extremes_low,VCE_R,36.52,B26_18,rank_1
+extremes_low,VCE_R,36.90,B26_03,rank_2
+extremes_low,VCE_R,37.93,B26_08,rank_3
+extremes_low,VCE_R,38.52,B26_04,rank_4
+extremes_low,VCE_R,38.98,B26_10,rank_5
+extremes_high,VCE_R,50.16,B26_09,rank_1
+extremes_high,VCE_R,48.54,B26_02,rank_2
+extremes_high,VCE_R,47.26,B26_25,rank_3
+extremes_high,VCE_R,47.19,B26_20,rank_4
+extremes_high,VCE_R,47.10,B26_06,rank_5
+measure_stats,VCE_L,26,,count
+measure_stats,VCE_L,-24.96,,mean
+measure_stats,VCE_L,-25.13,,median
+measure_stats,VCE_L,24.74,,stdev
+measure_stats,VCE_L,-70.61,,min
+measure_stats,VCE_L,15.41,,max
+measure_stats,VCE_L,-45.60,,q1
+measure_stats,VCE_L,-5.08,,q3
+measure_stats,VCE_L,21,,negative_count
+measure_stats,VCE_L,0,,above_180_count
+measure_stats,VCE_L,0,,missing
+extremes_low,VCE_L,-70.61,B26_02,rank_1
+extremes_low,VCE_L,-60.12,B26_09,rank_2
+extremes_low,VCE_L,-53.64,B26_20,rank_3
+extremes_low,VCE_L,-51.20,B26_06,rank_4
+extremes_low,VCE_L,-50.05,B26_21,rank_5
+extremes_high,VCE_L,15.41,B26_08,rank_1
+extremes_high,VCE_L,10.81,B26_17,rank_2
+extremes_high,VCE_L,10.17,B26_18,rank_3
+extremes_high,VCE_L,7.15,B26_14,rank_4
+extremes_high,VCE_L,5.78,B26_03,rank_5
+measure_stats,Tonnis_R,26,,count
+measure_stats,Tonnis_R,-6.53,,mean
+measure_stats,Tonnis_R,-6.46,,median
+measure_stats,Tonnis_R,2.20,,stdev
+measure_stats,Tonnis_R,-10.95,,min
+measure_stats,Tonnis_R,-2.75,,max
+measure_stats,Tonnis_R,-8.50,,q1
+measure_stats,Tonnis_R,-4.34,,q3
+measure_stats,Tonnis_R,26,,negative_count
+measure_stats,Tonnis_R,0,,above_180_count
+measure_stats,Tonnis_R,0,,missing
+extremes_low,Tonnis_R,-10.95,B26_18,rank_1
+extremes_low,Tonnis_R,-9.82,B26_12,rank_2
+extremes_low,Tonnis_R,-9.69,B26_09,rank_3
+extremes_low,Tonnis_R,-8.60,B26_08,rank_4
+extremes_low,Tonnis_R,-8.57,B26_20,rank_5
+extremes_high,Tonnis_R,-2.75,B26_16,rank_1
+extremes_high,Tonnis_R,-3.82,B26_22,rank_2
+extremes_high,Tonnis_R,-3.83,B26_14,rank_3
+extremes_high,Tonnis_R,-3.84,B26_23,rank_4
+extremes_high,Tonnis_R,-4.13,B26_02,rank_5
+measure_stats,Tonnis_L,26,,count
+measure_stats,Tonnis_L,71.56,,mean
+measure_stats,Tonnis_L,43.48,,median
+measure_stats,Tonnis_L,65.40,,stdev
+measure_stats,Tonnis_L,-19.93,,min
+measure_stats,Tonnis_L,163.76,,max
+measure_stats,Tonnis_L,15.22,,q1
+measure_stats,Tonnis_L,146.03,,q3
+measure_stats,Tonnis_L,3,,negative_count
+measure_stats,Tonnis_L,0,,above_180_count
+measure_stats,Tonnis_L,0,,missing
+extremes_low,Tonnis_L,-19.93,B26_15,rank_1
+extremes_low,Tonnis_L,-9.45,B26_11,rank_2
+extremes_low,Tonnis_L,-5.46,B26_18,rank_3
+extremes_low,Tonnis_L,3.83,B26_08,rank_4
+extremes_low,Tonnis_L,12.93,B26_17,rank_5
+extremes_high,Tonnis_L,163.76,B26_25,rank_1
+extremes_high,Tonnis_L,161.34,B26_06,rank_2
+extremes_high,Tonnis_L,155.36,B26_21,rank_3
+extremes_high,Tonnis_L,154.78,B26_20,rank_4
+extremes_high,Tonnis_L,152.65,B26_12,rank_5
+measure_stats,CCD_R,26,,count
+measure_stats,CCD_R,131.30,,mean
+measure_stats,CCD_R,131.10,,median
+measure_stats,CCD_R,6.85,,stdev
+measure_stats,CCD_R,117.54,,min
+measure_stats,CCD_R,143.53,,max
+measure_stats,CCD_R,126.33,,q1
+measure_stats,CCD_R,137.21,,q3
+measure_stats,CCD_R,0,,negative_count
+measure_stats,CCD_R,0,,above_180_count
+measure_stats,CCD_R,0,,missing
+extremes_low,CCD_R,117.54,B26_02,rank_1
+extremes_low,CCD_R,118.86,B26_18,rank_2
+extremes_low,CCD_R,122.41,B26_24,rank_3
+extremes_low,CCD_R,125.44,B26_21,rank_4
+extremes_low,CCD_R,125.51,B26_15,rank_5
+extremes_high,CCD_R,143.53,B26_09,rank_1
+extremes_high,CCD_R,142.10,B26_04,rank_2
+extremes_high,CCD_R,139.90,B26_22,rank_3
+extremes_high,CCD_R,138.67,B26_13,rank_4
+extremes_high,CCD_R,138.64,B26_23,rank_5
+measure_stats,CCD_L,26,,count
+measure_stats,CCD_L,138.62,,mean
+measure_stats,CCD_L,137.28,,median
+measure_stats,CCD_L,8.71,,stdev
+measure_stats,CCD_L,125.65,,min
+measure_stats,CCD_L,163.18,,max
+measure_stats,CCD_L,132.11,,q1
+measure_stats,CCD_L,145.19,,q3
+measure_stats,CCD_L,0,,negative_count
+measure_stats,CCD_L,0,,above_180_count
+measure_stats,CCD_L,0,,missing
+extremes_low,CCD_L,125.65,B26_11,rank_1
+extremes_low,CCD_L,126.40,B26_26,rank_2
+extremes_low,CCD_L,128.92,B26_18,rank_3
+extremes_low,CCD_L,129.22,B26_12,rank_4
+extremes_low,CCD_L,130.99,B26_15,rank_5
+extremes_high,CCD_L,163.18,B26_01,rank_1
+extremes_high,CCD_L,148.92,B26_02,rank_2
+extremes_high,CCD_L,148.81,B26_14,rank_3
+extremes_high,CCD_L,148.30,B26_16,rank_4
+extremes_high,CCD_L,147.91,B26_04,rank_5
+bilateral,VCE,67.78,,mean_abs_diff
+bilateral,VCE,119.15,,max_abs_diff
+bilateral_top,VCE,119.15,B26_02,rank_1
+bilateral_top,VCE,110.28,B26_09,rank_2
+bilateral_top,VCE,100.83,B26_20,rank_3
+bilateral_top,VCE,98.30,B26_06,rank_4
+bilateral_top,VCE,96.22,B26_21,rank_5
+bilateral,Tonnis,79.07,,mean_abs_diff
+bilateral,Tonnis,170.09,,max_abs_diff
+bilateral_top,Tonnis,170.09,B26_25,rank_1
+bilateral_top,Tonnis,168.70,B26_06,rank_2
+bilateral_top,Tonnis,163.93,B26_21,rank_3
+bilateral_top,Tonnis,163.35,B26_20,rank_4
+bilateral_top,Tonnis,162.47,B26_12,rank_5
+bilateral,CCD,8.83,,mean_abs_diff
+bilateral,CCD,31.38,,max_abs_diff
+bilateral_top,CCD,31.38,B26_02,rank_1
+bilateral_top,CCD,28.36,B26_01,rank_2
+bilateral_top,CCD,20.57,B26_16,rank_3
+bilateral_top,CCD,17.35,B26_14,rank_4
+bilateral_top,CCD,14.26,B26_06,rank_5
+visual_inspection,B26_02,7,B26_02,CCD_L extrême haut (148.92) | CCD_R extrême bas (117.54) | Tonnis_R extrême haut (-4.13) | VCE_L extrême bas (-70.61) | VCE_R extrême haut (48.54) | |CCD_R − CCD_L| élevé (31.38°) | |VCE_R − VCE_L| élevé (119.15°)
+visual_inspection,B26_06,6,B26_06,Tonnis_L extrême haut (161.34) | VCE_L extrême bas (-51.20) | VCE_R extrême haut (47.10) | |CCD_R − CCD_L| élevé (14.26°) | |Tonnis_R − Tonnis_L| élevé (168.70°) | |VCE_R − VCE_L| élevé (98.30°)
+visual_inspection,B26_18,6,B26_18,CCD_L extrême bas (128.92) | CCD_R extrême bas (118.86) | Tonnis_L extrême bas (-5.46) | Tonnis_R extrême bas (-10.95) | VCE_L extrême haut (10.17) | VCE_R extrême bas (36.52)
+visual_inspection,B26_20,6,B26_20,Tonnis_L extrême haut (154.78) | Tonnis_R extrême bas (-8.57) | VCE_L extrême bas (-53.64) | VCE_R extrême haut (47.19) | |Tonnis_R − Tonnis_L| élevé (163.35°) | |VCE_R − VCE_L| élevé (100.83°)
+visual_inspection,B26_09,5,B26_09,CCD_R extrême haut (143.53) | Tonnis_R extrême bas (-9.69) | VCE_L extrême bas (-60.12) | VCE_R extrême haut (50.16) | |VCE_R − VCE_L| élevé (110.28°)
+visual_inspection,B26_21,5,B26_21,CCD_R extrême bas (125.44) | Tonnis_L extrême haut (155.36) | VCE_L extrême bas (-50.05) | |Tonnis_R − Tonnis_L| élevé (163.93°) | |VCE_R − VCE_L| élevé (96.22°)
+visual_inspection,B26_08,4,B26_08,Tonnis_L extrême bas (3.83) | Tonnis_R extrême bas (-8.60) | VCE_L extrême haut (15.41) | VCE_R extrême bas (37.93)
+visual_inspection,B26_12,4,B26_12,CCD_L extrême bas (129.22) | Tonnis_L extrême haut (152.65) | Tonnis_R extrême bas (-9.82) | |Tonnis_R − Tonnis_L| élevé (162.47°)
+visual_inspection,B26_14,4,B26_14,CCD_L extrême haut (148.81) | Tonnis_R extrême haut (-3.83) | VCE_L extrême haut (7.15) | |CCD_R − CCD_L| élevé (17.35°)
+visual_inspection,B26_04,3,B26_04,CCD_L extrême haut (147.91) | CCD_R extrême haut (142.10) | VCE_R extrême bas (38.52)
+visual_inspection,B26_15,3,B26_15,CCD_L extrême bas (130.99) | CCD_R extrême bas (125.51) | Tonnis_L extrême bas (-19.93)
+visual_inspection,B26_16,3,B26_16,CCD_L extrême haut (148.30) | Tonnis_R extrême haut (-2.75) | |CCD_R − CCD_L| élevé (20.57°)
+visual_inspection,B26_25,3,B26_25,Tonnis_L extrême haut (163.76) | VCE_R extrême haut (47.26) | |Tonnis_R − Tonnis_L| élevé (170.09°)
+visual_inspection,B26_01,2,B26_01,CCD_L extrême haut (163.18) | |CCD_R − CCD_L| élevé (28.36°)
+visual_inspection,B26_03,2,B26_03,VCE_L extrême haut (5.78) | VCE_R extrême bas (36.90)
+visual_inspection,B26_11,2,B26_11,CCD_L extrême bas (125.65) | Tonnis_L extrême bas (-9.45)
+visual_inspection,B26_17,2,B26_17,Tonnis_L extrême bas (12.93) | VCE_L extrême haut (10.81)
+visual_inspection,B26_22,2,B26_22,CCD_R extrême haut (139.90) | Tonnis_R extrême haut (-3.82)
+visual_inspection,B26_23,2,B26_23,CCD_R extrême haut (138.64) | Tonnis_R extrême haut (-3.84)
+visual_inspection,B26_10,1,B26_10,VCE_R extrême bas (38.98)
+visual_inspection,B26_13,1,B26_13,CCD_R extrême haut (138.67)
+visual_inspection,B26_24,1,B26_24,CCD_R extrême bas (122.41)
+visual_inspection,B26_26,1,B26_26,CCD_L extrême bas (126.40)

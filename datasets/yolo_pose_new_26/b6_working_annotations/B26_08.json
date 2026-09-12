@@ -1,0 +1,55 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "P0_MOVE_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_08",
+  "annotation_order": 10,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_08.png",
+  "image_width": 2672,
+  "image_height": 2423,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_manual_P0_move",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "standard",
+  "ambiguities": [],
+  "IT_R": {
+    "x": 650.7,
+    "y": 2207.9,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 1718.0,
+    "y": 2192.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "MANUAL_P0: IT_L ajusté caudalement sur apex ischion G — aligné vs IT_R PASS",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_08.json",
+  "correction_history": [
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P0",
+      "x_old": 1746.5,
+      "y_old": 2133.1,
+      "x_new": 1718.0,
+      "y_new": 2192.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Trop crânial vs IT_R PASS (~59 px) — apex caudal non atteint",
+      "comment": "Apex caudal ischion G sur bord cortical inférieur — IT_R conservé (référence PASS)",
+      "reviewer": "agent_B6_manual_P0_move",
+      "reviewer_status": "standard"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "P0_MOVE_COMPLETED / QA_REQUIRED"
+}

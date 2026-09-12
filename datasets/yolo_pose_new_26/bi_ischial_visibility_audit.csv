@@ -1,0 +1,28 @@
+image_id,split,it_r_visibility,it_l_visibility,global_annotation_quality,issue_reason,issue_detail,fsd_r_y_pct,fsd_l_y_pct,manual_review_required,notes
+B26_01,train,VISIBLE,VISIBLE,EXCELLENTE,,,85.6,88.6,false,Tubérosités entièrement dans le FOV; marges caudales confortables
+B26_02,train,VISIBLE,VISIBLE,EXCELLENTE,,,98.3,99.3,false,Diaphyse très basse (FSD ~98%) mais tubérosités ischiatiques nettes et hors bord
+B26_03,train,VISIBLE,VISIBLE,EXCELLENTE,,,98.0,97.2,false,FOV inférieur serré pour fémur; IT_R/IT_L clairement identifiables
+B26_04,train,VISIBLE,VISIBLE,EXCELLENTE,,,97.1,96.5,false,Repères caudaux bilatéraux nets
+B26_05,train,PARTIELLE,PARTIELLE,MOYENNE,bord de l'image,Tubérosités visibles mais proches du bord inférieur; marge caudale réduite,96.7,96.9,true,Cas le plus serré du corpus pour la région ischiatique
+B26_06,train,VISIBLE,VISIBLE,EXCELLENTE,,,95.6,95.6,false,
+B26_07,train,VISIBLE,VISIBLE,BONNE,autre,Gaz intestinal/fécal central abondant (n'obstrue pas les tubérosités),97.3,97.3,true,Revue clinique recommandée pour confirmer repère caudal
+B26_08,train,VISIBLE,VISIBLE,EXCELLENTE,,,98.1,97.2,false,
+B26_09,train,VISIBLE,VISIBLE,EXCELLENTE,,,99.1,98.6,false,FOV fémoral très bas; ischions latéraux nets
+B26_10,val,VISIBLE,VISIBLE,EXCELLENTE,,,95.8,97.0,false,
+B26_11,train,VISIBLE,VISIBLE,BONNE,autre,Rotation/inclinaison pelvienne légère (obturateurs asymétriques),97.3,97.8,true,Revue clinique pour cohérence R/L
+B26_12,train,VISIBLE,VISIBLE,BONNE,bord de l'image,Bord inférieur juste sous les tubérosités; marge caudale limitée,98.3,97.5,true,Revue manuelle recommandée malgré visibilité globale
+B26_13,val,VISIBLE,VISIBLE,EXCELLENTE,,,90.2,94.2,false,Bonne marge sous ischions (analyse FOV)
+B26_14,train,VISIBLE,VISIBLE,EXCELLENTE,,,95.4,95.1,false,
+B26_15,train,VISIBLE,VISIBLE,EXCELLENTE,,,96.7,97.5,false,
+B26_16,train,VISIBLE,VISIBLE,EXCELLENTE,,,98.4,98.2,false,
+B26_17,val,VISIBLE,VISIBLE,EXCELLENTE,,,97.9,97.0,false,Large marge caudale (~15% sous repère osseux inférieur)
+B26_18,train,VISIBLE,VISIBLE,EXCELLENTE,,,80.5,77.8,false,FOV inférieur généreux (FSD ~78-80%)
+B26_19,train,VISIBLE,VISIBLE,EXCELLENTE,,,99.4,99.3,false,Diaphyse au bord image; ischions entièrement visibles
+B26_20,val,VISIBLE,VISIBLE,EXCELLENTE,,,98.1,97.5,false,
+B26_21,train,VISIBLE,VISIBLE,EXCELLENTE,,,94.3,94.1,false,
+B26_22,train,VISIBLE,VISIBLE,BONNE,autre,Gaz intestinal en région pelvienne haute (hors zone IT),97.7,96.7,false,
+B26_23,train,VISIBLE,VISIBLE,BONNE,autre,Crête iliaque supérieure légèrement coupée (hors zone IT),98.1,97.8,false,
+B26_24,train,VISIBLE,VISIBLE,EXCELLENTE,,,97.6,97.0,false,
+B26_25,train,VISIBLE,VISIBLE,EXCELLENTE,,,97.6,96.9,false,
+B26_26,val,VISIBLE,VISIBLE,EXCELLENTE,,,91.6,89.5,false,FOV inférieur confortable pour ischions
+summary,ALL,25/26 VISIBLE (96.2%),25/26 VISIBLE (96.2%),26/26 annotables (100%),,,,,"B26_05 PARTIELLE bilatérale; 4 revues manuelles recommandées",

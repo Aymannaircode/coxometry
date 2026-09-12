@@ -1,0 +1,351 @@
+freeze,grad_any,image,it_max_abs,it_nonzero_frac,key,kp_index,label_v,label_x,label_y,landmark,mechanism,old_max_abs,old_nonzero_frac,param_name,position_loss,requires_grad,section,shape,tensor,train,value,visibility_bce_target,zone
+rows 0:42 ALL,,,,,,,,,,,requires_grad=False + hook mask on rows 42:48,,,,,,freeze_spec,"(48, C_in, 3, 3)",model.23.cv4.0.0.conv.weight,rows 42:48 ALL,,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.0.0.bn.weight/bias/running_*,[42:48],,,
+"block [0:42,:] and [:,0:42]",,,,,,,,,,,hook mask on IT block,,,,,,freeze_spec,"(48, 48, 3, 3)",model.23.cv4.0.1.conv.weight,"block [42:48,42:48] ONLY",,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.0.1.bn.*,[42:48],,,
+rows 0:42 ALL; cols 0:42 for rows 42:48,,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48, 48, 1, 1)",model.23.cv4.0.2.weight,"block [42:48,42:48]",,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.0.2.bias,[42:48],,,
+rows 0:42 ALL,,,,,,,,,,,requires_grad=False + hook mask on rows 42:48,,,,,,freeze_spec,"(48, C_in, 3, 3)",model.23.cv4.1.0.conv.weight,rows 42:48 ALL,,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.1.0.bn.weight/bias/running_*,[42:48],,,
+"block [0:42,:] and [:,0:42]",,,,,,,,,,,hook mask on IT block,,,,,,freeze_spec,"(48, 48, 3, 3)",model.23.cv4.1.1.conv.weight,"block [42:48,42:48] ONLY",,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.1.1.bn.*,[42:48],,,
+rows 0:42 ALL; cols 0:42 for rows 42:48,,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48, 48, 1, 1)",model.23.cv4.1.2.weight,"block [42:48,42:48]",,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.1.2.bias,[42:48],,,
+rows 0:42 ALL,,,,,,,,,,,requires_grad=False + hook mask on rows 42:48,,,,,,freeze_spec,"(48, C_in, 3, 3)",model.23.cv4.2.0.conv.weight,rows 42:48 ALL,,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.2.0.bn.weight/bias/running_*,[42:48],,,
+"block [0:42,:] and [:,0:42]",,,,,,,,,,,hook mask on IT block,,,,,,freeze_spec,"(48, 48, 3, 3)",model.23.cv4.2.1.conv.weight,"block [42:48,42:48] ONLY",,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.2.1.bn.*,[42:48],,,
+rows 0:42 ALL; cols 0:42 for rows 42:48,,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48, 48, 1, 1)",model.23.cv4.2.2.weight,"block [42:48,42:48]",,,
+[0:42],,,,,,,,,,,hook mask,,,,,,freeze_spec,"(48,)",model.23.cv4.2.2.bias,[42:48],,,
+,,B26_01,,,,14,2.0,0.200733,0.803002,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_01,,,,15,2.0,0.649084,0.817261,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_02,,,,14,2.0,0.182178,0.930633,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_02,,,,15,2.0,0.620132,0.924557,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_03,,,,14,2.0,0.236964,0.907884,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_03,,,,15,2.0,0.682508,0.858091,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_04,,,,14,2.0,0.243564,0.869792,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_04,,,,15,2.0,0.723795,0.839621,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_05,,,,14,2.0,0.215426,0.98238,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_05,,,,15,2.0,0.801862,0.984043,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_06,,,,14,0.0,0.0,0.0,IT_R,,,,,False,,it_v0_labels,,,,,0.0,
+,,B26_06,,,,15,2.0,0.684115,0.916872,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_07,,,,14,2.0,0.236157,0.948269,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_07,,,,15,2.0,0.593062,0.948269,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_08,,,,14,2.0,0.243525,0.911226,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_08,,,,15,2.0,0.642964,0.904664,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_09,,,,14,2.0,0.260811,0.960899,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_09,,,,15,2.0,0.75595,0.940225,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_11,,,,14,0.0,0.0,0.0,IT_R,,,,,False,,it_v0_labels,,,,,0.0,
+,,B26_11,,,,15,2.0,0.681992,0.970817,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_12,,,,14,2.0,0.283322,0.901929,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_12,,,,15,2.0,0.682518,0.906853,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_14,,,,14,0.0,0.0,0.0,IT_R,,,,,False,,it_v0_labels,,,,,0.0,
+,,B26_14,,,,15,2.0,0.717524,0.832562,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_15,,,,14,0.0,0.0,0.0,IT_R,,,,,False,,it_v0_labels,,,,,0.0,
+,,B26_15,,,,15,0.0,0.0,0.0,IT_L,,,,,False,,it_v0_labels,,,,,0.0,
+,,B26_16,,,,14,2.0,0.242981,0.935319,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_16,,,,15,2.0,0.658017,0.915452,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_18,,,,14,2.0,0.256886,0.73341,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_18,,,,15,2.0,0.689288,0.704,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_19,,,,14,2.0,0.271858,0.959605,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_19,,,,15,0.0,0.0,0.0,IT_L,,,,,False,,it_v0_labels,,,,,0.0,
+,,B26_21,,,,14,0.0,0.0,0.0,IT_R,,,,,False,,it_v0_labels,,,,,0.0,
+,,B26_21,,,,15,2.0,0.668883,0.839893,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_22,,,,14,2.0,0.275449,0.934413,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_22,,,,15,2.0,0.67332,0.906073,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_23,,,,14,2.0,0.294389,0.905887,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_23,,,,15,2.0,0.718812,0.867211,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_24,,,,14,2.0,0.27394,0.972425,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_24,,,,15,2.0,0.729199,0.944039,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_25,,,,14,2.0,0.233251,0.909275,IT_R,,,,,True,,it_v0_labels,,,,,1.0,
+,,B26_25,,,,15,2.0,0.700807,0.882139,IT_L,,,,,True,,it_v0_labels,,,,,1.0,
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.0.conv.weight,,False,gradient_probe,"(16, 3, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.0.bn.weight,,False,gradient_probe,"(16,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.0.bn.bias,,False,gradient_probe,"(16,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.1.conv.weight,,False,gradient_probe,"(32, 16, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.1.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.1.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.cv1.conv.weight,,False,gradient_probe,"(32, 32, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.cv1.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.cv1.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.cv2.conv.weight,,False,gradient_probe,"(64, 48, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.m.0.cv1.conv.weight,,False,gradient_probe,"(8, 16, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.m.0.cv1.bn.weight,,False,gradient_probe,"(8,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.m.0.cv1.bn.bias,,False,gradient_probe,"(8,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.m.0.cv2.conv.weight,,False,gradient_probe,"(16, 8, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.m.0.cv2.bn.weight,,False,gradient_probe,"(16,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.2.m.0.cv2.bn.bias,,False,gradient_probe,"(16,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.3.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.3.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.3.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.cv1.conv.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.cv2.conv.weight,,False,gradient_probe,"(128, 96, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.cv2.bn.weight,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.cv2.bn.bias,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.m.0.cv1.conv.weight,,False,gradient_probe,"(16, 32, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.m.0.cv1.bn.weight,,False,gradient_probe,"(16,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.m.0.cv1.bn.bias,,False,gradient_probe,"(16,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.m.0.cv2.conv.weight,,False,gradient_probe,"(32, 16, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.m.0.cv2.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.4.m.0.cv2.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.5.conv.weight,,False,gradient_probe,"(128, 128, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.5.bn.weight,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.5.bn.bias,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.cv1.conv.weight,,False,gradient_probe,"(128, 128, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.cv1.bn.weight,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.cv1.bn.bias,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.cv2.conv.weight,,False,gradient_probe,"(128, 192, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.cv2.bn.weight,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.cv2.bn.bias,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv1.conv.weight,,False,gradient_probe,"(32, 64, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv1.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv1.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv2.conv.weight,,False,gradient_probe,"(32, 64, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv2.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv2.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv3.conv.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv3.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.cv3.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.0.cv1.conv.weight,,False,gradient_probe,"(32, 32, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.0.cv1.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.0.cv1.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.0.cv2.conv.weight,,False,gradient_probe,"(32, 32, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.0.cv2.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.0.cv2.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.1.cv1.conv.weight,,False,gradient_probe,"(32, 32, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.1.cv1.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.1.cv1.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.1.cv2.conv.weight,,False,gradient_probe,"(32, 32, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.1.cv2.bn.weight,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.6.m.0.m.1.cv2.bn.bias,,False,gradient_probe,"(32,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.7.conv.weight,,False,gradient_probe,"(256, 128, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.7.bn.weight,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.7.bn.bias,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.cv1.conv.weight,,False,gradient_probe,"(256, 256, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.cv1.bn.weight,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.cv1.bn.bias,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.cv2.conv.weight,,False,gradient_probe,"(256, 384, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.cv2.bn.weight,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.cv2.bn.bias,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv1.conv.weight,,False,gradient_probe,"(64, 128, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv2.conv.weight,,False,gradient_probe,"(64, 128, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv3.conv.weight,,False,gradient_probe,"(128, 128, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv3.bn.weight,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.cv3.bn.bias,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.0.cv1.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.0.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.0.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.0.cv2.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.0.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.0.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.1.cv1.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.1.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.1.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.1.cv2.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.1.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.8.m.0.m.1.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.9.cv1.conv.weight,,False,gradient_probe,"(128, 256, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.9.cv1.bn.weight,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.9.cv1.bn.bias,,False,gradient_probe,"(128,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.9.cv2.conv.weight,,False,gradient_probe,"(256, 512, 1, 1)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.9.cv2.bn.weight,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.9.cv2.bn.bias,,False,gradient_probe,"(256,)",,,,,other
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.cv1.conv.weight,,False,gradient_probe,"(256, 256, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.cv1.bn.weight,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.cv1.bn.bias,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.cv2.conv.weight,,False,gradient_probe,"(256, 256, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.cv2.bn.weight,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.cv2.bn.bias,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.qkv.conv.weight,,False,gradient_probe,"(256, 128, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.qkv.bn.weight,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.qkv.bn.bias,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.proj.conv.weight,,False,gradient_probe,"(128, 128, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.proj.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.proj.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.pe.conv.weight,,False,gradient_probe,"(128, 1, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.pe.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.attn.pe.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.ffn.0.conv.weight,,False,gradient_probe,"(256, 128, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.ffn.0.bn.weight,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.ffn.0.bn.bias,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.ffn.1.conv.weight,,False,gradient_probe,"(128, 256, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.ffn.1.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.10.m.0.ffn.1.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.cv1.conv.weight,,False,gradient_probe,"(128, 384, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.cv1.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.cv1.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.cv2.conv.weight,,False,gradient_probe,"(128, 192, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.cv2.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.cv2.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.m.0.cv1.conv.weight,,False,gradient_probe,"(32, 64, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.m.0.cv1.bn.weight,,False,gradient_probe,"(32,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.m.0.cv1.bn.bias,,False,gradient_probe,"(32,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.m.0.cv2.conv.weight,,False,gradient_probe,"(64, 32, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.m.0.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.13.m.0.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.cv1.conv.weight,,False,gradient_probe,"(64, 256, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.cv2.conv.weight,,False,gradient_probe,"(64, 96, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.m.0.cv1.conv.weight,,False,gradient_probe,"(16, 32, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.m.0.cv1.bn.weight,,False,gradient_probe,"(16,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.m.0.cv1.bn.bias,,False,gradient_probe,"(16,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.m.0.cv2.conv.weight,,False,gradient_probe,"(32, 16, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.m.0.cv2.bn.weight,,False,gradient_probe,"(32,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.16.m.0.cv2.bn.bias,,False,gradient_probe,"(32,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.17.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.17.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.17.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.cv1.conv.weight,,False,gradient_probe,"(128, 192, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.cv1.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.cv1.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.cv2.conv.weight,,False,gradient_probe,"(128, 192, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.cv2.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.cv2.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.m.0.cv1.conv.weight,,False,gradient_probe,"(32, 64, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.m.0.cv1.bn.weight,,False,gradient_probe,"(32,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.m.0.cv1.bn.bias,,False,gradient_probe,"(32,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.m.0.cv2.conv.weight,,False,gradient_probe,"(64, 32, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.m.0.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.19.m.0.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.20.conv.weight,,False,gradient_probe,"(128, 128, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.20.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.20.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.cv1.conv.weight,,False,gradient_probe,"(256, 384, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.cv1.bn.weight,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.cv1.bn.bias,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.cv2.conv.weight,,False,gradient_probe,"(256, 384, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.cv2.bn.weight,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.cv2.bn.bias,,False,gradient_probe,"(256,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv1.conv.weight,,False,gradient_probe,"(64, 128, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv2.conv.weight,,False,gradient_probe,"(64, 128, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv3.conv.weight,,False,gradient_probe,"(128, 128, 1, 1)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv3.bn.weight,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.cv3.bn.bias,,False,gradient_probe,"(128,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.0.cv1.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.0.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.0.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.0.cv2.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.0.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.0.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.1.cv1.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.1.cv1.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.1.cv1.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.1.cv2.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.1.cv2.bn.weight,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.22.m.0.m.1.cv2.bn.bias,,False,gradient_probe,"(64,)",,,,,backbone
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.0.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.0.bn.weight,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.0.bn.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.1.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.2.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.0.2.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.0.conv.weight,,False,gradient_probe,"(64, 128, 3, 3)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.0.bn.weight,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.0.bn.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.1.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.2.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.1.2.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.0.conv.weight,,False,gradient_probe,"(64, 256, 3, 3)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.0.bn.weight,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.0.bn.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.1.conv.weight,,False,gradient_probe,"(64, 64, 3, 3)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.2.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv2.2.2.bias,,False,gradient_probe,"(64,)",,,,,cv2_box
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.0.0.conv.weight,,False,gradient_probe,"(64, 1, 3, 3)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.0.0.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.0.0.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.0.1.conv.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.0.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.0.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.1.0.conv.weight,,False,gradient_probe,"(64, 1, 3, 3)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.1.0.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.1.0.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.1.1.conv.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.1.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.1.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.2.weight,,False,gradient_probe,"(1, 64, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.0.2.bias,,False,gradient_probe,"(1,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.0.0.conv.weight,,False,gradient_probe,"(128, 1, 3, 3)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.0.0.bn.weight,,False,gradient_probe,"(128,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.0.0.bn.bias,,False,gradient_probe,"(128,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.0.1.conv.weight,,False,gradient_probe,"(64, 128, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.0.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.0.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.1.0.conv.weight,,False,gradient_probe,"(64, 1, 3, 3)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.1.0.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.1.0.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.1.1.conv.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.1.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.1.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.2.weight,,False,gradient_probe,"(1, 64, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.1.2.bias,,False,gradient_probe,"(1,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.0.0.conv.weight,,False,gradient_probe,"(256, 1, 3, 3)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.0.0.bn.weight,,False,gradient_probe,"(256,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.0.0.bn.bias,,False,gradient_probe,"(256,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.0.1.conv.weight,,False,gradient_probe,"(64, 256, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.0.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.0.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.1.0.conv.weight,,False,gradient_probe,"(64, 1, 3, 3)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.1.0.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.1.0.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.1.1.conv.weight,,False,gradient_probe,"(64, 64, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.1.1.bn.weight,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.1.1.bn.bias,,False,gradient_probe,"(64,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.2.weight,,False,gradient_probe,"(1, 64, 1, 1)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv3.2.2.bias,,False,gradient_probe,"(1,)",,,,,cv3_cls
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.dfl.conv.weight,,False,gradient_probe,"(1, 16, 1, 1)",,,,,dfl
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.0.conv.weight,,True,gradient_probe,"(48, 64, 3, 3)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.0.bn.weight,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.0.bn.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.1.conv.weight,,True,gradient_probe,"(48, 48, 3, 3)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.1.bn.weight,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.1.bn.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.2.weight,,True,gradient_probe,"(48, 48, 1, 1)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.0.2.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.0.conv.weight,,True,gradient_probe,"(48, 128, 3, 3)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.0.bn.weight,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.0.bn.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.1.conv.weight,,True,gradient_probe,"(48, 48, 3, 3)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.1.bn.weight,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.1.bn.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.2.weight,,True,gradient_probe,"(48, 48, 1, 1)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.1.2.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.2.0.conv.weight,,True,gradient_probe,"(48, 256, 3, 3)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.2.0.bn.weight,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.2.0.bn.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.2.1.conv.weight,,True,gradient_probe,"(48, 48, 3, 3)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.2.1.bn.weight,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,True,,0.008439523167908192,1.0,,,,,,,,0.0,0.0,model.23.cv4.2.1.bn.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,False,,0.0,0.0,,,,,,,,0.0,0.0,model.23.cv4.2.2.weight,,True,gradient_probe,"(48, 48, 1, 1)",,,,,cv4_pose
+,True,,0.03125,1.0,,,,,,,,0.0,0.0,model.23.cv4.2.2.bias,,True,gradient_probe,"(48,)",,,,,cv4_pose
+,,,,,verdict,,,,,,,,,,,,summary,,,,V5_PHASE1_READY,,
+,,,,,checkpoint_exists,,,,,,,,,,,,summary,,,,True,,
+,,,,,backbone_frozen_no_grad,,,,,,,,,,,,summary,,,,True,,
+,,,,,cv2_frozen_no_grad,,,,,,,,,,,,summary,,,,True,,
+,,,,,cv3_frozen_no_grad,,,,,,,,,,,,summary,,,,True,,
+,,,,,cv4_old_channels_blocked,,,,,,,,,,,,summary,,,,True,,
+,,,,,cv4_it_channels_active,,,,,,,,,,,,summary,,,,True,,
+,,,,,loss_finite,,,,,,,,,,,,summary,,,,True,,
+,,,,,loss_total,,,,,,,,,,,,summary,,,,6.475607395172119,,
+,,,,,trainable_cv4_count,,,,,,,,,,,,summary,,,,24,,

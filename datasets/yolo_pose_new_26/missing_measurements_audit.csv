@@ -1,0 +1,44 @@
+section,measure,definition_in_project,required_landmarks,landmarks_in_14_set,calculable_now,new_landmarks_needed,existing_function,source_file,notes
+summary,Alpha angle,Non definie — absente spec MVP code tests API Flutter,N/A,N/A,No,Indetermine — spec clinique requise avant tout landmark,None,docs/landmark_specification.md §1 §3,Pas de mention §11 hors MVP; retuve ALPHA = echographie pediatrique hors projet
+summary,Femoral offset,Partielle §11: axe diaphysaire + FHC; calibration mm/px et definition a figer,"FHC_R, FHC_L, FSP_R, FSP_L, FSD_R, FSD_L",Yes (6/6 cotes),No,No pour landmarks base; oui pour spec mm/px,None,mvp_geometry/measurements.py; docs/landmark_specification.md §11,Offset code = refinement ASL_L uniquement; A7 FOV court = axe instable
+summary,Bi-ischial / ligne bi-ischiatique,Partielle §11: ligne bi-ischiatique necessite IT_R et IT_L; TD non substituables,"IT_R, IT_L",No,No,Yes — IT_R IT_L (LM-17 LM-18),None,docs/landmark_specification.md §11; docs/annotation_guidelines.md §1.4,Sortie metrique (angle vs distance) non figee; masques ischium Dataset2 insuffisants
+landmark_inventory,TD_R,Teardrop inferieur droit — reference horizontale pelvienne,LM-01,Yes,VCE Tonnis,No,,docs/landmark_specification.md §2.1,Non valide pour bi-ischial (A2)
+landmark_inventory,TD_L,Teardrop inferieur gauche,LM-02,Yes,VCE Tonnis,No,,docs/landmark_specification.md §2.1,Non valide pour bi-ischial (A2)
+landmark_inventory,FHC_R,Centre tete femorale droite,LM-03,Yes,VCE CCD Femoral_offset_partial,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,FHC_L,Centre tete femorale gauche,LM-04,Yes,VCE CCD Femoral_offset_partial,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,ASL_R,Extrémité latérale sourcil droit,LM-05,Yes,VCE Tonnis,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,ASL_L,Extrémité latérale sourcil gauche,LM-06,Yes,VCE Tonnis,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,ASM_R,Extrémité médiale sourcil droit,LM-07,Yes,Tonnis,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,ASM_L,Extrémité médiale sourcil gauche,LM-08,Yes,Tonnis,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,FNM_R,Milieu axe col droit,LM-09,Yes,CCD,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,FNM_L,Milieu axe col gauche,LM-10,Yes,CCD,No,,docs/landmark_specification.md §2.1,
+landmark_inventory,FSP_R,Axe diaphysaire proximal droit,LM-11,Yes,CCD Femoral_offset_partial,No,,docs/landmark_specification.md §2.1,A7 niveau sous petit trochanter
+landmark_inventory,FSP_L,Axe diaphysaire proximal gauche,LM-12,Yes,CCD Femoral_offset_partial,No,,docs/landmark_specification.md §2.1,A7
+landmark_inventory,FSD_R,Axe diaphysaire distal droit (FOV),LM-13,Yes,CCD Femoral_offset_partial,No,,docs/landmark_specification.md §2.1,A7 FOV court = instabilite shaft
+landmark_inventory,FSD_L,Axe diaphysaire distal gauche (FOV),LM-14,Yes,CCD Femoral_offset_partial,No,,docs/landmark_specification.md §2.1,A7
+landmark_inventory,ALB_R,Bord osseux latéral optionnel,LM-15,No (optionnel),VCE variante,No,,docs/landmark_specification.md §2.2,Pas lie aux 3 mesures auditees
+landmark_inventory,ALB_L,Bord osseux latéral optionnel,LM-16,No (optionnel),VCE variante,No,,docs/landmark_specification.md §2.2,
+landmark_inventory,IT_R,Tuberosite ischiatique droite (futur),LM-17+,No,Bi-ischial,Yes,,docs/landmark_specification.md §11,Explicitement requis hors MVP
+landmark_inventory,IT_L,Tuberosite ischiatique gauche (futur),LM-18+,No,Bi-ischial,Yes,,docs/landmark_specification.md §11,Explicitement requis hors MVP
+implemented_measure,VCE,Angle entre verticale perpendiculaire ITH par FHC et FHC→ASL,"TD_R TD_L FHC ASL",Yes,Yes,No,vce_angle(),mvp_geometry/measurements.py L89-110,Production MVP
+implemented_measure,Tonnis,Angle entre horizontale parallele ITH par ASM et ASM→ASL,"TD_R TD_L ASM ASL",Yes,Yes,No,tonnis_angle(),mvp_geometry/measurements.py L112-135,Production MVP
+implemented_measure,CCD,Angle medial entre axe col FHC→FNM et axe diaphyse FSP→FSD,"FHC FNM FSP FSD",Yes,Yes,No,ccd_angle(),mvp_geometry/measurements.py L138-155,Production MVP
+homonymy_warning,offset_ASL_L,Refinement post-detection ASM_L→ASL_L pixel offset,N/A,N/A,N/A,N/A,refine_asl_l(),mvp_geometry/refinement/asl_l.py,PAS femoral offset clinique
+test_coverage,test_measurements.py,VCE Tonnis CCD synthetiques,N/A,N/A,N/A,N/A,N/A,mvp_geometry/tests/test_measurements.py,Pas alpha offset bi-ischial
+test_coverage,test_geometry_service.py,API VCE Tonnis CCD,N/A,N/A,N/A,N/A,N/A,backend/tests/test_geometry_service.py,Pas alpha offset bi-ischial
+dataset_verdict,dataset1_analysis,Bi-ischial impossible 8 pts DDH; offset impossible axe long,N/A,N/A,No,Yes schema adulte,N/A,docs/dataset1_analysis.md §14,
+dataset_verdict,dataset_analysis,Bi-ischial non keypoints; offset non couvert,N/A,N/A,No,Yes schema adulte,N/A,docs/dataset_analysis.md §14,ischium segmentation != IT point
+model_state,V2_yolo_pose,14 keypoints indices 0-13,N/A,14/14,N/A,N/A,N/A,datasets/yolo_pose_new_26/meta/keypoint_order.md,Production — ne pas modifier
+model_state,V3,NO-GO,N/A,N/A,N/A,N/A,N/A,datasets/yolo_pose_new_26/v3_failure_diagnostic.md,Ne pas utiliser pour extension mesures
+recommendation,A_calculable_now,VCE Tonnis CCD uniquement,"14 landmarks MVP",Yes,Yes,No,compute_side(),mvp_geometry/hip_measures.py,
+recommendation,B_needs_new_landmarks,Bi-ischial: IT_R IT_L; Alpha: TBD; Femoral offset: non (landmarks),IT_R IT_L,Partial,No,Yes bi-ischial only,N/A,,
+recommendation,C_exact_new_landmarks,IT_R LM-17 tuberosite ischiatique droite,Bi-ischial,No,No,Yes,N/A,docs/landmark_specification.md §11,
+recommendation,C_exact_new_landmarks,IT_L LM-18 tuberosite ischiatique gauche,Bi-ischial,No,No,Yes,N/A,docs/landmark_specification.md §11,
+recommendation,D_training_impact,Bi-ischial => retrain 16 kp + re-annotation IT,N/A,N/A,N/A,Yes,N/A,,Repartir V2 pas V3
+recommendation,D_training_impact,Femoral offset => pas retrain si spec sur landmarks existants,N/A,N/A,N/A,No,N/A,,Implémentation mvp_geometry seulement
+recommendation,D_training_impact,Alpha => bloque jusqu'a spec clinique,N/A,N/A,N/A,Indetermine,N/A,,
+recommendation,E_step_order,1 Revue clinique definition Alpha angle,N/A,N/A,No,N/A,N/A,,Avant tout code ou training
+recommendation,E_step_order,2 Figer definition + mm/px Femoral offset,N/A,N/A,No,N/A,N/A,,Puis mvp_geometry sans toucher V2
+recommendation,E_step_order,3 Spec + annotation IT_R IT_L bi-ischial,IT_R IT_L,N/A,No,Yes,N/A,,Puis extension dataset YOLO
+recommendation,E_step_order,4 Stabiliser V2 VCE Tonnis CCD production,N/A,N/A,Yes,N/A,N/A,,Priorite court terme
+recommendation,E_step_order,5 Training futur uniquement apres spec + annotations bi-ischial,N/A,N/A,N/A,Yes,N/A,,V2 best init pas V3

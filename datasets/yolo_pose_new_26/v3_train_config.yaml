@@ -1,0 +1,107 @@
+# YOLO Pose V3 — hyperparamètres reproductibles (new_26)
+# Fine-tuning anatomique depuis V2 best.pt (epoch 80, mAP50-95 pose peak).
+# Ne modifie pas le dataset, les labels, ni les poids V2 originaux.
+#
+# Usage (préparation seule, sans entraînement) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v3_new_26.py
+#
+# Lancer l'entraînement (explicite) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v3_new_26.py --train
+
+version: "v3_anatomical"
+description: "Fine-tuning doux V2→V3 pour FSP/FSD/ASL, imgsz 1280, aug modérées"
+
+# --- Init (lecture seule sur V2) ---
+init:
+  source: runs/pose/runs/pose/runs/yolo_pose_new_26_v2-3/weights/best.pt
+  copy_to: runs/pose/yolo_pose_new_26_v3_anatomical/init/v2_best_mAP_epoch80.pt
+  note: "best.pt V2 = checkpoint epoch 80 (mAP50-95 pose max 0.692). Jamais écrasé."
+
+# --- Dataset (identique V2, 14 keypoints inchangés) ---
+data: datasets/yolo_pose_new_26/data.yaml
+
+# --- Run Ultralytics ---
+run:
+  project: runs/pose
+  name: yolo_pose_new_26_v3_anatomical
+  exist_ok: false
+
+# --- Entraînement ---
+train:
+  epochs: 60
+  patience: 15
+  imgsz: 1280
+  batch: 1          # CPU + imgsz 1280 : 1 recommandé ; essayer 2 si RAM suffisante
+  device: cpu
+  workers: 4
+  cache: false
+  amp: true
+  deterministic: true
+  seed: 42
+  fraction: 1.0
+  val: true
+  save: true
+  save_period: -1
+  plots: true
+  verbose: true
+
+# --- Optimiseur (fine-tuning doux — leçon régression V3 2026-08-23) ---
+optimizer:
+  name: AdamW
+  lr0: 0.0001       # ×100 plus bas que V2 (0.01) — critique pour fine-tune convergé
+  lrf: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 1.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.05
+  cos_lr: true
+
+# --- Loss gains pose (identiques V2) ---
+loss:
+  pose: 12.0
+  kobj: 1.0
+  box: 7.5
+  cls: 0.5
+  dfl: 1.5
+
+# --- Augmentations (modérées ; pas de mosaic / randaugment / erasing) ---
+augment:
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  auto_augment: null
+  erasing: 0.0
+  close_mosaic: 0
+  fliplr: 0.5       # conservé — flip_idx dataset validé (horizontal_flip_audit.md)
+  flipud: 0.0
+  degrees: 0.0
+  translate: 0.05   # réduit vs V2 (0.1)
+  scale: 0.2        # réduit vs V2 (0.5)
+  shear: 0.0
+  perspective: 0.0
+  hsv_h: 0.01       # réduit vs V2 (0.015)
+  hsv_s: 0.4        # réduit vs V2 (0.7)
+  hsv_v: 0.3        # réduit vs V2 (0.4)
+
+# --- Flags Ultralytics ---
+ultralytics:
+  pretrained: false  # checkpoint custom déjà chargé via YOLO(init.pt)
+  cls_remap: true
+  overlap_mask: true
+
+# --- Landmarks prioritaires (évaluation post-training, hors entraînement) ---
+focus_landmarks:
+  - FSP_R
+  - FSD_R
+  - FSP_L
+  - FSD_L
+  - ASL_R
+  - ASL_L
+
+# --- Seuils qualité clinique (comparaison V3 vs V2) ---
+evaluation_thresholds_px:
+  correct_max: 75
+  uncertain_max: 149
+  incorrect_min: 150

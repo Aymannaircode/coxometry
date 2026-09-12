@@ -1,0 +1,91 @@
+section,item,value,source,notes
+model_chain,v1_base,yolo11n-pose.pt (COCO),runs/pose/runs/yolo_pose_new_26/args.yaml,pretrained=true
+model_chain,v2_base,runs/pose/runs/yolo_pose_new_26/weights/best.pt,runs/pose/runs/pose/runs/yolo_pose_new_26_v2-3/args.yaml,fine-tune from V1
+architecture,family,YOLO11,args.yaml + best.pt metadata,Ultralytics 8.4.96
+architecture,variant,yolo11n-pose (nano),v3_regression_audit.md,~5.9 MB weights
+architecture,task,pose,args.yaml,
+classes,count,1, dataset.yaml,pelvis
+classes,name_0,pelvis,dataset.yaml,
+keypoints,count,14,dataset.yaml,kpt_shape=[14 3]
+keypoints,order,"TD_R TD_L FHC_R FHC_L ASL_R ASL_L ASM_R ASM_L FNM_R FNM_L FSP_R FSP_L FSD_R FSD_L",dataset.yaml,matches MVP_LANDMARK_NAMES
+keypoints,flip_idx,"[1 0 3 2 5 4 7 6 9 8 11 10 13 12]",dataset.yaml,R/L pairs
+dataset,yaml_primary,datasets/yolo_pose_new_26/dataset.yaml,V2 args.yaml,
+dataset,yaml_alias,datasets/yolo_pose_new_26/data.yaml,v3_train_config.md,identical content
+dataset,train_images,21,meta/split.json + filesystem,
+dataset,val_images,5,meta/split.json + filesystem,
+dataset,test_images,0,filesystem,no test folder
+dataset,split_seed,42,meta/split.json,
+dataset,val_ratio,0.1923,meta/split.json,5/26
+dataset,train_cases,"B26_01 B26_02 B26_03 B26_04 B26_05 B26_06 B26_07 B26_08 B26_09 B26_11 B26_12 B26_14 B26_15 B26_16 B26_18 B26_19 B26_21 B26_22 B26_23 B26_24 B26_25",meta/split.json,
+dataset,val_cases,"B26_10 B26_13 B26_17 B26_20 B26_26",meta/split.json,
+dataset,image_width_px_min,2548,computed read-only,
+dataset,image_width_px_max,3234,computed read-only,
+dataset,image_width_px_mean,2894,computed read-only,
+dataset,image_height_px_mean,2513,computed read-only,
+training,run_official,yolo_pose_new_26_v2-3,args.yaml,production V2
+training,epochs,100,args.yaml,
+training,imgsz,640,args.yaml,~4.5x downscale from native
+training,batch_v2,2,args.yaml,device=cpu
+training,batch_v1,4,V1 args.yaml,
+training,optimizer,auto (AdamW ~0.002),args.yaml + v3_regression_audit.md,
+training,lr0,0.01,args.yaml,
+training,lrf,0.01,args.yaml,final lr ~0.0001 linear
+training,patience_v2,100,args.yaml,no early stop (equals epochs)
+training,patience_v1,30,V1 args.yaml,
+training,pretrained_v2,true,args.yaml,fine-tune not scratch
+training,seed_v2,0,args.yaml,V1 used seed=42
+training,workers_v2,8,args.yaml,
+training,cache,false,args.yaml,
+training,amp,true,args.yaml,
+augmentation,mosaic,1.0,args.yaml,strong; risky on 21 images
+augmentation,auto_augment,randaugment,args.yaml,
+augmentation,erasing,0.4,args.yaml,
+augmentation,fliplr,0.5,args.yaml,flip_idx validated
+augmentation,flipud,0.0,args.yaml,
+augmentation,close_mosaic,10,args.yaml,
+augmentation,hsv_h,0.015,args.yaml,
+augmentation,hsv_s,0.7,args.yaml,
+augmentation,hsv_v,0.4,args.yaml,
+augmentation,translate,0.1,args.yaml,
+augmentation,scale,0.5,args.yaml,
+pose_params,pose_loss_gain,12.0,args.yaml,
+pose_params,kobj,1.0,args.yaml,
+pose_params,box,7.5,args.yaml,
+pose_params,cls,0.5,args.yaml,
+pose_params,dfl,1.5,args.yaml,
+pose_params,dis,6.0,args.yaml,
+metrics_v2,mAP50-95_pose_best,0.692,results.csv,epoch 80
+metrics_v2,mAP50-95_pose_final,0.646,results.csv,epoch 100
+metrics_v2,mAP50_pose,0.995,results.csv,epoch 80
+metrics_v2,val_pose_loss_best,1.652,results.csv,epoch 80
+metrics_v2,val_pose_loss_final,1.672,results.csv,epoch 100
+metrics_v1,mAP50-95_pose_best,0.388,results.csv,epoch 97
+pixel_error_v2,ASL_L_train_mean_px,538.18,train_vs_val_landmark_analysis.md,
+pixel_error_v2,ASL_L_val_mean_px,471.72,train_vs_val_landmark_analysis.md,
+pixel_error_v2,ASL_R_mean_px,144,landmark_annotation_quality_audit.md,
+pixel_error_v2,FSP_R_mean_px,151,landmark_annotation_quality_audit.md,
+pixel_error_v2,FSP_L_mean_px,170,landmark_annotation_quality_audit.md,
+pixel_error_v2,FSD_R_mean_px,159,landmark_annotation_quality_audit.md,
+pixel_error_v2,FSD_L_mean_px,108,landmark_annotation_quality_audit.md,
+pixel_error_e2e_B26_01,FSP_R_px,419,e2e_landmark_anatomical_audit_android.md,case in TRAIN
+pixel_error_e2e_B26_01,FSD_R_px,306,e2e_landmark_anatomical_audit_android.md,
+pixel_error_e2e_B26_01,FSP_L_px,274,e2e_landmark_anatomical_audit_android.md,
+pixel_error_e2e_B26_01,FSD_L_px,245,e2e_landmark_anatomical_audit_android.md,
+pixel_error_e2e_B26_01,ASL_R_px,231,e2e_landmark_anatomical_audit_android.md,
+pixel_error_e2e_B26_01,ASL_L_px,153,e2e_landmark_anatomical_audit_android.md,after refinement
+weights_v2,best_pt,"C:\Users\g\OneDrive\Desktop\Projet-Ayman\runs\pose\runs\pose\runs\yolo_pose_new_26_v2-3\weights\best.pt",filesystem,5947464 bytes
+weights_v2,last_pt,"...\yolo_pose_new_26_v2-3\weights\last.pt",filesystem,epoch 100
+scripts,dataset_prep,annotation_pilot/scripts/prepare_yolo_pose_new_26.py,repo,
+scripts,v2_train,none (Ultralytics API/CLI reconstructed),args.yaml,no dedicated v2 script
+scripts,v2_inference,annotation_pilot/scripts/run_yolo_pose_inference_new_26.py,repo,
+scripts,v2_analysis_train_val,annotation_pilot/scripts/analyze_v2_train_vs_val_new_26.py,repo,
+scripts,v2_analysis_behavior,annotation_pilot/scripts/analyze_v2_training_behavior_new_26.py,repo,
+integrity,train_val_overlap,0,computed,split.json
+integrity,split_filesystem_match,true,computed,
+integrity,label_columns_all_47,true,computed,26/26 labels
+integrity,yaml_mvp_order_match,true,computed,
+integrity,json_label_match_px,0,landmark_annotation_quality_audit.md,
+integrity,B26_01_split,train,meta/split.json,
+integrity,B26_12_split,train,meta/split.json,gold quality reference
+integrity,B26_13_split,val,meta/split.json,gold quality reference
+recommendation,verdict,rebuild_V3,yolo_training_config_audit.md,do not keep V2 config as-is for retraining

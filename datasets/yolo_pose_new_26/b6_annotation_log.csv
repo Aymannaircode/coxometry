@@ -1,0 +1,27 @@
+image,IT_R_x,IT_R_y,IT_R_v,IT_L_x,IT_L_y,IT_L_v,visibility_R,visibility_L,reviewer_status,comment
+B26_01,548.0,2140.0,2,1756.0,2143.0,2,VISIBLE,VISIBLE,standard,IT_R: Point caudal net; cas standard EXCELLENT; IT_L: Rejet piège fémoral latéral; contour ischiatique retenu; A-IT01: piège fémoral IT_L documenté (pilote)
+B26_05,705.0,2892.0,2,2472.0,2876.0,2,PARTIAL,PARTIAL,supervised_case,IT_R: PARTIAL bord FOV; repère conservateur dans FOV; anti-fémur appliqué; IT_L: PARTIAL bord FOV; session supervisée; marge caudale réduite; A-FOV05: ambiguïté apex caudal bord FOV (~110px dispersion y); A-FEM05: piège fémoral IT_R
+B26_07,640.4,2431.5,2,1834.0,2379.0,2,VISIBLE,VISIBLE,review_recommended,Revue rotation/gaz recommandée B7; A-GAS07: gaz intestinal central — repère latéral vérifié
+B26_11,566.7,2298.6,2,2052.2,2252.6,2,VISIBLE,VISIBLE,review_recommended,IT_R: raffiné par offsets B26_01 + scan local; A-ROT11: rotation pelvienne légère — R/L vérifié indépendamment
+B26_12,843.0,2148.0,2,2041.0,2179.0,2,VISIBLE,VISIBLE,review_recommended,A-BRD12: marge caudale réduite — règle bord FOV appliquée
+B26_02,544.4,1804.7,2,1879.0,1826.0,2,VISIBLE,VISIBLE,standard,
+B26_03,732.2,2141.2,2,2074.0,2026.0,2,VISIBLE,VISIBLE,standard,
+B26_04,856.0,2454.0,2,2193.1,2256.9,2,VISIBLE,VISIBLE,standard,
+B26_06,716.0,2241.0,2,1929.5,2043.0,2,VISIBLE,VISIBLE,standard,
+B26_08,650.7,2207.9,2,1746.5,2133.1,2,VISIBLE,VISIBLE,standard,
+B26_09,769.1,2105.3,2,2268.3,2053.5,2,VISIBLE,VISIBLE,standard,
+B26_10,830.0,2221.9,2,1970.4,2172.7,2,VISIBLE,VISIBLE,standard,IT_L: raffiné par offsets B26_01 + scan local
+B26_13,904.2,2297.6,2,2168.3,2291.9,2,VISIBLE,VISIBLE,standard,
+B26_14,743.8,2201.0,2,2000.5,2121.1,2,VISIBLE,VISIBLE,standard,IT_R: raffiné par offsets B26_01 + scan local
+B26_15,630.0,2028.6,2,1725.4,1976.3,2,VISIBLE,VISIBLE,standard,
+B26_16,730.4,2245.7,2,1988.0,2158.2,2,VISIBLE,VISIBLE,standard,
+B26_17,562.3,2137.4,2,1869.5,2083.3,2,VISIBLE,VISIBLE,standard,
+B26_18,772.2,1925.2,2,2077.3,1812.5,2,VISIBLE,VISIBLE,standard,
+B26_19,777.2,2103.3,2,2028.9,2029.4,2,VISIBLE,VISIBLE,standard,
+B26_20,667.2,2245.2,2,1900.6,2135.1,2,VISIBLE,VISIBLE,standard,
+B26_21,841.9,2580.5,2,2016.8,2487.8,2,VISIBLE,VISIBLE,standard,
+B26_22,828.0,2308.0,2,2028.4,2154.0,2,VISIBLE,VISIBLE,standard,
+B26_23,903.5,2076.6,2,2184.3,1991.6,2,VISIBLE,VISIBLE,standard,
+B26_24,616.0,2352.0,2,1900.0,2120.5,2,VISIBLE,VISIBLE,standard,
+B26_25,679.1,2194.7,2,2032.7,2105.7,2,VISIBLE,VISIBLE,standard,IT_L: raffiné par offsets B26_01 + scan local
+B26_26,538.3,2030.0,2,2002.9,1932.9,2,VISIBLE,VISIBLE,standard,

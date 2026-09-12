@@ -1,0 +1,17 @@
+﻿pilot_id,source_file,source_split,image_copy,annotator_A_status,annotator_B_status,qc_status,notes
+P01,a308.jpg,Train,images/P01_a308.jpg,pending,pending,pending,standard
+P02,a245.jpg,Train,images/P02_a245.jpg,pending,pending,pending,standard median
+P03,e65.jpg,Train,images/P03_e65.jpg,pending,pending,pending,small resolution
+P04,w84.jpg,Train,images/P04_w84.jpg,pending,pending,pending,large resolution
+P05,y44.jpg,Train,images/P05_y44.jpg,pending,pending,pending,DDH points missing left
+P06,a322.jpg,Train,images/P06_a322.jpg,pending,pending,pending,uncertain femoral heads D1
+P07,b31.jpg,Validation,images/P07_b31.jpg,pending,pending,pending,mixed visibility
+P08,11ebyy.jpg,Validation,images/P08_11ebyy.jpg,pending,pending,pending,no D1 keypoints JSON
+P09,b1.jpg,Validation,images/P09_b1.jpg,pending,pending,pending,no D1 keypoints JSON
+P10,170qt.jpg,Test,images/P10_170qt.jpg,pending,pending,pending,blind annotation
+P11,259qt.jpg,Test,images/P11_259qt.jpg,pending,pending,pending,blind annotation
+P12,282qt.jpg,Test,images/P12_282qt.jpg,pending,pending,pending,blind annotation
+P13,a311.jpg,Train,images/P13_a311.jpg,pending,pending,pending,QC region anomaly
+P14,h27.jpg,Validation,images/P14_h27.jpg,pending,pending,pending,QC region anomaly
+P15,c82.jpg,Train,images/P15_c82.jpg,pending,pending,pending,wide framing
+P16,a425.jpg,Train,images/P16_a425.jpg,pending,pending,pending,near-square aspect

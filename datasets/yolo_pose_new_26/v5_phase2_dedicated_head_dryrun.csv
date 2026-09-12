@@ -1,0 +1,48 @@
+capacity,case_id,complexity,features,grad_backbone,grad_head_14kp,grad_it_head_P3,grad_it_head_P4,grad_it_head_P5,grad_it_head_total,grad_neck,gt_visible,it_channels_mean_abs,it_flat_channels,it_raw_shape,landmark,loss_total,max_diff_14kp_channels,max_diff_boxes,max_diff_cls,mean_14kp_px,metric,model,n_detections,n_kp,name,neck_shape,nz_backbone,nz_head_14kp,nz_it_head_P3,nz_it_head_P4,nz_it_head_P5,nz_it_head_total,nz_neck,option_id,parity_14kp_ok,parity_det_ok,position_weighted,risk,scale,section,selected,spatial,trainable_params,ultralytics_compat,value
+medium,,low,P3(64ch)+P4(128ch)+P5(256ch) neck outputs,,,,,,,,,,,,,,,,,,,,,,ITHeadSimplePerScale,,,,,,,,,A,,,,low,,design,False,,370578,wrapper splice kpts[42:48],
+medium-high,,medium,P3(64ch)+P4(128ch)+P5(256ch) neck outputs,,,,,,,,,,,,,,,,,,,,,,ITHeadMultiScaleFusion,,,,,,,,,B,,,,low,,design,True,,362898,wrapper splice kpts[42:48],
+medium,,medium,P3(64ch)+P4(128ch)+P5(256ch) neck outputs,,,,,,,,,,,,,,,,,,,,,,ITHeadFrozenFPN,,,,,,,,,C,,,,medium (FPN integration),,design,False,,252178,wrapper splice kpts[42:48],
+high (independent),,high ops,V2 preds + cropped ROI / coords,,,,,,,,,,,,,,,,,,,,,,V2 + separate IT regressor,,,,,,,,,D,,,,low on V2,,design,False,,external,two-stage pipeline,
+,,,,,,,,,,,,,,,,,,,,,trainable_params_it_head,,,,,,,,,,,,,,,,,,,capacity,,,,,362898
+,,,,,,,,,,,,,,,,,,,,,frozen_base_params,,,,,,,,,,,,,,,,,,,capacity,,,,,2853411
+,,,,,,,,,,,,,6,"(1, 6, 80, 80)",,,,,,,,,,,,"(1, 64, 80, 80)",,,,,,,,,,,,,P3,forward_shape,,80x80,,,
+,,,,,,,,,,,,,6,"(1, 6, 40, 40)",,,,,,,,,,,,"(1, 128, 40, 40)",,,,,,,,,,,,,P4,forward_shape,,40x40,,,
+,,,,,,,,,,,,,6,"(1, 6, 20, 20)",,,,,,,,,,,,"(1, 256, 20, 20)",,,,,,,,,,,,,P5,forward_shape,,20x20,,,
+,,,,,,,,,,,,,6,"(1, 6, 8400)",,,,,,,,,,,,,,,,,,,,,,,,,fused_kpts,forward_shape,,anchors=8400,,,
+,,,,,,,,,,,,,48,"(1, 48, 8400)",,,,,,,,,,,,,,,,,,,,,,,,,full_kpts,forward_shape,,IT_R=ch42-44 IT_L=ch45-47,,,
+,,,,0.0,0.0,0.4651230850722641,0.5204501280095428,0.46705480059608817,2.268690902274102,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grad_probe,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,6,6,5,20,0,,,,,,,grad_probe,,,,,
+,,,,,,,,,,,,,,,,4.730527877807617,,,,,,,,,,,,,,,,,,,,,,,,grad_probe,,,,,
+,,,,,,,,,,,True,,,,IT_R,,,,,,,,,,,,,,,,,,,,,,11.996881484985352,,,loss_kp,,,,,
+,,,,,,,,,,,False,,,,IT_L,,,,,,,,,,,,,,,,,,,,,,0.0,,,loss_kp,,,,,
+,,,,,,,,,,,,0.2625599503517151,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,True,True,,,,parity,,,,,
+,B26_10,,,,,,,,,,,,,,,,,,,,,V2,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_13,,,,,,,,,,,,,,,,,,,,,V2,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_17,,,,,,,,,,,,,,,,,,,,,V2,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_20,,,,,,,,,,,,,,,,,,,,,V2,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_26,,,,,,,,,,,,,,,,,,,,,V2,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_10,,,,,,,,,,,,,,,,,,,,,surgical_init,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_13,,,,,,,,,,,,,,,,,,,,,surgical_init,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_17,,,,,,,,,,,,,,,,,,,,,surgical_init,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_20,,,,,,,,,,,,,,,,,,,,,surgical_init,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_26,,,,,,,,,,,,,,,,,,,,,surgical_init,1,,,,,,,,,,,,,,,,,val_det,,,,,
+,B26_10,,,,,,,,,,,,,,,,,,,138.7002158341648,,V2,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_13,,,,,,,,,,,,,,,,,,,135.16692772998778,,V2,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_17,,,,,,,,,,,,,,,,,,,112.66494247554907,,V2,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_20,,,,,,,,,,,,,,,,,,,126.40934686105038,,V2,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_26,,,,,,,,,,,,,,,,,,,161.79164931324337,,V2,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_10,,,,,,,,,,,,,,,,,,,138.7002158341648,,phase2_dryrun,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_13,,,,,,,,,,,,,,,,,,,135.16692772998778,,phase2_dryrun,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_17,,,,,,,,,,,,,,,,,,,112.66494247554907,,phase2_dryrun,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_20,,,,,,,,,,,,,,,,,,,126.40934686105038,,phase2_dryrun,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,B26_26,,,,,,,,,,,,,,,,,,,161.79168540528926,,phase2_dryrun,,14,,,,,,,,,,,,,,,,val_14kp,,,,,
+,,,,,,,,,,,,,,,,,,,,,case_id,,,,,,,,,,,,,,,,,,,overfit,,,,,B26_01
+,,,,,,,,,,,,,,,,,,,,,steps,,,,,,,,,,,,,,,,,,,overfit,,,,,50
+,,,,,,,,,,,,,,,,,,,,,lr,,,,,,,,,,,,,,,,,,,overfit,,,,,0.001
+,,,,,,,,,,,,,,,,,,,,,loss_start,,,,,,,,,,,,,,,,,,,overfit,,,,,5.3440022468566895
+,,,,,,,,,,,,,,,,,,,,,loss_end,,,,,,,,,,,,,,,,,,,overfit,,,,,3.8036367893218994
+,,,,,,,,,,,,,,,,,,,,,IT_R_error_px,,,,,,,,,,,,,,,,,,,overfit,,,,,464.87103271484375
+,,,,,,,,,,,,,,,,,,,,,IT_L_error_px,,,,,,,,,,,,,,,,,,,overfit,,,,,589.1090087890625
+,,,,,,,,,,,,,,,,,,,,,can_overfit_single_image,,,,,,,,,,,,,,,,,,,overfit,,,,,NO
+,,,,,,,,,,,,,,,,,,,,,status,,,,,,,,,,,,,,,,,,,verdict,,,,,V5_PHASE2_DEDICATED_HEAD_READY
+,,,,,,,,,,,,,,,,,,,,,detail,,,,,,,,,,,,,,,,,,,verdict,,,,,Option B fusion head; all dry-run gates passed

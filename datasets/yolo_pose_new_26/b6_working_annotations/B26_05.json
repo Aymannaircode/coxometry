@@ -1,0 +1,87 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "P1_MANUAL_REVIEW_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_05",
+  "annotation_order": 2,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_05.png",
+  "image_width": 3008,
+  "image_height": 3008,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_P1_manual_review",
+  "annotation_date": "2026-08-29",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "PARTIAL",
+    "IT_L": "PARTIAL"
+  },
+  "reviewer_status": "supervised_case",
+  "ambiguities": [
+    "A-FOV05: ambiguïté apex caudal bord FOV (~110px dispersion y)",
+    "A-FEM05: piège fémoral IT_R"
+  ],
+  "IT_R": {
+    "x": 648.0,
+    "y": 2955.0,
+    "v": 2,
+    "visibility": "PARTIAL"
+  },
+  "IT_L": {
+    "x": 2412.0,
+    "y": 2960.0,
+    "v": 2,
+    "visibility": "PARTIAL"
+  },
+  "comment": "P1: IT_R KEEP — PARTIAL bord FOV apex in-FOV conservateur | IT_L MOVE — replacé sur cortex ischion G au bord FOV",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_05.json",
+  "correction_history": [
+    {
+      "session": "2026-08-28",
+      "landmark": "IT_R",
+      "priority": "P2",
+      "x_old": 705.0,
+      "y_old": 2892.0,
+      "x_new": 648.0,
+      "y_new": 2955.0,
+      "v": 2,
+      "visibility": "PARTIAL",
+      "reason": "PARTIAL FOV ; ambiguïté apex caudal vs bord image",
+      "comment": "Repositionné sur cortex ischiatique visible (x<670) — dernier bord osseux net dans FOV ; choix conservateur PARTIAL",
+      "reviewer": "agent_B6_manual_correction"
+    },
+    {
+      "session": "2026-08-28",
+      "landmark": "IT_L",
+      "priority": "P1",
+      "x_old": 2472.0,
+      "y_old": 2876.0,
+      "x_new": 2395.0,
+      "y_new": 2958.0,
+      "v": 2,
+      "visibility": "PARTIAL",
+      "reason": "PARTIAL FOV ; ~100 px trop crânial ; proximité fémorale",
+      "comment": "Replacé sur ischion G caudal médial au fémur — os pelvien confirmé visuellement",
+      "reviewer": "agent_B6_manual_correction"
+    },
+    {
+      "session": "2026-08-29",
+      "landmark": "IT_L",
+      "priority": "P1",
+      "x_old": 2395.0,
+      "y_old": 2958.0,
+      "x_new": 2412.0,
+      "y_new": 2960.0,
+      "v": 2,
+      "visibility": "PARTIAL",
+      "reason": "P1 revue — repère latéral au cortex en zone soft-tissue",
+      "comment": "Replacé sur bord cortical ischion G visible au contact FOV — anti-fémur OK ; choix PARTIAL conservateur",
+      "reviewer": "agent_B6_P1_manual_review",
+      "review_status": "MOVE",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "manual_correction_session": "2026-08-29",
+  "manual_correction_status": "P1_MANUAL_REVIEW_COMPLETED / QA_REQUIRED"
+}

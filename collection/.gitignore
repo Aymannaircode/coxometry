@@ -1,0 +1,22 @@
+# Phase 11C-1: keep empty-folder markers only.
+# Future clinical deposits in these stages must not be committed from this tree.
+01_INBOX_RAW/*
+!01_INBOX_RAW/.gitkeep
+02_DEIDENTIFICATION_PENDING/*
+!02_DEIDENTIFICATION_PENDING/.gitkeep
+03_DEIDENTIFIED/*
+!03_DEIDENTIFIED/.gitkeep
+04_ELIGIBILITY_PENDING/*
+!04_ELIGIBILITY_PENDING/.gitkeep
+05_PHYSICIAN_REVIEW/*
+!05_PHYSICIAN_REVIEW/.gitkeep
+06_ANNOTATION_PENDING/*
+!06_ANNOTATION_PENDING/.gitkeep
+07_QC_PENDING/*
+!07_QC_PENDING/.gitkeep
+08_VALIDATED/*
+!08_VALIDATED/.gitkeep
+09_EXCLUDED/*
+!09_EXCLUDED/.gitkeep
+10_ARCHIVE/*
+!10_ARCHIVE/.gitkeep

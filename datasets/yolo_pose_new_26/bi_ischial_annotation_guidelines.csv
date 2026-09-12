@@ -1,0 +1,48 @@
+section,rule_id,rule,status,source_doc,clinical_validation_required,notes
+identification,IT_R,Name and structure IT_R tuberosite ischiatique droite patient,DEFINED,landmark_specification.md §11; bi_ischial_spec.md §1,false,LM-17 proposed
+identification,IT_L,Name and structure IT_L tuberosite ischiatique gauche patient,DEFINED,landmark_specification.md §11; bi_ischial_spec.md §2,false,LM-18 proposed
+identification,R_L,IT_R=droit patient gauche image; IT_L=gauche patient droite image,DEFINED,annotation_guidelines.md §1.1,false,
+placement,B1_CANDIDATE,Point inferieur/caudal identifiable du contour osseux tuberosite ischiatique AP,PROPOSED,missing_measurements_audit.md §3; B1 CANDIDATE,true,NOT clinically validated definitive definition
+placement,CONTOUR,Follow osseous contour of ischial tuberosity not soft tissue,PROPOSED,bi_ischial_annotation_guidelines §3.1 derived from B1,true,
+placement,CENTER,Place point center at most caudal/inferior identifiable point on contour,PROPOSED,B1 CANDIDATE,true,Cortical vs center vs apex unresolved
+placement,WIDE,Wide extended tuberosity contour choice rule,CLINICAL VALIDATION REQUIRED,bi_ischial_B1_position_audit.md §4,true,Provisional: most caudal net point else v=0
+placement,SOFT_TISSUE,Do not place on soft tissues,PROPOSED,MVP osseous landmark principle,true,Operational thresholds not defined
+placement,TD_CONFUSION,Do not place IT on teardrop; spatial TD medial IT lateral caudal,DEFINED + PROPOSED,A2; annotation_guidelines.md §2.1; bi_ischial_spec.md §8,false for prohibition; true for spatial guide
+placement,ANTI_FEMUR,IT candidate must never be on femur diaphysis or contour; landmark on ischial tuberosity pelvic bone,PROPOSED,bi_ischial_annotation_guidelines §3.6; B6_pilot_B26_01; B6_review_B26_05,true,B26_01 IT_L trap; B26_05 IT_R trap
+special,PARTIAL,Partially visible tuberosity — see §5 PARTIAL rule,PROPOSED,bi_ischial_visibility_audit.md; annotation_guidelines.md §1.2; §5.3,true,B26_05 only PARTIAL bilateral case
+special,SUPERPOSITION,Bone superposition,CLINICAL VALIDATION REQUIRED,bi_ischial_spec.md §6; FHC analogy §2.2,true,Provisional: zoom else v=0
+special,CONTOUR_DIFFICULT,Difficult contour to follow,CLINICAL VALIDATION REQUIRED,annotation_guidelines.md §1.2,true,Provisional: v=0 if inconsistent
+special,FOV_BORDER,FOV border rule — no extrapolation; last identifiable ischial cortex in image,PROPOSED,bi_ischial_annotation_guidelines §4.4; B6_review_B26_05,true,B26_05 tightest case; B26_12 reduced margin
+special,POOR_QUALITY,Poor radiographic quality,DEFINED general,annotation_guidelines.md §1.2,partial,IT-specific thresholds open
+special,ASYMMETRY,Apparent asymmetry rotation,CLINICAL VALIDATION REQUIRED,annotation_guidelines.md §3; B7 B26_11,true,No mirror copy DEFINED
+visibility,B7_VISIBLE,Contour caudal identifiable annotatable v=2 without extrapolation,DEFINED B7 audit,bi_ischial_visibility_audit.md §Methode,false,Visibility QC not anatomical definition
+visibility,B7_PARTIAL,Tuberosity present caudal landmark less comfortable,DEFINED B7 audit,bi_ischial_visibility_audit.md §Methode,false,Libelle audit PARTIELLE = PARTIAL
+visibility,B7_UNCERTAIN,Persistent doubt clinical review,DEFINED B7 audit,bi_ischial_visibility_audit.md §Methode,false,
+visibility,B7_NON_VISIBLE,Structure absent cut off not identifiable,DEFINED B7 audit,bi_ischial_visibility_audit.md §Methode,false,
+visibility,B7_NOT_B1,B7 visibility rule is not anatomical landmark definition,DEFINED,bi_ischial_B1_position_audit.md §8,false,
+visibility,MAP_V2,B7 VISIBLE to v=2 if B1 placement without reasonable doubt,PROPOSED,bi_ischial_annotation_guidelines §5.3; MVP §1.2,true,No new v convention
+visibility,MAP_V2_PARTIAL,B7 PARTIAL to v=2 if net else v=0 or clinical review,PROPOSED,bi_ischial_annotation_guidelines §5.3,true,B26_05 v=2 and v=0 both defensible
+visibility,MAP_V0_PARTIAL,B7 PARTIAL to v=0 if caudal landmark doubtful,PROPOSED,bi_ischial_annotation_guidelines §5.3,true,
+visibility,MAP_V0_UNCERTAIN,B7 UNCERTAIN to v=0 default until review,PROPOSED,bi_ischial_annotation_guidelines §5.3,true,
+visibility,MAP_V0_NON_VISIBLE,B7 NON_VISIBLE to v=0,DEFINED,annotation_guidelines.md §1.2,false,
+v0,GENERAL,v=0 if guess unreliable not visible,DEFINED,annotation_guidelines.md §1.2,false,No new convention
+v0,V1_DEFAULT,v=1 not allowed by default,DEFINED,annotation_guidelines.md §1.2,true,if IT v=1 exception needed
+v0,UNILATERAL,One IT v=0 makes BI_ISCHIAL impossible,DEFINED,bi_ischial_spec.md §13,false,
+v0,FEMUR_TRAP,Reject femoral candidate then v=0 if ischium not reliable,PROPOSED,bi_ischial_annotation_guidelines §3.6,true,
+v0,FOV_BORDER,Extrapolation or border doubt leads to v=0,PROPOSED,bi_ischial_annotation_guidelines §4.4,true,
+TD_IT,NOT_EQUAL,TD_R TD_L not equal IT_R IT_L,DEFINED,A2; bi_ischial_spec.md §8,false,
+TD_IT,NO_SUB,TD must never replace IT,DEFINED,annotation_guidelines.md §2.1; missing_measurements_spec.md §3.3,false,
+example,B26_01,Standard easy case VISIBLE EXCELLENTE + femoral trap IT_L,PROPOSED,bi_ischial_annotation_guidelines §9.1; B6_pilot_B26_01,true,PILOT coords NON-OFFICIAL; rejected (2136 2117)
+example,B26_05,Limit case PARTIAL MOYENNE reduced margin border femur trap supervised,PROPOSED,bi_ischial_annotation_guidelines §9.2; B6_review_B26_05,true,Only bilateral PARTIAL case; PILOT coords NON-OFFICIAL
+example,B26_12,Reduced caudal margin VISIBLE BONNE manual review,EXAMPLE B7,bi_ischial_visibility_audit.csv,true,images/train/B26_12.png
+example,B26_07,Intestinal gas VISIBLE BONNE manual review,EXAMPLE B7,bi_ischial_visibility_audit.csv,true,images/train/B26_07.png
+example,B26_11,Pelvic rotation VISIBLE BONNE R/L review,EXAMPLE B7,bi_ischial_visibility_audit.csv,true,images/train/B26_11.png
+clinical,B1_POSITION,Exact position on tuberosity,CLINICAL VALIDATION REQUIRED,bi_ischial_B1_position_audit.md,true,B1 CANDIDATE
+clinical,B1_CORTICAL,Cortical vs center,CLINICAL VALIDATION REQUIRED,bi_ischial_B1_position_audit.md §3,true,
+clinical,B1_WIDE,Wide contour treatment,CLINICAL VALIDATION REQUIRED,bi_ischial_B1_position_audit.md §4,true,
+clinical,B1_PARTIAL,Partial visibility treatment PARTIAL to v=2 vs v=0,CLINICAL VALIDATION REQUIRED,bi_ischial_B1_position_audit.md §6; §5.3,true,
+clinical,B1_BORDER,FOV border rule threshold,CLINICAL VALIDATION REQUIRED,bi_ischial_annotation_guidelines §4.4,true,
+clinical,B1_ANTI_FEMUR,Anti-femur lateral rejection thresholds,CLINICAL VALIDATION REQUIRED,bi_ischial_annotation_guidelines §3.6,true,
+clinical,B1_V0,v=0 edge cases for IT,CLINICAL VALIDATION REQUIRED,bi_ischial_B1_position_audit.md §9,partial general DEFINED
+status,B4,B4 annotation guide status,READY FOR B6 CONDITIONALLY,this document revised 2026-08-28,true,Rules PROPOSED; B1 CANDIDATE; no official IT annotations
+status,B1,B1 placement proposal status,CANDIDATE,B1 CANDIDATE,true,Not officially clinically validated

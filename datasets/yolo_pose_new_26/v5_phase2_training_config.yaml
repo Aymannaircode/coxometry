@@ -1,0 +1,94 @@
+# YOLO Pose V5 Phase 2 — Dedicated IT head (ITHeadMultiScaleFusion)
+# Init depuis v5_surgical_init.pt (Phase 0 validée).
+# Architecture validée : v5_phase2_dedicated_head_dryrun.md → V5_PHASE2_DEDICATED_HEAD_READY
+#
+# Preflight (gradient probe, NO training) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v5_phase2.py
+#
+# Lancer entraînement (explicite) :
+#   .venv\Scripts\python.exe annotation_pilot\scripts\train_yolo_pose_v5_phase2.py --train
+
+version: "v5_phase2_dedicated_it_head"
+description: "IT-only training via ITHeadMultiScaleFusion on P3/P4/P5 — backbone+neck+cv4 frozen"
+
+init:
+  source: runs/pose/yolo_pose_new_26_v5_16kp/weights/v5_surgical_init.pt
+  architecture: ITHeadMultiScaleFusion
+  note: "Ne jamais modifier v5_surgical_init.pt — gel complet base + tête IT dédiée"
+
+data: datasets/yolo_pose_new_26/data.yaml
+
+run:
+  project: runs/pose
+  name: yolo_pose_new_26_v5_phase2
+  exist_ok: false
+
+train:
+  epochs: 30
+  patience: 8
+  imgsz: 640
+  batch: 1
+  device: cpu
+  workers: 0
+  cache: false
+  amp: false
+  deterministic: true
+  seed: 42
+  fraction: 1.0
+  val: true
+  save: true
+  save_period: -1
+  plots: false
+  verbose: true
+
+optimizer:
+  name: AdamW
+  lr0: 0.0001
+  weight_decay: 0.0005
+
+loss:
+  pose: 12.0
+  kobj: 1.0
+  box: 7.5
+  cls: 0.5
+  dfl: 1.5
+
+it_only:
+  train_kp_indices: [14, 15]
+  old_nk: 42
+  new_nk: 48
+  position_loss_min_visibility: 2
+
+metrics:
+  it_correct_threshold_px: 50.0
+  early_stop_metric: IT_mean_px
+
+augment:
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  auto_augment: null
+  erasing: 0.0
+  close_mosaic: 0
+  fliplr: 0.0
+  flipud: 0.0
+  degrees: 0.0
+  translate: 0.0
+  scale: 0.0
+  shear: 0.0
+  perspective: 0.0
+  hsv_h: 0.0
+  hsv_s: 0.0
+  hsv_v: 0.0
+
+guardrails:
+  frozen_zone_max_delta: 1.0e-8
+  epoch_14kp_mean_max_ratio_vs_v2: 1.15
+  epoch_14kp_p90_max_ratio_vs_v2: 1.20
+  detection_count_must_match_v2: true
+  abort_on_frozen_drift: true
+
+references:
+  v2_best: runs/pose/runs/pose/runs/yolo_pose_new_26_v2-3/weights/best.pt
+  dryrun_report: datasets/yolo_pose_new_26/v5_phase2_dedicated_head_dryrun.md

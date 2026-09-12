@@ -1,0 +1,12 @@
+{
+  "records": [
+    {
+      "case_id": "SYNTHETIC_R27_001",
+      "source_file_hash": "010ea9df7e5bb67b032de95ea5852beb60ce1ea2b0c7f5e2bc666eafdb4c06de",
+      "deidentified_file_hash": "3b44e8d5aa5950f4cd3b6e366272c7c29ec266ec7416489a8812fa0e0b1919c5",
+      "pixel_hash": "8c426a73d66fda0f60b17866613e2ad4e30efbea2a6663f20725feecf9d1b5b7",
+      "study_uid": "1.2.826.0.1.3680043.10.541.113.1",
+      "duplicate_status": "UNIQUE"
+    }
+  ]
+}

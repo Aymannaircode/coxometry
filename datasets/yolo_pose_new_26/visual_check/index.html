@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vérification visuelle YOLO Pose — new_26</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #11151c;
+      --panel: #1b2230;
+      --text: #e8eef7;
+      --muted: #9fb0c7;
+      --accent: #5fd38d;
+      --warn: #ffb454;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header, main, footer {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+    }
+    header {
+      border-bottom: 1px solid #2a3447;
+    }
+    h1 { margin: 0 0 .25rem; font-size: 1.6rem; }
+    .subtitle { color: var(--muted); margin: 0; }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .stat {
+      background: var(--panel);
+      border: 1px solid #2a3447;
+      border-radius: 10px;
+      padding: .6rem .9rem;
+      min-width: 140px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid #2a3447;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+    .meta { padding: .85rem 1rem 1rem; }
+    .meta h2 { margin: 0 0 .35rem; font-size: 1.1rem; color: var(--accent); }
+    .meta p { margin: .15rem 0; color: var(--muted); font-size: .92rem; }
+    .meta a { color: #8ec5ff; }
+    .warn { margin: .5rem 0 0; padding-left: 1rem; color: var(--warn); font-size: .85rem; }
+    .banner {
+      margin-top: 1rem;
+      background: var(--panel);
+      border: 1px solid #2a3447;
+      border-radius: 12px;
+      padding: .75rem 1rem;
+    }
+    .warn-banner { border-color: #6a4b1f; }
+    footer { color: var(--muted); font-size: .85rem; border-top: 1px solid #2a3447; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vérification visuelle YOLO Pose — new_26</h1>
+    <p class="subtitle">26 overlays · Orange = RIGHT (_R) · Bleu = LEFT (_L) · Vert = bbox</p>
+    <div class="stats">
+      <div class="stat"><strong>26</strong><br>overlays</div>
+      <div class="stat"><strong>21</strong><br>train</div>
+      <div class="stat"><strong>5</strong><br>val</div>
+      <div class="stat"><strong>0</strong><br>avertissements auto</div>
+    </div>
+  </header>
+  <main>
+    
+    <section class="grid">
+      
+<article class="card">
+  <a href="overlays/B26_01_overlay.png" target="_blank">
+    <img src="thumbs/B26_01_thumb.png" alt="B26_01" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_01</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2730 × 2665 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_01_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_02_overlay.png" target="_blank">
+    <img src="thumbs/B26_02_thumb.png" alt="B26_02" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_02</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3030 × 1975 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_02_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_03_overlay.png" target="_blank">
+    <img src="thumbs/B26_03_thumb.png" alt="B26_03" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_03</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3030 × 2410 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_03_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_04_overlay.png" target="_blank">
+    <img src="thumbs/B26_04_thumb.png" alt="B26_04" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_04</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3030 × 2688 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_04_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_05_overlay.png" target="_blank">
+    <img src="thumbs/B26_05_thumb.png" alt="B26_05" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_05</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3008 × 3008 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_05_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_06_overlay.png" target="_blank">
+    <img src="thumbs/B26_06_thumb.png" alt="B26_06" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_06</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2751 × 2430 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_06_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_07_overlay.png" target="_blank">
+    <img src="thumbs/B26_07_thumb.png" alt="B26_07" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_07</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2998 × 2687 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_07_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_08_overlay.png" target="_blank">
+    <img src="thumbs/B26_08_thumb.png" alt="B26_08" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_08</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2672 × 2423 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_08_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_09_overlay.png" target="_blank">
+    <img src="thumbs/B26_09_thumb.png" alt="B26_09" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_09</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2983 × 2225 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_09_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_10_overlay.png" target="_blank">
+    <img src="thumbs/B26_10_thumb.png" alt="B26_10" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_10</h2>
+    <p>split: <strong>val</strong></p>
+    <p>3039 × 2625 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_10_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_11_overlay.png" target="_blank">
+    <img src="thumbs/B26_11_thumb.png" alt="B26_11" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_11</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2871 × 2570 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_11_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_12_overlay.png" target="_blank">
+    <img src="thumbs/B26_12_thumb.png" alt="B26_12" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_12</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2986 × 2437 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_12_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_13_overlay.png" target="_blank">
+    <img src="thumbs/B26_13_thumb.png" alt="B26_13" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_13</h2>
+    <p>split: <strong>val</strong></p>
+    <p>3234 × 2961 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_13_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_14_overlay.png" target="_blank">
+    <img src="thumbs/B26_14_thumb.png" alt="B26_14" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_14</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2779 × 2592 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_14_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_15_overlay.png" target="_blank">
+    <img src="thumbs/B26_15_thumb.png" alt="B26_15" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_15</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2548 × 2279 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_15_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_16_overlay.png" target="_blank">
+    <img src="thumbs/B26_16_thumb.png" alt="B26_16" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_16</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3006 × 2401 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_16_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_17_overlay.png" target="_blank">
+    <img src="thumbs/B26_17_thumb.png" alt="B26_17" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_17</h2>
+    <p>split: <strong>val</strong></p>
+    <p>2763 × 2442 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_17_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_18_overlay.png" target="_blank">
+    <img src="thumbs/B26_18_thumb.png" alt="B26_18" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_18</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3006 × 2625 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_18_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_19_overlay.png" target="_blank">
+    <img src="thumbs/B26_19_thumb.png" alt="B26_19" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_19</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2825 × 2228 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_19_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_20_overlay.png" target="_blank">
+    <img src="thumbs/B26_20_thumb.png" alt="B26_20" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_20</h2>
+    <p>split: <strong>val</strong></p>
+    <p>2701 × 2514 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_20_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_21_overlay.png" target="_blank">
+    <img src="thumbs/B26_21_thumb.png" alt="B26_21" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_21</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3008 × 2998 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_21_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_22_overlay.png" target="_blank">
+    <img src="thumbs/B26_22_thumb.png" alt="B26_22" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_22</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3006 × 2470 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_22_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_23_overlay.png" target="_blank">
+    <img src="thumbs/B26_23_thumb.png" alt="B26_23" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_23</h2>
+    <p>split: <strong>train</strong></p>
+    <p>3030 × 2327 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_23_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_24_overlay.png" target="_blank">
+    <img src="thumbs/B26_24_thumb.png" alt="B26_24" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_24</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2548 × 2466 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_24_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_25_overlay.png" target="_blank">
+    <img src="thumbs/B26_25_thumb.png" alt="B26_25" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_25</h2>
+    <p>split: <strong>train</strong></p>
+    <p>2851 × 2469 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_25_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+<article class="card">
+  <a href="overlays/B26_26_overlay.png" target="_blank">
+    <img src="thumbs/B26_26_thumb.png" alt="B26_26" loading="lazy">
+  </a>
+  <div class="meta">
+    <h2>B26_26</h2>
+    <p>split: <strong>val</strong></p>
+    <p>2822 × 2426 px</p>
+    <p>14/14 keypoints visibles</p>
+    
+    <p><a href="overlays/B26_26_overlay.png" target="_blank">Ouvrir pleine résolution</a></p>
+  </div>
+</article>
+    </section>
+  </main>
+  <footer>
+    Généré le 2026-08-23 16:30:43 —
+    sources non modifiées — entraînement non lancé.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+section,item_id,topic,status,value_documented,source_doc,action_required,notes
+meta,GLOBAL,Statut global bi-ischial,NEW LANDMARKS REQUIRED + SPECIFICATION REQUIRED,IT_R IT_L requis §11; metrique sortie non figee; 14 kp insuffisants,docs/landmark_specification.md §11; missing_measurements_spec.md §3,Aucune modif projet,B7 visibilite new_26 non auditee
+landmark,IT_R,D1 definition anatomique IT_R,PARTIELLEMENT DEFINED,Tuberosite ischiatique droite patient; extremite droite ligne bi-ischiatique; LM-17 propose,docs/landmark_specification.md §11; missing_measurements_audit.md §3,B1 position exacte,Interdit MVP 14 kp annotation_guidelines §1.4
+landmark,IT_L,D2 definition anatomique IT_L,PARTIELLEMENT DEFINED,Tuberosite ischiatique gauche patient; extremite gauche ligne bi-ischiatique; LM-18 propose,docs/landmark_specification.md §11; missing_measurements_audit.md §3,B1 position exacte,Interdit MVP 14 kp
+landmark,D3,Position exacte sur tuberosite,SPECIFICATION REQUIRED,Sommet inferieur vs centre vs bord vs point caudal — non fige,missing_measurements_spec.md §5.3 B1; missing_measurements_audit.md §3,B1 + illustrations,Proposition audit non validee: point caudal/inferieur identifiable
+convention,D4,Convention R/L,DEFINED,IT_R=droit patient=gauche image; IT_L=gauche patient=droite image,docs/annotation_guidelines.md §1.1,Aucune,Identique 14 landmarks MVP
+visibility,D5,Tuberosite partiellement visible,SPECIFICATION REQUIRED,Pas de fiche IT; regles generales v=0/v=1/v=2 applicables par analogie,docs/annotation_guidelines.md §1.2,B4 B7,Fiches IT manquantes
+visibility,D6,Landmark ambigu,SPECIFICATION REQUIRED,A2 teardrop vs ischions; B1 position; cas limites non documentes IT,docs/landmark_specification.md §8 A2; missing_measurements_spec.md §5.3,B1 B4 B7,
+relation,D7,Relation TD_R TD_L vs IT,DEFINED,TD=teardrop base ITH horizontal pelvien MVP; IT=tuberosite base BI_ISCHIAL hors MVP,docs/landmark_specification.md §2.3 §4 LM-01 §11,Aucune,Structures voisines distinctes
+substitution,D8,TD ne remplace PAS IT,DEFINED,A2 interdit remplacement silencieux; §11 exige IT; guide interdit ischions pour teardrop,docs/landmark_specification.md §8 A2 §11; annotation_guidelines.md §1.4 §2.1,Aucune,Confirmation explicite
+geometry,D9,BI_ISCHIAL construction,DEFINED,BI_ISCHIAL = droite(IT_R IT_L),missing_measurements_spec.md §3.2; missing_measurements_audit.md §3,Aucune pour construction,Usage metrique non detaille
+output,D10,Metrique sortie angle distance autre,SPECIFICATION REQUIRED,Angle vs horizontal? distance IT_R-IT_L mm? inclinaison pelvienne?,missing_measurements_spec.md §3.1 §3.5,B2,Pas bi_ischial_angle() code
+output,D11,Unite sortie,SPECIFICATION REQUIRED,degres si angle; mm si distance — depend B2,missing_measurements_spec.md §3.5,B2,
+calibration,D12,Calibration mm/px,SPECIFICATION REQUIRED,Probable si distance; non definie; conditionnelle metrique B2 B3,missing_measurements_spec.md §3.5 §5.3 B3,B2 B3,Dependance ITH non documentee
+validity,D13,Conditions validite invalidite,SPECIFICATION REQUIRED,14 kp insuffisants; TD substitut interdit; regles IT v=0 unilateral non formalisees,missing_measurements_spec.md §3.3; dataset_analysis.md §14,B2 B4 B7,
+schema,D14,Passage 14 a 16 keypoints,PLANNED,+IT_R IT_L; re-annotation; V2 incompatible; changement schema,missing_measurements_spec.md §3.4; keypoint_order.md,B5 B6 avant execution,LM-17 LM-18 §11
+schema,D15,Ordre 16 keypoints,PROVISIONAL,0-13 inchange; 14=IT_R 15=IT_L propose,keypoint_order.md; missing_measurements_spec.md §3.4,B5,§9 landmark_spec ordre alternatif non implemente
+schema,D16,flip_idx 16 kp,PROVISIONAL,[1 0 3 2 5 4 7 6 9 8 11 10 13 12 15 14],keypoint_order.md; missing_measurements_spec.md §3.4,B5,Permutation 14↔15
+labels,D17,Impact labels YOLO,DOCUMENTED FUTUR,47 cols -> 53 cols; +2 triplets x y v,keypoint_order.md; missing_measurements_spec.md §3.4,Apres B6,Non modifie maintenant
+yaml,D18,Impact data.yaml,DOCUMENTED FUTUR,kpt_shape [14 3]->[16 3]; flip_idx etendu; kpt_names +IT_R IT_L,datasets/yolo_pose_new_26/data.yaml; missing_measurements_spec.md §3.4,B5 avant modif,Actuel: 14 kp inchange
+training,D19,Impact training futur,DEFINED POLICY,T1 pas train si B1-B7; T3 retrain 16 kp init V2 best V3 NO-GO,missing_measurements_spec.md §5.4 T1 T3,Apres B1-B7 B6,Re-annotation 26 cas
+visibility,D20,Visibilite IT sur new_26,SPECIFICATION REQUIRED,26 images AP adulte; 14 kp seulement; aucun audit IT; B7 ouvert,missing_measurements_spec.md §5.3 B7; preparation_report.md,B7 audit corpus,A7 FSD FOV court contexte voisin non IT
+landmarks,L1,14 kp suffisants?,DEFINED NON,§11 exige IT_R IT_L explicitement,docs/landmark_specification.md §11,Aucune,NEW LANDMARKS REQUIRED
+landmarks,L2,Segmentation ischium suffit?,DEFINED NON,Masques ischium != keypoint tuberosite,docs/dataset_analysis.md §14,Aucune,
+landmarks,L3,TD substitut IT?,DEFINED NON,A2 interdit remplacement silencieux,missing_measurements_spec.md §3.3,Aucune,
+pipeline,P1,Code bi_ischial,ABSENT,Pas bi_ischial_angle distance,missing_measurements_audit.md §3,F2 puis implémentation,
+pipeline,P2,Tests bi-ischial,ABSENT,Aucun test,missing_measurements_audit.md,Apres spec,
+pipeline,P3,V2 Retuve IT,ABSENT,Pas slot IT; tuberosites absentes modele,retuve_feasibility_test.md; keypoint_order.md,Aucune,
+clinical_decision,B1,Position exacte IT + illustrations,SPECIFICATION REQUIRED,BLOCKER pre-training,missing_measurements_spec.md §5.3,Revue clinique,
+clinical_decision,B2,Sortie angle distance inclinaison,SPECIFICATION REQUIRED,BLOCKER pre-training,missing_measurements_spec.md §5.3,Revue clinique,
+clinical_decision,B3,Calibration mm/px si distance,SPECIFICATION REQUIRED,BLOCKER pre-training,missing_measurements_spec.md §5.3,Revue clinique,
+clinical_decision,B4,Fiches annotation IT_R IT_L,SPECIFICATION REQUIRED,BLOCKER pre-training,missing_measurements_spec.md §5.3,annotation_guidelines.md,
+clinical_decision,B5,Ordre 16 kp et flip_idx,SPECIFICATION REQUIRED,BLOCKER pre-training,missing_measurements_spec.md §5.3,Confirmer append 14-15,
+clinical_decision,B6,Re-annotation new_26,SPECIFICATION REQUIRED,BLOCKER pre-training,missing_measurements_spec.md §5.3,26 images,
+clinical_decision,B7,Visibilite tuberosites corpus AP,SPECIFICATION REQUIRED,BLOCKER pre-training,missing_measurements_spec.md §5.3,Audit new_26,
+policy,T1,Pas entrainer si B1-B7 ouverts,DEFINED POLICY,BLOCKER pre-training,missing_measurements_spec.md §5.4,Attendre spec complete,
+policy,T3,Bi-ischial => 16 kp retrain V2 init,DEFINED POLICY,Retraining obligatoire; V3 NO-GO,missing_measurements_spec.md §5.4 T3,Apres annotations,
+precondition,PRE1,Spec clinique B1-B3,BLOCKER,B1 B2 B3 fermes,bi_ischial_spec.md Preconditions,Revue clinique,
+precondition,PRE2,Guide annotation B4,BLOCKER,Fiches IT dans guidelines,bi_ischial_spec.md Preconditions,B4,
+precondition,PRE3,Schema YOLO B5,BLOCKER,Ordre 16 kp flip_idx confirmes,bi_ischial_spec.md Preconditions,B5,
+precondition,PRE4,Audit visibilite B7,BLOCKER,Audit 26 images new_26,bi_ischial_spec.md Preconditions,B7,
+precondition,PRE5,Re-annotation B6,BLOCKER,IT_R IT_L sur 26 cas,bi_ischial_spec.md Preconditions,B6,
+precondition,PRE6,Extension labels yaml,BLOCKER POST-SPEC,47->53 cols; data.yaml 16 kp,bi_ischial_spec.md Preconditions,Apres PRE1-PRE5,
+precondition,PRE7,Training futur,BLOCKER POST-ANNOTATION,V2 best init pas V3,bi_ischial_spec.md Preconditions,T3,

@@ -1,0 +1,32 @@
+check_id,category,item,result,detail,evidence
+SCR01,script,requires_train_flag,YES,"model.train() only if args.train is True","train_yolo_pose_v4_new_26.py L362-368"
+SCR02,script,default_mode,preflight_only,"Without --train: prints 'Mode preflight : entraînement NON lancé'","train_yolo_pose_v4_new_26.py L362-364"
+SCR03,script,official_run_name,yolo_pose_new_26_v4_16kp,"cfg run.name from v4_training_config.yaml","v4_training_config.yaml L30"
+SCR04,script,expected_artifacts,"results.csv; args.yaml; weights/best.pt; v4_train_config.md","Created by Ultralytics train + write_run_meta","train_yolo_pose_v4_new_26.py L274-309; L339-344"
+CFG01,config,run_dir,PLANNED,runs/pose/yolo_pose_new_26_v4_16kp/,v4_training_config.yaml
+CFG02,config,epochs,100,,v4_training_config.yaml
+CFG03,config,imgsz,960,,v4_training_config.yaml
+CFG04,config,exist_ok,false,"Ultralytics abort if run dir exists with weights",v4_training_config.yaml L31
+RUN01,filesystem,official_run_dir,ABSENT,runs/pose/yolo_pose_new_26_v4_16kp/ not found,disk scan 2026-08-29
+RUN02,filesystem,official_init_copy,ABSENT,runs/pose/yolo_pose_new_26_v4_16kp/init/v2_best_mAP_epoch80.pt not found,disk scan 2026-08-29
+RUN03,filesystem,official_v4_train_config_md,ABSENT,Would be written even by preflight-only script,disk scan 2026-08-29
+RUN04,filesystem,official_results_csv,ABSENT,,v4_training_final_report.md
+RUN05,filesystem,official_best_pt,ABSENT,,v4_training_final_report.md
+V2CHK01,init,V2_best_pt_exists,OK,"5947464 bytes; SHA256 prefix 1f92d0867b4cd86e",disk probe 2026-08-29
+V2CHK02,init,V2_path,runs/pose/runs/pose/runs/yolo_pose_new_26_v2-3/weights/best.pt,unchanged since 2026-08-23,disk probe
+LOG01,history,train_yolo_pose_v4_new_26_in_terminals,NOT_FOUND,No captured terminal ran this script,grep terminals/*
+LOG02,history,train_yolo_pose_v4_new_26_with_train,NOT_FOUND,No --train invocation logged,grep terminals/*
+LOG03,history,preflight_session_instruction,NO_TRAINING,"User query 2026-08-29 01:14: 'NE PAS lancer le training'",agent transcript ef58d556
+LOG04,history,preflight_script_shell_attempt,UNKNOWN_OUTCOME,"Agent invoked script without --train then wrote reports manually",agent transcript ef58d556 L36-37
+LOG05,history,preflight_csv_training_not_run,CONFIRMED,INT05 training_not_run OK,v4_preflight.csv
+LOG06,history,preflight_md_training_not_run,CONFIRMED,"Mode READ-ONLY preflight — aucun entrainement lance",v4_preflight.md L4
+LOG07,history,v4_training_complete_message,LEGACY_ONLY,"Terminal shows V4 TRAINING COMPLETE for yolo_pose_new_26_v4 not v4_16kp",terminals/33.txt L49-51
+LEG01,legacy_run,yolo_pose_new_26_v4,EXISTS,"Pilot Aug 2026; 29 epochs; imgsz 640; name=yolo_pose_new_26_v4",runs/pose/yolo_pose_new_26_v4/args.yaml
+LEG02,legacy_vs_official,name_diff,v4 vs v4_16kp,"Different Ultralytics run name and config generation",compare args.yaml vs v4_training_config.yaml
+LEG03,legacy_vs_official,kp_count,14_vs_16,"Legacy v4_train_config.md cites 14 keypoints; official targets 16 KP",v4_train_config.md L34
+LEG04,legacy_vs_official,epochs,30_vs_100,,compare configs
+LEG05,legacy_vs_official,imgsz,640_vs_960,,compare configs
+ERR01,errors,official_training_error_logs,NONE,"No failure log because --train never started",analysis
+ERR02,errors,preflight_script_error_logs,NONE_CAPTURED,No terminal output for preflight script run,terminals/*
+CONF01,conclusion,root_cause,TRAINING_NOT_LAUNCHED,"Official V4 16 KP never executed: --train not called; preflight explicitly forbade training",synthesis
+CONF02,conclusion,secondary_note,LEGACY_RUN_ELSEWHERE,"Unrelated pilot at runs/pose/yolo_pose_new_26_v4/ (Aug 23) may cause V4 naming confusion",synthesis

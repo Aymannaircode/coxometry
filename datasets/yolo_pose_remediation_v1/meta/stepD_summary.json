@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-09-04T18:28:17Z",
+  "candidates_inventoried": 69,
+  "empty_patient_dirs": 33,
+  "dicoms_a_annoter_used": 26,
+  "dicoms_a_verifier": 8,
+  "dicoms_rejetees": 2,
+  "eligible_yes": 0,
+  "eligible_pending_physician": 8,
+  "selected_new_unique_patients": 6,
+  "total_remediation_cases_in_yolo": 26,
+  "new_cases_yolo_promoted": 0,
+  "test_cases": 0,
+  "hard_tag_distribution_selected_new": {
+    "OVERLAP": 6,
+    "ROT_mild": 5,
+    "SHAFT_hard": 4,
+    "ASL_hard": 6,
+    "QUALITY_var": 2
+  },
+  "annotation_qa_complete": false,
+  "final_evaluation_ready": false,
+  "safe_to_proceed_step_e": false,
+  "blockers": [
+    "Insufficient real unused AP pelvis DICOMs to reach 40\u201380 total",
+    "Cannot form >=15 held-out test cases without fabricating or reshuffling",
+    "All unused a_verifier cases require physician adult/eligibility confirmation",
+    "New cases not annotated; YOLO promotion withheld"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "_WARNING": "NON-OFFICIAL B6 working annotation — NOT for YOLO training or official labels",
+  "_schema": "b6-working-annotation-1.0",
+  "_status": "MANUAL_CORRECTION_COMPLETED / QA_REQUIRED",
+  "image_id": "B26_11",
+  "annotation_order": 4,
+  "split": "train",
+  "source_image": "datasets/yolo_pose_new_26/images/train/B26_11.png",
+  "image_width": 2871,
+  "image_height": 2570,
+  "definition_working": "IT_R / IT_L = point caudal/inférieur identifiable du contour osseux de chaque tubérosité ischiatique sur AP bassin",
+  "guidelines_version": "bi_ischial_annotation_guidelines.md (B4 READY FOR B6 CONDITIONALLY)",
+  "annotator": "agent_B6_manual_correction",
+  "annotation_date": "2026-08-28",
+  "official_labels_modified": false,
+  "visibility_b7": {
+    "IT_R": "VISIBLE",
+    "IT_L": "VISIBLE"
+  },
+  "reviewer_status": "review_recommended",
+  "ambiguities": [
+    "A-ROT11: rotation pelvienne légère — R/L vérifié indépendamment"
+  ],
+  "IT_R": {
+    "x": 632.0,
+    "y": 2498.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "IT_L": {
+    "x": 1958.0,
+    "y": 2495.0,
+    "v": 2,
+    "visibility": "VISIBLE"
+  },
+  "comment": "IT_R: raffiné par offsets B26_01 + scan local | MANUAL_CORR: IT_L: Apex caudal ischion G — placement indépendant malgré rotation; IT_R: Apex caudal ischion D sous rotation — contour pelvien identifiable",
+  "reference_official_14kp": "annotation_pilot/annotations/new_26/B26_11.json",
+  "correction_history": [
+    {
+      "session": "2026-08-28",
+      "landmark": "IT_R",
+      "priority": "P2",
+      "x_old": 566.7,
+      "y_old": 2298.6,
+      "x_new": 632.0,
+      "y_new": 2498.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Rotation ; faible contraste ; structure non confirmable en auto",
+      "comment": "Apex caudal ischion D sous rotation — contour pelvien identifiable",
+      "reviewer": "agent_B6_manual_correction"
+    },
+    {
+      "session": "2026-08-28",
+      "landmark": "IT_L",
+      "priority": "P1",
+      "x_old": 2052.2,
+      "y_old": 2252.6,
+      "x_new": 1958.0,
+      "y_new": 2495.0,
+      "v": 2,
+      "visibility": "VISIBLE",
+      "reason": "Rotation ; ~120 px trop crânial",
+      "comment": "Apex caudal ischion G — placement indépendant malgré rotation",
+      "reviewer": "agent_B6_manual_correction"
+    }
+  ],
+  "manual_correction_session": "2026-08-28",
+  "manual_correction_status": "MANUAL_CORRECTION_COMPLETED / QA_REQUIRED"
+}

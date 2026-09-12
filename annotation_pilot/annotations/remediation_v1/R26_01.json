@@ -1,0 +1,20 @@
+{
+  "schema_version": "mvp-pilot-1.0",
+  "image_id": "R26_01",
+  "source_file": "1.2.840.113564.192168100150.202312191448193835.1203801020003",
+  "source_dataset": "bassin_a_verifier",
+  "view": "AP_pelvis",
+  "population_note": "PENDING_PHYSICIAN_ADULT_CONFIRM",
+  "annotator_id": null,
+  "annotation_date": null,
+  "guidelines_version": "annotation_guidelines.md + phase10c_stepA_definition_fov_lock.md",
+  "image_width": 3032,
+  "image_height": 2520,
+  "landmarks": [],
+  "status": "NOT_ANNOTATED",
+  "notes": "Hard AP pelvis (>=2 tags); pick one of two same-patient views; age absent \u2014 PENDING physician adult confirm",
+  "fov_policy_review_required": "YES",
+  "hard_tags": "OVERLAP;ROT_mild;SHAFT_hard;ASL_hard;QUALITY_var",
+  "do_not_invent_coordinates": true,
+  "do_not_apply_0_5_head_diameter_cutoff": true
+}

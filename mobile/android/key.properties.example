@@ -1,0 +1,7 @@
+# Copy to key.properties and fill in your local values.
+# NEVER commit key.properties or keystore files.
+
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=coxometrie
+storeFile=../keystore/release.jks
